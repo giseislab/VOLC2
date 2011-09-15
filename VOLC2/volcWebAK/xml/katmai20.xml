@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<merge fileTime_loc="Sat Aug 27, 2011 21:47:57 AKST" fileTime_utc="20110828074757">
+<event id="08091931" network-code="AK" time-stamp="2011/08/27_21:47:57" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="08"/>
+<param name="day" value="09"/>
+<param name="hour" value="19"/>
+<param name="minute" value="31"/>
+<param name="second" value="40.38"/>
+<param name="latitude" value="58.1763"/>
+<param name="longitude" value="-155.3648"/>
+<param name="depth" value="1.46"/>
+<param name="magnitude" value="0.70"/>
+<param name="num-stations" value="11"/>
+<param name="num-phases" value="11"/>
+<param name="dist-first-station" value="4.00"/>
+<param name="rms-error" value="0.12"/>
+<param name="hor-error" value="0.00"/>
+<param name="azimuthal-gap" value="125.00"/>
+<param name="local-time" value="Tue Aug 09, 2011 10:31:40 AKST"/>
+<param name="icon-style" value="0"/>
+</event>
+<event id="08051019" network-code="AK" time-stamp="2011/08/27_21:47:57" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="08"/>
+<param name="day" value="05"/>
+<param name="hour" value="10"/>
+<param name="minute" value="19"/>
+<param name="second" value=" 2.73"/>
+<param name="latitude" value="58.0395"/>
+<param name="longitude" value="-155.2615"/>
+<param name="depth" value="7.89"/>
+<param name="magnitude" value="0.70"/>
+<param name="num-stations" value="8"/>
+<param name="num-phases" value="8"/>
+<param name="dist-first-station" value="3.00"/>
+<param name="rms-error" value="0.08"/>
+<param name="hor-error" value="0.00"/>
+<param name="azimuthal-gap" value="217.00"/>
+<param name="local-time" value="Fri Aug 05, 2011 01:19:02 AKST"/>
+<param name="icon-style" value="0"/>
+</event>
+<event id="08042033" network-code="AK" time-stamp="2011/08/27_21:47:57" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="08"/>
+<param name="day" value="04"/>
+<param name="hour" value="20"/>
+<param name="minute" value="33"/>
+<param name="second" value="36.76"/>
+<param name="latitude" value="58.1640"/>
+<param name="longitude" value="-155.3198"/>
+<param name="depth" value="1.93"/>
+<param name="magnitude" value="0.70"/>
+<param name="num-stations" value="8"/>
+<param name="num-phases" value="8"/>
+<param name="dist-first-station" value="5.00"/>
+<param name="rms-error" value="0.07"/>
+<param name="hor-error" value="0.00"/>
+<param name="azimuthal-gap" value="116.00"/>
+<param name="local-time" value="Thu Aug 04, 2011 11:33:36 AKST"/>
+<param name="icon-style" value="0"/>
+</event>
+<event id="08040807" network-code="AK" time-stamp="2011/08/27_21:47:57" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="08"/>
+<param name="day" value="04"/>
+<param name="hour" value="08"/>
+<param name="minute" value="07"/>
+<param name="second" value="23.53"/>
+<param name="latitude" value="58.0390"/>
+<param name="longitude" value="-155.2750"/>
+<param name="depth" value="7.92"/>
+<param name="magnitude" value="1.90"/>
+<param name="num-stations" value="7"/>
+<param name="num-phases" value="7"/>
+<param name="dist-first-station" value="2.00"/>
+<param name="rms-error" value="0.12"/>
+<param name="hor-error" value="0.00"/>
+<param name="azimuthal-gap" value="254.00"/>
+<param name="local-time" value="Wed Aug 03, 2011 23:07:23 AKST"/>
+<param name="icon-style" value="0"/>
+</event>
+<event id="08011946" network-code="AK" time-stamp="2011/08/27_21:47:57" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="08"/>
+<param name="day" value="01"/>
+<param name="hour" value="19"/>
+<param name="minute" value="46"/>
+<param name="second" value="42.15"/>
+<param name="latitude" value="58.2157"/>
+<param name="longitude" value="-155.3308"/>
+<param name="depth" value="5.09"/>
+<param name="magnitude" value="0.70"/>
+<param name="num-stations" value="12"/>
+<param name="num-phases" value="12"/>
+<param name="dist-first-station" value="1.00"/>
+<param name="rms-error" value="0.94"/>
+<param name="hor-error" value="0.00"/>
+<param name="azimuthal-gap" value="107.00"/>
+<param name="local-time" value="Mon Aug 01, 2011 10:46:42 AKST"/>
+<param name="icon-style" value="0"/>
+</event>
+<event id="07301027" network-code="AK" time-stamp="2011/08/27_21:47:57" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="07"/>
+<param name="day" value="30"/>
+<param name="hour" value="10"/>
+<param name="minute" value="27"/>
+<param name="second" value="32.26"/>
+<param name="latitude" value="58.0858"/>
+<param name="longitude" value="-155.6995"/>
+<param name="depth" value="5.00"/>
+<param name="magnitude" value="0.10"/>
+<param name="num-stations" value="7"/>
+<param name="num-phases" value="7"/>
+<param name="dist-first-station" value="17.00"/>
+<param name="rms-error" value="1.34"/>
+<param name="hor-error" value="0.00"/>
+<param name="azimuthal-gap" value="344.00"/>
+<param name="local-time" value="Sat Jul 30, 2011 01:27:32 AKST"/>
+<param name="icon-style" value="0"/>
+</event>
+<event id="07300023" network-code="AK" time-stamp="2011/08/27_21:47:57" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="07"/>
+<param name="day" value="30"/>
+<param name="hour" value="00"/>
+<param name="minute" value="23"/>
+<param name="second" value="35.92"/>
+<param name="latitude" value="58.1585"/>
+<param name="longitude" value="-155.3230"/>
+<param name="depth" value="5.01"/>
+<param name="magnitude" value="0.90"/>
+<param name="num-stations" value="11"/>
+<param name="num-phases" value="11"/>
+<param name="dist-first-station" value="6.00"/>
+<param name="rms-error" value="1.18"/>
+<param name="hor-error" value="0.00"/>
+<param name="azimuthal-gap" value="122.00"/>
+<param name="local-time" value="Fri Jul 29, 2011 15:23:35 AKST"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="07300017" network-code="AK" time-stamp="2011/08/27_21:47:57" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="07"/>
+<param name="day" value="30"/>
+<param name="hour" value="00"/>
+<param name="minute" value="17"/>
+<param name="second" value="30.57"/>
+<param name="latitude" value="58.2552"/>
+<param name="longitude" value="-155.4992"/>
+<param name="depth" value="5.01"/>
+<param name="magnitude" value="1.10"/>
+<param name="num-stations" value="9"/>
+<param name="num-phases" value="9"/>
+<param name="dist-first-station" value="6.00"/>
+<param name="rms-error" value="20.40"/>
+<param name="hor-error" value="0.00"/>
+<param name="azimuthal-gap" value="262.00"/>
+<param name="local-time" value="Fri Jul 29, 2011 15:17:30 AKST"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="07292324" network-code="AK" time-stamp="2011/08/27_21:47:57" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="07"/>
+<param name="day" value="29"/>
+<param name="hour" value="23"/>
+<param name="minute" value="24"/>
+<param name="second" value="53.60"/>
+<param name="latitude" value="58.2157"/>
+<param name="longitude" value="-155.3308"/>
+<param name="depth" value="12.76"/>
+<param name="magnitude" value="1.00"/>
+<param name="num-stations" value="12"/>
+<param name="num-phases" value="12"/>
+<param name="dist-first-station" value="1.00"/>
+<param name="rms-error" value="1.03"/>
+<param name="hor-error" value="0.00"/>
+<param name="azimuthal-gap" value="107.00"/>
+<param name="local-time" value="Fri Jul 29, 2011 14:24:53 AKST"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="07281718" network-code="AK" time-stamp="2011/08/27_21:47:57" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="07"/>
+<param name="day" value="28"/>
+<param name="hour" value="17"/>
+<param name="minute" value="18"/>
+<param name="second" value="40.96"/>
+<param name="latitude" value="58.5890"/>
+<param name="longitude" value="-155.7455"/>
+<param name="depth" value="32.98"/>
+<param name="magnitude" value="0.00"/>
+<param name="num-stations" value="6"/>
+<param name="num-phases" value="6"/>
+<param name="dist-first-station" value="35.00"/>
+<param name="rms-error" value="0.27"/>
+<param name="hor-error" value="0.00"/>
+<param name="azimuthal-gap" value="284.00"/>
+<param name="local-time" value="Thu Jul 28, 2011 08:18:40 AKST"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="07281652" network-code="AK" time-stamp="2011/08/27_21:47:57" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="07"/>
+<param name="day" value="28"/>
+<param name="hour" value="16"/>
+<param name="minute" value="52"/>
+<param name="second" value=" 0.10"/>
+<param name="latitude" value="58.1620"/>
+<param name="longitude" value="-155.3075"/>
+<param name="depth" value="1.94"/>
+<param name="magnitude" value="1.20"/>
+<param name="num-stations" value="10"/>
+<param name="num-phases" value="10"/>
+<param name="dist-first-station" value="6.00"/>
+<param name="rms-error" value="0.06"/>
+<param name="hor-error" value="0.00"/>
+<param name="azimuthal-gap" value="113.00"/>
+<param name="local-time" value="Thu Jul 28, 2011 07:52:00 AKST"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="07281640" network-code="AK" time-stamp="2011/08/27_21:47:57" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="07"/>
+<param name="day" value="28"/>
+<param name="hour" value="16"/>
+<param name="minute" value="40"/>
+<param name="second" value="26.69"/>
+<param name="latitude" value="58.1623"/>
+<param name="longitude" value="-155.3213"/>
+<param name="depth" value="1.66"/>
+<param name="magnitude" value="0.00"/>
+<param name="num-stations" value="10"/>
+<param name="num-phases" value="10"/>
+<param name="dist-first-station" value="5.00"/>
+<param name="rms-error" value="0.06"/>
+<param name="hor-error" value="0.00"/>
+<param name="azimuthal-gap" value="79.00"/>
+<param name="local-time" value="Thu Jul 28, 2011 07:40:26 AKST"/>
+<param name="icon-style" value="2"/>
+</event>
+<event id="07281558" network-code="AK" time-stamp="2011/08/27_21:47:57" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="07"/>
+<param name="day" value="28"/>
+<param name="hour" value="15"/>
+<param name="minute" value="58"/>
+<param name="second" value=" 0.66"/>
+<param name="latitude" value="58.1698"/>
+<param name="longitude" value="-155.3185"/>
+<param name="depth" value="0.78"/>
+<param name="magnitude" value="0.70"/>
+<param name="num-stations" value="11"/>
+<param name="num-phases" value="11"/>
+<param name="dist-first-station" value="5.00"/>
+<param name="rms-error" value="0.06"/>
+<param name="hor-error" value="0.00"/>
+<param name="azimuthal-gap" value="113.00"/>
+<param name="local-time" value="Thu Jul 28, 2011 06:58:00 AKST"/>
+<param name="icon-style" value="2"/>
+</event>
+<event id="07280558" network-code="AK" time-stamp="2011/08/27_21:47:57" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="07"/>
+<param name="day" value="28"/>
+<param name="hour" value="05"/>
+<param name="minute" value="58"/>
+<param name="second" value="20.23"/>
+<param name="latitude" value="58.2043"/>
+<param name="longitude" value="-155.2968"/>
+<param name="depth" value="5.02"/>
+<param name="magnitude" value="0.00"/>
+<param name="num-stations" value="8"/>
+<param name="num-phases" value="8"/>
+<param name="dist-first-station" value="2.00"/>
+<param name="rms-error" value="0.69"/>
+<param name="hor-error" value="0.00"/>
+<param name="azimuthal-gap" value="134.00"/>
+<param name="local-time" value="Wed Jul 27, 2011 20:58:20 AKST"/>
+<param name="icon-style" value="2"/>
+</event>
+<event id="07272246" network-code="AK" time-stamp="2011/08/27_21:47:57" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="07"/>
+<param name="day" value="27"/>
+<param name="hour" value="22"/>
+<param name="minute" value="46"/>
+<param name="second" value="52.93"/>
+<param name="latitude" value="58.1838"/>
+<param name="longitude" value="-155.3027"/>
+<param name="depth" value="1.51"/>
+<param name="magnitude" value="1.30"/>
+<param name="num-stations" value="8"/>
+<param name="num-phases" value="8"/>
+<param name="dist-first-station" value="3.00"/>
+<param name="rms-error" value="0.03"/>
+<param name="hor-error" value="0.00"/>
+<param name="azimuthal-gap" value="100.00"/>
+<param name="local-time" value="Wed Jul 27, 2011 13:46:52 AKST"/>
+<param name="icon-style" value="2"/>
+</event>
+<event id="07260925" network-code="AK" time-stamp="2011/08/27_21:47:57" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="07"/>
+<param name="day" value="26"/>
+<param name="hour" value="09"/>
+<param name="minute" value="25"/>
+<param name="second" value=" 3.85"/>
+<param name="latitude" value="58.2163"/>
+<param name="longitude" value="-155.5200"/>
+<param name="depth" value="5.00"/>
+<param name="magnitude" value="1.20"/>
+<param name="num-stations" value="9"/>
+<param name="num-phases" value="9"/>
+<param name="dist-first-station" value="2.00"/>
+<param name="rms-error" value="1.03"/>
+<param name="hor-error" value="0.00"/>
+<param name="azimuthal-gap" value="205.00"/>
+<param name="local-time" value="Tue Jul 26, 2011 00:25:03 AKST"/>
+<param name="icon-style" value="2"/>
+</event>
+<event id="07260702" network-code="AK" time-stamp="2011/08/27_21:47:57" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="07"/>
+<param name="day" value="26"/>
+<param name="hour" value="07"/>
+<param name="minute" value="02"/>
+<param name="second" value="12.02"/>
+<param name="latitude" value="58.0573"/>
+<param name="longitude" value="-155.3065"/>
+<param name="depth" value="5.00"/>
+<param name="magnitude" value="2.80"/>
+<param name="num-stations" value="8"/>
+<param name="num-phases" value="8"/>
+<param name="dist-first-station" value="1.00"/>
+<param name="rms-error" value="99.99"/>
+<param name="hor-error" value="0.00"/>
+<param name="azimuthal-gap" value="117.00"/>
+<param name="local-time" value="Mon Jul 25, 2011 22:02:12 AKST"/>
+<param name="icon-style" value="2"/>
+</event>
+<event id="07241833" network-code="AK" time-stamp="2011/08/27_21:47:57" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="07"/>
+<param name="day" value="24"/>
+<param name="hour" value="18"/>
+<param name="minute" value="33"/>
+<param name="second" value="32.53"/>
+<param name="latitude" value="58.2157"/>
+<param name="longitude" value="-155.3310"/>
+<param name="depth" value="5.00"/>
+<param name="magnitude" value="1.40"/>
+<param name="num-stations" value="7"/>
+<param name="num-phases" value="7"/>
+<param name="dist-first-station" value="1.00"/>
+<param name="rms-error" value="9.07"/>
+<param name="hor-error" value="0.00"/>
+<param name="azimuthal-gap" value="107.00"/>
+<param name="local-time" value="Sun Jul 24, 2011 09:33:32 AKST"/>
+<param name="icon-style" value="2"/>
+</event>
+<event id="07221846" network-code="AK" time-stamp="2011/08/27_21:47:57" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="07"/>
+<param name="day" value="22"/>
+<param name="hour" value="18"/>
+<param name="minute" value="46"/>
+<param name="second" value="35.59"/>
+<param name="latitude" value="58.1838"/>
+<param name="longitude" value="-155.2935"/>
+<param name="depth" value="6.89"/>
+<param name="magnitude" value="1.10"/>
+<param name="num-stations" value="6"/>
+<param name="num-phases" value="6"/>
+<param name="dist-first-station" value="4.00"/>
+<param name="rms-error" value="0.03"/>
+<param name="hor-error" value="0.00"/>
+<param name="azimuthal-gap" value="203.00"/>
+<param name="local-time" value="Fri Jul 22, 2011 09:46:35 AKST"/>
+<param name="icon-style" value="2"/>
+</event>
+<event id="07190035" network-code="AK" time-stamp="2011/08/27_21:47:57" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="07"/>
+<param name="day" value="19"/>
+<param name="hour" value="00"/>
+<param name="minute" value="35"/>
+<param name="second" value="29.11"/>
+<param name="latitude" value="58.1888"/>
+<param name="longitude" value="-155.3975"/>
+<param name="depth" value="0.01"/>
+<param name="magnitude" value="2.20"/>
+<param name="num-stations" value="6"/>
+<param name="num-phases" value="6"/>
+<param name="dist-first-station" value="5.00"/>
+<param name="rms-error" value="0.14"/>
+<param name="hor-error" value="0.00"/>
+<param name="azimuthal-gap" value="332.00"/>
+<param name="local-time" value="Mon Jul 18, 2011 15:35:29 AKST"/>
+<param name="icon-style" value="2"/>
+</event>
+</merge>
