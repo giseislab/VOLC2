@@ -252,7 +252,7 @@ sub do_origin {	##### write out a single origin placemark
 	}
 
 	# PRINT XML CODE
-	print<<EOD; # BEGIN HERE DOCUMENT
+	print<<"EOD"; # BEGIN HERE DOCUMENT
 	<marker name="ml:$magnitude $datestr" icon="$icon" lat="$lat" lon="$lon" depth="$depth" ml="$magnitude" scale="$size" color="$color" TimeStamp="$timestampstr">
 		[b]$datestr $timestr UTC[/b][br/] 
 		[b]$magtype: $magnitude[/b][br/] 
@@ -262,7 +262,8 @@ sub do_origin {	##### write out a single origin placemark
 		[b]arrivals: $nass/$ndef[/b] [br/]	
 		[a href="$waveform_url"\ target="waveform"]waveforms[/a]
 	</marker>
-EOD  ## END OF HERE DOCUMENT
+EOD  
+## END OF HERE DOCUMENT
 }
 
 
@@ -409,7 +410,7 @@ sub do_site {		##### write out a single site placemark
 	}
 
 	# PRINT XML # BEGIN HERE DOCUMENT
-	print<<EOF; 
+	print<<"EOF"; 
 	<marker name="$sta" icon="$icon" lat="$lat" lon="$lon" elev="$elev">
 		[center][b]$sta\[/b][/center][br/]
 		"$staname"[br/]
@@ -418,7 +419,8 @@ sub do_site {		##### write out a single site placemark
 		arrivals: $num_arrivals[br/]
 		"$sta"-"$net"[br/]
 	</marker>
-EOF # END OF HERE DOCUMENT
+EOF 
+# END OF HERE DOCUMENT
 }
 
 
