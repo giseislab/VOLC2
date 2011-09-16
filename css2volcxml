@@ -50,10 +50,13 @@ if ( ! &getopts('sobe:fx') || $#ARGV != 0 ) {
 	if ($opt_s && $opt_o) {
 		die("Error: -s and -o flags cannot be used together.\n");
 	}
-	$dbname = pop(@ARGV);
-	@dbname = split(/\//,$dbname);
 
-	$dbnameshort = pop(@dbname);
+	die($Usage) if (!$opt_o && !$opt_b && !$opt_s);
+
+	$dbname = pop(@ARGV);
+	die("database $dbname not found") unless (-e $dbname);
+	die("table $dbname.origin not found") if (!(-e "$dbname.origin") && ($opt_o || $opt_b));
+	die("table $dbname.site not found") if (!(-e "$dbname.site") && $opt_s);
 
 	# Write XML
 	&xmlstart;
@@ -162,36 +165,50 @@ sub get_orig_records {	##### extract origin records
 		# GTHO 2010/10/04 Remove ridiculous magnitudes from orbmag
 		if ($magnitude > 9.9) {
 			$magtype = "error: $magnitude";
-			$magnitude = 0;
+			$magnitude = -9.99;
 		}
 		
+		# I thnk this exists only for the VALVE waveform hyperlinks
+		# builds @netstachan and $firstarrivaltime, $lastarrivaltime	
 		our @netstachan = ();
 		our $firstarrivaltime = 999999999999;
 		our $lastarrivaltime = -999999999999;
-		if (-e "$dbname.assoc" && -e "$dbname.arrival") {
-			eval { # try to join this origin to assoc and arrival to get arrival.sta/chan/time 
+		if (-e "$dbname.assoc" && -e "$dbname.arrival" && $opt_w) {
+			#eval { # try to join this origin to assoc and arrival to get arrival.sta/chan/time 
 				my @db2 = dbopen($dbname, 'r');
 				my @dbo = dblookup(@db2,"","origin","",1);
 				@dbo = dbsubset(@dbo,"orid==$orid"); 
-				@dba = dblookup(@db2,"","assoc","",1);
-				@dba = dbjoin(@dba, @dbo);
-				my @dbar = dblookup(@db2,"","arrival","",1);
-				@dba = dbjoin(@dba, @dbar);
-				# try to add affiliation table to get net
-				my @dbaf = dblookup(@db2,"","affiliation","",1);
-				@dbaf = dbsubset(@dbaf,"net=~/A./");
-				@dba = dbjoin(@dba, @dbaf);
-				$numarrivals = dbquery(@dba, "dbRECORD_COUNT") + 1;
-				if ($numarrivals > 0) {
-					foreach $arow (0..$numarrivals-1) {
-						$dba[3] = $arow;
-						push @netstachan, sprintf("%s.%s.%s", dbgetv(@dba, "net"), dbgetv(@dba, "sta"), dbgetv(@dba, "chan")); 
-						my $atime = dbgetv(@dba, "arrival.time");
-						$firstarrivaltime = $atime if ($atime < $firstarrivaltime);
-						$lastarrivaltime = $atime if ($atime > $lastarrivaltime);
+				if (@dba = dblookup(@db2,"","assoc","",1)) {
+					@dba = dbjoin(@dba, @dbo);
+					if (my @dbar = dblookup(@db2,"","arrival","",1)) {
+						@dba = dbjoin(@dba, @dbar);
+
+						# try to add affiliation table to get net
+						if (my @dbaf = dblookup(@db2,"","affiliation","",1)){
+							@dbaf = dbsubset(@dbaf,"net=~/A./");
+							@dba = dbjoin(@dba, @dbaf);
+							$numarrivals = dbquery(@dba, "dbRECORD_COUNT") + 1;
+							if ($numarrivals > 0) {
+								foreach $arow (0..$numarrivals-1) {
+									$dba[3] = $arow;
+									my $thisnet = "--";
+									eval {
+										$thisnet = dbgetv(@dba, "net");
+									};
+									push @netstachan, sprintf("%s.%s.%s", $thisnet, dbgetv(@dba, "sta"), dbgetv(@dba, "chan")); 
+									eval {
+										my $atime = dbgetv(@dba, "arrival.time");
+										$firstarrivaltime = $atime if ($atime < $firstarrivaltime);
+										$lastarrivaltime = $atime if ($atime > $lastarrivaltime);
+									};
+								}
+							}
+						}
 					}
 				}
-			}
+			#};
+			#warn $@ if $@;
+
 		}
 
 		&origin_size_color;
@@ -258,6 +275,50 @@ sub do_origin {	##### write out a single origin placemark
 	}
 
 	# PRINT XML CODE
+	unless ($opt_x) {
+		print "
+	<marker name=\"ml:$magnitude $datestr\" icon=\"$icon\" lat=\"$lat\" lon=\"$lon\" depth=\"$depth\" ml=\"$magnitude\" scale=\"$size\" color=\"$color\" TimeStamp=\"$timestampstr\">
+		\[b\]$datestr $timestr UTC\[/b\]\[br/\] 
+		\[b\]$magtype: $magnitude\[/b]\[br/\] 
+		lat=$lat, lon=$lon, depth=$depth km\[br/\] 
+		source: $source\[br\] author: $auth\[br/\] 
+		event type: $etype\[br/\] 
+		\[b\]arrivals: $nass/$ndef\[/b\] \[br/\]	
+		$waveform_hyperlink
+	</marker>
+		";
+	} else {
+		$year = epoch2str($time,'%Y');
+		$month = epoch2str($time,'%m');
+		$day = epoch2str($time,'%d');
+		$hour = epoch2str($time,'%H');
+		$minute = epoch2str($time,'%M');
+		$second = epoch2str($time,'%S');
+		$localtime = epoch2str($time, '%Y/%m/%d_%H:%M:%S');
+		$time_stamp = `date`;chomp($time_stamp);
+		print "
+<event id=\$evid\" network-code=\"AK\" time-stamp=\"$time_stamp\" version=\"1\">
+	<param name=\"year\" value=\"$year\"/>
+	<param name=\"month\" value=\"$month\"/>
+	<param name=\"day\" value=\"$day\"/>
+	<param name=\"hour\" value=\"$hour\"/>
+	<param name=\"minute\" value=\"$minute\"/>
+	<param name=\"second\" value=\"$second\"/>
+	<param name=\"latitude\" value=\"$lat\"/>
+	<param name=\"longitude\" value=\"$lon\"/>
+	<param name=\"depth\" value=\"$depth\"/>
+	<param name=\"magnitude\" value=\"$magnitude\"/>
+	<param name=\"num-stations\" value=\"$nass\"/>
+	<param name=\"num-phases\" value=\"$ndef\"/>
+	<param name=\"dist-first-station\" value=\"9.99\"/>
+	<param name=\"rms-error\" value=\"9.99\"/>
+	<param name=\"hor-error\" value=\"9.99\"/>
+	<param name=\"azimuthal-gap\" value=\"359.99\"/>
+	<param name=\"local-time\" value=\"$localtime\"/>
+	<param name=\"icon-style\" value=\"0\"/>
+</event>		
+		";
+	}
 }
 
 
@@ -404,7 +465,22 @@ sub do_site {		##### write out a single site placemark
 	}
 
 	# PRINT XML
-
+	unless ($opt_x) {
+		print "
+	<marker name=\"$sta\" icon=\"$icon\" lat=\"$lat\" lon=\"$lon\" elev=\"$elev\">
+		\[center\]\[b\]$sta\[/b\]\[/center\]\[br/\]
+		\"$staname\"\[br/\]
+		elevation: $elev meters\[br/\]
+		net: \"$net\"\[br/\]
+		arrivals: $num_arrivals\[br/\]
+		\"$sta\"-\"$net\"\[br/\]
+	</marker>
+		";
+	} else {
+		print "
+	<marker lat=\"$lat\" lng=\"$lon\" station=\"sta\" channel=\"EHZ\" network=\"$net\" location=\"--\" type=\"SP\"/>
+		";
+	}
 }
 
 
