@@ -292,7 +292,7 @@ $waveform_hyperlink
 		$time_stamp = epoch2str(now(), '%Y/%m/%d_%H:%M:%S');
 		$time_stamp = `date`;chomp($time_stamp);
 		print "
-<event id=\$evid\" network-code=\"AK\" time-stamp=\"$time_stamp\" version=\"1\">
+<event id=\"$evid\" network-code=\"AK\" time-stamp=\"$time_stamp\" version=\"1\">
 <param name=\"year\" value=\"$year\"/>
 <param name=\"month\" value=\"$month\"/>
 <param name=\"day\" value=\"$day\"/>
