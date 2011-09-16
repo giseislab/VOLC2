@@ -291,8 +291,7 @@ $waveform_hyperlink
 		$localtime = epoch2str($time, '%a %b %d, %Y %X %Z');
 		$time_stamp = epoch2str(now(), '%Y/%m/%d_%H:%M:%S');
 		$time_stamp = `date`;chomp($time_stamp);
-		print "
-<event id=\"$evid\" network-code=\"AK\" time-stamp=\"$time_stamp\" version=\"1\">
+		print "<event id=\"$evid\" network-code=\"AK\" time-stamp=\"$time_stamp\" version=\"1\">
 <param name=\"year\" value=\"$year\"/>
 <param name=\"month\" value=\"$month\"/>
 <param name=\"day\" value=\"$day\"/>
@@ -311,8 +310,7 @@ $waveform_hyperlink
 <param name=\"azimuthal-gap\" value=\"359.99\"/>
 <param name=\"local-time\" value=\"$localtime\"/>
 <param name=\"icon-style\" value=\"0\"/>
-</event>		
-		";
+</event>";		
 	}
 }
 
