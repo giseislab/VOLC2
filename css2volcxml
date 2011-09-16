@@ -311,12 +311,8 @@ $waveform_hyperlink
 <param name=\"magnitude\" value=\"$magnitude\"/>
 <param name=\"num-stations\" value=\"$nass\"/>
 <param name=\"num-phases\" value=\"$ndef\"/>
-<param name=\"dist-first-station\" value=\"9.99\"/>
-<param name=\"rms-error\" value=\"9.99\"/>
-<param name=\"hor-error\" value=\"9.99\"/>
-<param name=\"azimuthal-gap\" value=\"359.99\"/>
 <param name=\"local-time\" value=\"$localtime\"/>
-<param name=\"icon-style\" value=\"0\"/>
+<param name=\"icon-style\" value=\"1\"/>
 </event>\n";		
 	}
 }
