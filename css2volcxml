@@ -462,20 +462,16 @@ sub do_site {		##### write out a single site placemark
 
 	# PRINT XML
 	unless ($opt_x) {
-		print "
-	<marker name=\"$sta\" icon=\"$icon\" lat=\"$lat\" lon=\"$lon\" elev=\"$elev\">
-		\[center\]\[b\]$sta\[/b\]\[/center\]\[br/\]
-		\"$staname\"\[br/\]
-		elevation: $elev meters\[br/\]
-		net: \"$net\"\[br/\]
-		arrivals: $num_arrivals\[br/\]
-		\"$sta\"-\"$net\"\[br/\]
-	</marker>
-		";
+		print "<marker name=\"$sta\" icon=\"$icon\" lat=\"$lat\" lon=\"$lon\" elev=\"$elev\">
+\[center\]\[b\]$sta\[/b\]\[/center\]\[br/\]
+\"$staname\"\[br/\]
+elevation: $elev meters\[br/\]
+net: \"$net\"\[br/\]
+arrivals: $num_arrivals\[br/\]
+\"$sta\"-\"$net\"\[br/\]
+</marker>\n";
 	} else {
-		print "
-	<marker lat=\"$lat\" lng=\"$lon\" station=\"sta\" channel=\"EHZ\" network=\"$net\" location=\"--\" type=\"SP\"/>
-		";
+		print "<marker lat=\"$lat\" lng=\"$lon\" station=\"sta\" channel=\"EHZ\" network=\"$net\" location=\"--\" type=\"SP\"/>\n";
 	}
 }
 

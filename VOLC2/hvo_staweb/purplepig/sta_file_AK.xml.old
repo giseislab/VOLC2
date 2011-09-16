@@ -1,0 +1,20 @@
+<markers>
+<marker lat="58.2100" lng="-155.3281" station="ACH" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.1981" lng="-155.4961" station="ANCK" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.0518" lng="-155.3036" station="CAHL" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.2638" lng="-155.8858" station="CNTC" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.1305" lng="-154.9713" station="KABR" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.2702" lng="-155.2843" station="KABU" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="58.6483" lng="-155.0081" station="KAHC" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.4933" lng="-154.5484" station="KAHG" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.4843" lng="-155.0479" station="KAIC" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.2963" lng="-155.0632" station="KAKN" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="58.5961" lng="-154.3489" station="KAPH" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.4971" lng="-154.7054" station="KARR" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.3830" lng="-154.8013" station="KAWH" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.2743" lng="-155.2038" station="KBM" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.2426" lng="-155.1854" station="KCE" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.3069" lng="-155.1135" station="KCG" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.4393" lng="-155.7428" station="KEL" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.1336" lng="-155.1629" station="MGLS" channel="EHZ" network="AV" location="--" type="SP"/>
+</markers>
