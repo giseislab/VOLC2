@@ -76,19 +76,13 @@ if ( ! &getopts('sobe:fx') || $#ARGV != 0 ) {
 
 ######################################################################
 sub xmlstart {		##### Write the starting portion of a xml file
-print <<END_OF_ENTRY
-<?xml version="1.0" encoding="UTF-8"?>
-<markers>
-END_OF_ENTRY
-;
+	print "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+	print "<markers>\n" unless ($opt_x && ($opt_o || $opt_b));
 }
 
 
 sub xmlfinish {	##### close a xml file
-	print <<END_OF_ENTRY 
-</markers>
-END_OF_ENTRY
-;
+	print "</markers>\n" unless ($opt_x && ($opt_o || $opt_b));
 }
 
 
@@ -277,15 +271,15 @@ sub do_origin {	##### write out a single origin placemark
 	# PRINT XML CODE
 	unless ($opt_x) {
 		print "
-	<marker name=\"ml:$magnitude $datestr\" icon=\"$icon\" lat=\"$lat\" lon=\"$lon\" depth=\"$depth\" ml=\"$magnitude\" scale=\"$size\" color=\"$color\" TimeStamp=\"$timestampstr\">
-		\[b\]$datestr $timestr UTC\[/b\]\[br/\] 
-		\[b\]$magtype: $magnitude\[/b]\[br/\] 
-		lat=$lat, lon=$lon, depth=$depth km\[br/\] 
-		source: $source\[br\] author: $auth\[br/\] 
-		event type: $etype\[br/\] 
-		\[b\]arrivals: $nass/$ndef\[/b\] \[br/\]	
-		$waveform_hyperlink
-	</marker>
+<marker name=\"ml:$magnitude $datestr\" icon=\"$icon\" lat=\"$lat\" lon=\"$lon\" depth=\"$depth\" ml=\"$magnitude\" scale=\"$size\" color=\"$color\" TimeStamp=\"$timestampstr\">
+\[b\]$datestr $timestr UTC\[/b\]\[br/\] 
+\[b\]$magtype: $magnitude\[/b]\[br/\] 
+lat=$lat, lon=$lon, depth=$depth km\[br/\] 
+source: $source\[br\] author: $auth\[br/\] 
+event type: $etype\[br/\] 
+\[b\]arrivals: $nass/$ndef\[/b\] \[br/\]	
+$waveform_hyperlink
+</marker>
 		";
 	} else {
 		$year = epoch2str($time,'%Y');
@@ -294,28 +288,29 @@ sub do_origin {	##### write out a single origin placemark
 		$hour = epoch2str($time,'%H');
 		$minute = epoch2str($time,'%M');
 		$second = epoch2str($time,'%S');
-		$localtime = epoch2str($time, '%Y/%m/%d_%H:%M:%S');
+		$localtime = epoch2str($time, '%a %b %d, %Y %X %Z');
+		$time_stamp = epoch2str(now(), '%Y/%m/%d_%H:%M:%S');
 		$time_stamp = `date`;chomp($time_stamp);
 		print "
 <event id=\$evid\" network-code=\"AK\" time-stamp=\"$time_stamp\" version=\"1\">
-	<param name=\"year\" value=\"$year\"/>
-	<param name=\"month\" value=\"$month\"/>
-	<param name=\"day\" value=\"$day\"/>
-	<param name=\"hour\" value=\"$hour\"/>
-	<param name=\"minute\" value=\"$minute\"/>
-	<param name=\"second\" value=\"$second\"/>
-	<param name=\"latitude\" value=\"$lat\"/>
-	<param name=\"longitude\" value=\"$lon\"/>
-	<param name=\"depth\" value=\"$depth\"/>
-	<param name=\"magnitude\" value=\"$magnitude\"/>
-	<param name=\"num-stations\" value=\"$nass\"/>
-	<param name=\"num-phases\" value=\"$ndef\"/>
-	<param name=\"dist-first-station\" value=\"9.99\"/>
-	<param name=\"rms-error\" value=\"9.99\"/>
-	<param name=\"hor-error\" value=\"9.99\"/>
-	<param name=\"azimuthal-gap\" value=\"359.99\"/>
-	<param name=\"local-time\" value=\"$localtime\"/>
-	<param name=\"icon-style\" value=\"0\"/>
+<param name=\"year\" value=\"$year\"/>
+<param name=\"month\" value=\"$month\"/>
+<param name=\"day\" value=\"$day\"/>
+<param name=\"hour\" value=\"$hour\"/>
+<param name=\"minute\" value=\"$minute\"/>
+<param name=\"second\" value=\"$second\"/>
+<param name=\"latitude\" value=\"$lat\"/>
+<param name=\"longitude\" value=\"$lon\"/>
+<param name=\"depth\" value=\"$depth\"/>
+<param name=\"magnitude\" value=\"$magnitude\"/>
+<param name=\"num-stations\" value=\"$nass\"/>
+<param name=\"num-phases\" value=\"$ndef\"/>
+<param name=\"dist-first-station\" value=\"9.99\"/>
+<param name=\"rms-error\" value=\"9.99\"/>
+<param name=\"hor-error\" value=\"9.99\"/>
+<param name=\"azimuthal-gap\" value=\"359.99\"/>
+<param name=\"local-time\" value=\"$localtime\"/>
+<param name=\"icon-style\" value=\"0\"/>
 </event>		
 		";
 	}
