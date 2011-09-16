@@ -30,9 +30,11 @@ $maxevents = 300; # Changed from 1000 to 300 because seeing malloc problems in c
 
 #USAGE
 $Usage = "
-Usage: css2volcxml [-sobf] [-e subset_expr] dbname > xml_file
+Usage: css2volcxml [-sobf] [-e subset_expr] [-m mode] dbname > xml_file
 
 See manpage for further details.
+By default, mode is "avoxml", which will result in XML formatted as db2avoxml module.
+
 
 AUTHOR
 Michael West, Glenn Thompson
@@ -40,8 +42,8 @@ Michael West, Glenn Thompson
 
 
 # Command line arguments
-$opt_s = $opt_o = $opt_b = $opt_e = $opt_f = 0; # Kill "variable used once" error
-if ( ! &getopts('sobe:f') || $#ARGV != 0 ) {
+$opt_s = $opt_o = $opt_b = $opt_e = $opt_f = $opt_m = 0; # Kill "variable used once" error
+if ( ! &getopts('sobe:fm:') || $#ARGV != 0 ) {
 	die ( "$Usage" );
 } else {
 	if ($opt_s && $opt_o) {
@@ -252,18 +254,18 @@ sub do_origin {	##### write out a single origin placemark
 	}
 
 	# PRINT XML CODE
-	print<<"EOD"; # BEGIN HERE DOCUMENT
-	<marker name="ml:$magnitude $datestr" icon="$icon" lat="$lat" lon="$lon" depth="$depth" ml="$magnitude" scale="$size" color="$color" TimeStamp="$timestampstr">
-		[b]$datestr $timestr UTC[/b][br/] 
-		[b]$magtype: $magnitude[/b][br/] 
-		lat=$lat, lon=$lon, depth=$depth km[br/] 
-		source: $source[br] author: $auth[br/] 
-		event type: $etype[br/] 
-		[b]arrivals: $nass/$ndef[/b] [br/]	
-		[a href="$waveform_url"\ target="waveform"]waveforms[/a]
+	if 
+	print "
+	<marker name=\"ml:$magnitude $datestr\" icon=\"$icon\" lat=\"$lat\" lon=\"$lon\" depth=\"$depth\" ml=\"$magnitude\" scale=\"$size\" color=\"$color\" TimeStamp=\"$timestampstr\">
+		\[b\]$datestr $timestr UTC\[/b\]\[br/\] 
+		\[b\]$magtype: $magnitude\[/b]\[br/\] 
+		lat=$lat, lon=$lon, depth=$depth km\[br/\] 
+		source: $source\[br\] author: $auth\[br/\] 
+		event type: $etype\[br/\] 
+		\[b\]arrivals: $nass/$ndef\[/b\] \[br/\]	
+		\[a href=\"$waveform_url\" target=\"waveform\"\]waveforms\[/a\]
 	</marker>
-EOD  
-## END OF HERE DOCUMENT
+	";
 }
 
 
@@ -409,18 +411,17 @@ sub do_site {		##### write out a single site placemark
 		}
 	}
 
-	# PRINT XML # BEGIN HERE DOCUMENT
-	print<<"EOF"; 
-	<marker name="$sta" icon="$icon" lat="$lat" lon="$lon" elev="$elev">
-		[center][b]$sta\[/b][/center][br/]
-		"$staname"[br/]
-		elevation: $elev meters[br/]
-		net: "$net"[br/]
-		arrivals: $num_arrivals[br/]
-		"$sta"-"$net"[br/]
+	# PRINT XML
+	print "
+	<marker name=\"$sta\" icon=\"$icon\" lat=\"$lat\" lon=\"$lon\" elev=\"$elev\">
+		\[center\]\[b\]$sta\[/b\]\[/center\]\[br/\]
+		\"$staname\"\[br/\]
+		elevation: $elev meters\[br/\]
+		net: \"$net\"\[br/\]
+		arrivals: $num_arrivals\[br/\]
+		\"$sta\"-\"$net\"\[br/\]
 	</marker>
-EOF 
-# END OF HERE DOCUMENT
+	";
 }
 
 
