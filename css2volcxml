@@ -77,12 +77,20 @@ if ( ! &getopts('sobe:fx') || $#ARGV != 0 ) {
 ######################################################################
 sub xmlstart {		##### Write the starting portion of a xml file
 	print "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
-	print "<markers>\n" unless ($opt_x && ($opt_o || $opt_b));
+	unless ($opt_x && ($opt_o || $opt_b)) {
+		print "<markers>\n";
+	} else {
+		print "<merge>\n";
+	}
 }
 
 
 sub xmlfinish {	##### close a xml file
-	print "</markers>\n" unless ($opt_x && ($opt_o || $opt_b));
+	unless ($opt_x && ($opt_o || $opt_b)) {
+		print "</markers>\n";
+	} else {
+		print "</merge>\n";
+	}
 }
 
 
@@ -310,7 +318,7 @@ $waveform_hyperlink
 <param name=\"azimuthal-gap\" value=\"359.99\"/>
 <param name=\"local-time\" value=\"$localtime\"/>
 <param name=\"icon-style\" value=\"0\"/>
-</event>";		
+</event>\n";		
 	}
 }
 
