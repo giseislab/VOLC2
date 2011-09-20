@@ -397,12 +397,17 @@ sub origin_size_color {	##### calculate the size and color of hypocenter icons
 sub get_site_records {	##### extract site records
 	@db = dbopen($dbname,'r');
 	@db = dblookup(@db,"","site","",1);
+	@db = dbsubset(@db, "offdate==NULL"); # added by GT 2010/11/17
+
+	# added by GT 2011/09/20
+	my @dbsc = dblookup(@db,"","sitechan","",1);
+	@db = dbjoin(@db, @dbsc);
+	@db = dbsubset(@db, $opt_e) if ($opt_e ne "0");
 	
 	# added by GT 2010/11/17
-	@db = dbsubset(@db, "offdate==NULL"); # added by GT 2010/11/17
 	my @db2 = dblookup(@db,"","affiliation","",1);
 	@db = dbjoin(@db, @db2);
-	@db = dbsubset(@db, "net=~/A[KTV]/");
+	@db = dbsubset(@db, "net=~/A[KTV]/ && chan=~/[BES]HZ/");
 	# end of GT block
 
 	$nrecords = dbquery(@db,"dbRECORD_COUNT");
@@ -413,7 +418,7 @@ sub get_site_records {	##### extract site records
 	$theTime = strtime(now);
 	print "\t<!-- created by css2volcxml from database: $dbname on $theTime UTC -->\n";
 	for ($db[3]=0 ; $db[3]<$nrecords ; $db[3]++) {
-		my ($sta,$lon,$lat,$elev,$staname,$net) = dbgetv(@db,"sta","lon","lat","elev","staname","net");
+		my ($sta,$chan,$lon,$lat,$elev,$staname,$net) = dbgetv(@db,"sta","chan","lon","lat","elev","staname","net");
 		$elev = $elev*1000;				# convert km to meters
 
 		# added by GT 2010/11/17 - look for number of arrivals/events for this station
@@ -428,14 +433,14 @@ sub get_site_records {	##### extract site records
 		}
 		# end of GT block
 			
-		&do_site($sta, $lon, $lat, $elev, $staname, $net, $num_arrivals);
+		&do_site($sta, $chan, $lon, $lat, $elev, $staname, $net, $num_arrivals);
 	}
 	dbclose(@db);
 }
 
 
 sub do_site {		##### write out a single site placemark
-	my($sta, $lon, $lat, $elev, $staname, $net, $num_arrivals) = @_;
+	my($sta, $chan, $lon, $lat, $elev, $staname, $net, $num_arrivals) = @_;
 	my $icondir = $ENV{'PUBLICWEBPRODUCTSURL'}."/kml/icons";
 	my $icon = "seismometer_2.png"; # default
 	if ($net eq "AV") {
@@ -471,7 +476,14 @@ arrivals: $num_arrivals\[br/\]
 \"$sta\"-\"$net\"\[br/\]
 </marker>\n";
 	} else {
-		print "<marker lat=\"$lat\" lng=\"$lon\" station=\"sta\" channel=\"EHZ\" network=\"$net\" location=\"--\" type=\"SP\"/>\n";
+		if ($chan=~/BHZ/) {
+			$type = "SP";
+		}
+		else
+		{
+			$type = "BB";
+		}
+		print "<marker lat=\"$lat\" lng=\"$lon\" station=\"$sta\" channel=\"$chan\" network=\"$net\" location=\"--\" type=\"$type\"/>\n";
 	}
 }
 

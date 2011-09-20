@@ -34,7 +34,7 @@ var authorNW = "AK";
 
 //Location of xml file for stations
 //staXML = "xml/sta_file.xml";
-staXML = "../hvo_staweb/purplepig/sta_file_AK.xml";
+staXML = "xml/stations_katmai.xml";
 
 //Station size
 SP_icon.iconSize = new GSize(15, 15);

@@ -32,7 +32,7 @@
 		<b>Volcano: </b>
 		<select name="volcano">
 		<?php
-			$volcano = !isset($_GET['volcano'])? "katmai" : $_GET['volcano'];
+			$volcano = !isset($_GET['volcano'])? "spurr" : $_GET['volcano'];
 			print "<script src = \"js_scripts/volc2Param_$volcano.js\" type=\"text/javascript\"> </script>\n";
 		?>
 		<script src = "js_scripts/volcCalStuff.js" type="text/javascript"> </script>
@@ -66,7 +66,7 @@
 					<b>Volcano</b>
 					<select name="volcano">
 					<?php
-						$volcanoes = array('spurr', 'redoubt', 'iliamna', 'augustine', 'katmai');
+						$volcanoes = array('spurr', 'redoubt', 'iliamna', 'augustine', 'katmai', 'all');
 						foreach($volcanoes as $volcanoitem) {
 		    					if ($volcanoitem == $volcano) {
 								print "\t\t<option value=\"$volcano\" selected>".ucfirst($volcano)."</option>\n";

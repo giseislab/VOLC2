@@ -1,0 +1,12 @@
+ bin/css2volcxml  -x -b -e 'time>"2011/06/01"' /Seis/Kiska4/picks/Total/Total  > origins_all.xml
+ bin/css2volcxml  -x -b -e 'time>"2011/06/01" && deg2km(distance(61.2989, -152.2539, lat, lon))<50.0' /Seis/Kiska4/picks/Total/Total  > origins_spurr.xml
+ bin/css2volcxml  -x -b -e 'time>"2011/06/01" && deg2km(distance(60.4852, -152.7438, lat, lon))<50.0' /Seis/Kiska4/picks/Total/Total  > origins_redoubt.xml
+ bin/css2volcxml  -x -b -e 'time>"2011/06/01" && deg2km(distance(60.0319, -153.0918, lat, lon))<50.0' /Seis/Kiska4/picks/Total/Total  > origins_iliamna.xml
+ bin/css2volcxml  -x -b -e 'time>"2011/06/01" && deg2km(distance(59.3626, -153.435, lat, lon))<50.0' /Seis/Kiska4/picks/Total/Total  > origins_augustine.xml
+ bin/css2volcxml  -x -b -e 'time>"2011/06/01" && deg2km(distance(58.279, -154.9533, lat, lon))<50.0' /Seis/Kiska4/picks/Total/Total  > origins_katmai.xml
+ bin/css2volcxml -s -x /avort/oprun/dbmaster/master_stations > stations_all.xml
+ bin/css2volcxml  -x -s -e 'deg2km(distance(61.2989, -152.2539, lat, lon))<50.0' /avort/oprun/dbmaster/master_stations  > stations_spurr.xml
+ bin/css2volcxml  -x -s -e 'deg2km(distance(60.4852, -152.7438, lat, lon))<50.0' /avort/oprun/dbmaster/master_stations  > stations_redoubt.xml
+ bin/css2volcxml  -x -s -e 'deg2km(distance(60.0319, -153.0918, lat, lon))<50.0' /avort/oprun/dbmaster/master_stations  > stations_iliamna.xml
+ bin/css2volcxml  -x -s -e 'deg2km(distance(59.3626, -153.435, lat, lon))<50.0' /avort/oprun/dbmaster/master_stations  > stations_augustine.xml
+ bin/css2volcxml  -x -s -e 'deg2km(distance(58.279, -154.9533, lat, lon))<50.0' /avort/oprun/dbmaster/master_stations  > stations_katmai.xml

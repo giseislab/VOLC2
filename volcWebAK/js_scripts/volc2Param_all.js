@@ -18,8 +18,8 @@ var mapParam = {
 };
 
 //define event file path here. This is the file that comes from merge.xml
-var eventXml20 = "xml/origins_spurr.xml";
-var eventXmlAll = "xml/origins_spurr.xml";
+var eventXml20 = "xml/origins_all.xml";
+var eventXmlAll = "xml/origins_all.xml";
 var initialPlot = 1;
 var initialMarkerPlot = 20;
 var maxMarkerPlot = 5000;
@@ -34,7 +34,7 @@ var authorNW = "AK";
 
 //Location of xml file for stations
 //staXML = "xml/sta_file.xml";
-staXML = "xml/stations_spurr.xml";
+staXML = "xml/stations_all.xml";
 
 //Station size
 SP_icon.iconSize = new GSize(15, 15);
