@@ -28,7 +28,10 @@
 		<script src = "../hvo_staweb/js_scripts/checkMobile.js" type="text/javascript"> </script>
 		<script src = "../hvo_staweb/js_scripts/plotStationsAlaska.js" type="text/javascript"> </script>
 		<!--Volc2 stuff--!>
-		<script src = "js_scripts/volc2Param_katmai.js" type="text/javascript"> </script>
+		<?php
+		$volcano = "katmai";
+		print "<script src = \"js_scripts/volc2Param_$volcano.js\" type=\"text/javascript\"> </script>\n";
+		?>
 		<script src = "js_scripts/volcCalStuff.js" type="text/javascript"> </script>
 		<script src = "js_scripts/menu.js" type="text/javascript"> </script>
 		<script src = "js_scripts/volc2.js" type="text/javascript"> </script>
@@ -39,7 +42,9 @@
 	<body>
 		<div id ="header"><a href ="http://avo.wr.usgs.gov"><img id = "logo" src = "images/avoLogo.jpg" alt = "logo"/></a>
 			<img id = "req2Logo" src = "images/volc2logoAVO.png" alt = "Volcano Earthquakes in an Igloo"/>
-			<span>Katmai Volcanic Group</span>
+			<?php
+			print "<span>$volcano Volcanic Group</span>\n";
+			?>
 		</div>
 		<div class = "clear"></div>
 		<tr><div id = "time">File updated: <span></span></div></tr>
