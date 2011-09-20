@@ -75,7 +75,7 @@
 	    							print "\t\t<option value=\"$volcanoitem\" >$volcanoitem</option>\n";
 	     	    					}
 	        				}
-							print "\t</select>\n";
+							print "\t</select><input type=\"submit\" value=\"Go\" />\n";
 					?>
 					Magnitudes: <br/>
 					<label><input type="checkbox" id ="eqAll" name="eqselect" checked ="checked"/> All EQ's</label><br/>
