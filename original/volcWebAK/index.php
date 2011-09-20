@@ -30,19 +30,20 @@
 		<!--Volc2 stuff--!>
 		<form name="volcano" method="get'>
 		<b>Choose volcano</b>
-		<SELECT NAME="VOLCANO">
+		<select name="volcano">
 		<?php
 		$volcano = !isset($_REQUEST['volcano'])? "katmai" : $REQUEST['volcano'];
 		$volcanoes = array('spurr', 'redoubt', 'iliamna', 'augustine', 'katmai');
 		foreach($volcanoes as $volcanoitem) {
 		    if ($volcanoitem == $volcano) {
-			print "<OPTION SELECTED>$volcano\n";
+			print "<option SELECTED>$volcano</option>\n";
 	    	    }
 	    	    else
 	    	    {
-	    		print "<OPTION>$volcanoitem\n";
+	    		print "<OPTION>$volcanoitem</option>\n";
 	     	    }
 	        }
+		print "</select>\n";
 		print "<script src = \"js_scripts/volc2Param_$volcano.js\" type=\"text/javascript\"> </script>\n";
 		?>
 		<script src = "js_scripts/volcCalStuff.js" type="text/javascript"> </script>
