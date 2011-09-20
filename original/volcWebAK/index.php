@@ -45,21 +45,7 @@
 	<body>
 		<div id ="header"><a href ="http://avo.wr.usgs.gov"><img id = "logo" src = "images/avoLogo.jpg" alt = "logo"/></a>
 			<img id = "req2Logo" src = "images/volc2logoAVO.png" alt = "Volcano Earthquakes in an Igloo"/>
-			<form name="volcano" method="get'>
-			<b>Choose volcano</b>
-			<select name="volcano">
 			<?php
-				$volcanoes = array('spurr', 'redoubt', 'iliamna', 'augustine', 'katmai');
-				foreach($volcanoes as $volcanoitem) {
-		    			if ($volcanoitem == $volcano) {
-						print "\t\t<option value=\"$volcano\" selected>$volcano</option>\n";
-	    	    			}
-	    	    			else
-	    	    			{
-	    					print "\t\t<option value=\"$volcanoitem\" >$volcanoitem</option>\n";
-	     	    			}
-	        		}
-				print "\t</select>\n";
 				print "<span>$volcano Volcanic Group</span>\n";
 			?>
 		</div>
@@ -75,6 +61,22 @@
 			<fieldset>
 				<legend>Control Panel</legend>
 				<div id = "controlLeft">
+					<form name="volcano" method="get">
+					<b>Choose volcano</b>
+					<select name="volcano">
+					<?php
+						$volcanoes = array('spurr', 'redoubt', 'iliamna', 'augustine', 'katmai');
+						foreach($volcanoes as $volcanoitem) {
+		    					if ($volcanoitem == $volcano) {
+								print "\t\t<option value=\"$volcano\" selected>$volcano</option>\n";
+	    	 		   			}		
+	    	    					else
+	    	    					{
+	    							print "\t\t<option value=\"$volcanoitem\" >$volcanoitem</option>\n";
+	     	    					}
+	        				}
+							print "\t</select>\n";
+					?>
 					Magnitudes: <br/>
 					<label><input type="checkbox" id ="eqAll" name="eqselect" checked ="checked"/> All EQ's</label><br/>
 					<label><input type="checkbox" id ="eq4" name="eqselect"/> &gt; 4.0 </label><br/>
