@@ -1,0 +1,6 @@
+<markers>
+<marker lat="60.4622" lng="-152.7540" station="RSO" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="60.4894" lng="-152.6920" station="REF" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="60.5229" lng="-152.7380" station="RDN" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="60.4199" lng="-152.7720" station="RED" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="60.4881" lng="-152.8400" station="RDWB" channel="EHZ" network="AV" location="--" type="BB"/>

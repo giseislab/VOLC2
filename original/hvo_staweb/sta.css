@@ -1,0 +1,77 @@
+
+#title
+{
+font-size:175%;
+text-align:center;
+}
+
+#map
+{
+border: 1px solid black;
+width:500px;
+font-size:90%;
+}
+
+#control_panel
+{
+border: 0px solid black;
+}
+
+#rightSide
+{
+font-size:90%;
+width:160px;
+height:640px;
+vertical-align:bottom;
+text-align:left;
+border: 1px solid black;
+}
+
+#rightSideHeader
+{
+text-align:left;
+font-size:100%;
+margin-right:5px;
+font-weight: bold;
+}
+
+#explanation
+{
+text-align:left;
+font-size:70%;
+margin-left:20px;
+}
+
+#search_function
+{
+border: 0px;
+height:80px;
+width:150px;
+margin-left:5px;
+font-size:90%;
+text-align:left;
+font-weight: bold;
+}
+
+#side_bar
+{
+border: 0px;
+height:620px;
+width:155px;
+margin-left:5px;
+overflow:auto;
+font-size:90%;
+border-collapse:collapse;
+vertical-align:bottom;
+}
+
+#helpLogo
+{
+width:110px;
+height:60px;
+float:center;
+}
+
+#side_bar li a:link{color: #800000; text-decoration: none; }
+#side_bar li a:hover{color: #000080; text-decoration: none; font-weight: bold;}
+
