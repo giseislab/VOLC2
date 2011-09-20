@@ -32,6 +32,7 @@
 		<b>Choose volcano</b>
 		<select name="volcano">
 		<?php
+			print "\$volcano = ".$_REQUEST['volcano']."<br/>\n";
 			$volcano = !isset($_REQUEST['volcano'])? "katmai" : $REQUEST['volcano'];
 			print "<script src = \"js_scripts/volc2Param_$volcano.js\" type=\"text/javascript\"> </script>\n";
 		?>
