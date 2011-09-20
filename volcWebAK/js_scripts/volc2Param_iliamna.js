@@ -12,14 +12,14 @@ thelenwes@gmail.com
 //define map center and zoom level here by entering map lat and lon center and zoom level.
 //the greater the zoom level the larger the scale
 var mapParam = {
-	lat: 19.36,
- 	lon: -155.24,
-	zoom: 11
+	lat: 60.0319,
+ 	lon: -153.0918,
+	zoom: 9
 };
 
 //define event file path here. This is the file that comes from merge.xml
-var eventXml20 = "xml/kilauea20.xml";
-var eventXmlAll = "xml/kilaueaAll.xml";
+var eventXml20 = "xml/origins_iliamna.xml";
+var eventXmlAll = "xml/origins_iliamna.xml";
 var initialPlot = 1;
 var initialMarkerPlot = 20;
 var maxMarkerPlot = 5000;
@@ -30,11 +30,11 @@ var corr = 0;   //Elevation of velocity model datum
 
 //define authorative network code here. This will cause all network events to plot as 
 // circles and all non- network events to plot as squares
-var authorNW = "HV";
+var authorNW = "AK";
 
 //Location of xml file for stations
 //staXML = "xml/sta_file.xml";
-staXML = "../hvo_staweb/purplepig/sta_file.xml";
+staXML = "xml/sta_file_AK.xml";
 
 //Station size
 SP_icon.iconSize = new GSize(15, 15);
@@ -43,7 +43,7 @@ SM_icon.iconSize = new GSize(15, 15);
 
 //Variables for plotStations
 sidebar = 0;		//no sidebar
-pdf = 0;			//no pdf links
+pdf = 1;			//no pdf links
 
 //get links for event pages--including imports. Edit this file as needed. You must include all networks that are in your xml
 //file--including the authoritative network. params: net = networkcode, id = event id as provided by QDDS
@@ -60,8 +60,8 @@ function getLink(net, id){
 	if(net.toUpperCase()=="NC"){
 		return "<a href ='http://quake.wr.usgs.gov/recenteqs/Quakes/nc" + id + ".htm'>"
 	}
-	if(net.toUpperCase()=="HV"){
-		return "<a href ='http://tux.wr.usgs.gov/Quakes/hv" + id + ".html'>"
+	if(net.toUpperCase()=="AK"){
+		return "<a href ='http://thisIsADummyAddress/recenteqs/Quakes/nc" + id + ".htm'>"
 	}
 }
 //Misc Global Variables for cross-section
