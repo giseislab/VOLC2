@@ -12,7 +12,7 @@
 		<link rel="stylesheet" type="text/css" href="js_scripts/JSCal2-1.7/src/css/steel/steel.css">
 		
 		<!--Misc stuff--!>
-		<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAADLVBXakPUVGdLMxvnw_xjRROHl2n3JvsTik875qBELv4_RGFpBQxZVxwItz8R2I-hgxB9x1rq8PgBQ" type="text/javascript"></script>
+  		<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA08sgpfMO8KIySKvJkekPIRTXrO8TDN3d9zJDDLg-faokzzewNxRRg8YyWsFjL8Yj63junmxsjjZL9g" type="text/javascript"></script>
 		<!--[if IE]><script language="javascript" type="text/javascript" src="js_scripts/flotr/excanvas.js"></script><![endif]-->
 		<script src = "js_scripts/prototype-1.6.0.2.js"  type="text/javascript"></script>
 		<script src = "js_scripts/scriptaculous.js" type="text/javascript"></script>
@@ -29,11 +29,10 @@
 		<script src = "../hvo_staweb/js_scripts/plotStationsAlaska.js" type="text/javascript"> </script>
 		<!--Volc2 stuff--!>
 		<form name="volcano" method="get'>
-		<b>Choose volcano</b>
+		<b>Volcano: </b>
 		<select name="volcano">
 		<?php
-			print "\$volcano = ".$_REQUEST['volcano']."<br/>\n";
-			$volcano = !isset($_REQUEST['volcano'])? "katmai" : $REQUEST['volcano'];
+			$volcano = !isset($_GET['volcano'])? "katmai" : $_GET['volcano'];
 			print "<script src = \"js_scripts/volc2Param_$volcano.js\" type=\"text/javascript\"> </script>\n";
 		?>
 		<script src = "js_scripts/volcCalStuff.js" type="text/javascript"> </script>
@@ -47,7 +46,7 @@
 		<div id ="header"><a href ="http://avo.wr.usgs.gov"><img id = "logo" src = "images/avoLogo.jpg" alt = "logo"/></a>
 			<img id = "req2Logo" src = "images/volc2logoAVO.png" alt = "Volcano Earthquakes in an Igloo"/>
 			<?php
-				print "<span>$volcano Volcanic Group</span>\n";
+				print "<span>".ucfirst($volcano)." Volcano</span>\n";
 			?>
 		</div>
 		<div class = "clear"></div>
@@ -62,22 +61,26 @@
 			<fieldset>
 				<legend>Control Panel</legend>
 				<div id = "controlLeft">
-					<form name="volcano" method="get">
-					<b>Choose volcano</b>
+					<tr>
+					<td><form name="volcano" method="get">
+					<b>Volcano</b>
 					<select name="volcano">
 					<?php
 						$volcanoes = array('spurr', 'redoubt', 'iliamna', 'augustine', 'katmai');
 						foreach($volcanoes as $volcanoitem) {
 		    					if ($volcanoitem == $volcano) {
-								print "\t\t<option value=\"$volcano\" selected>$volcano</option>\n";
+								print "\t\t<option value=\"$volcano\" selected>".ucfirst($volcano)."</option>\n";
 	    	 		   			}		
 	    	    					else
 	    	    					{
-	    							print "\t\t<option value=\"$volcanoitem\" >$volcanoitem</option>\n";
+	    							print "\t\t<option value=\"$volcanoitem\" >".ucfirst($volcanoitem)."</option>\n";
 	     	    					}
 	        				}
-							print "\t</select><input type=\"submit\" value=\"Go\" />\n";
 					?>
+					</select>
+					</td>
+					<td><input type="submit" value="Go" /></td>
+					</tr>
 					Magnitudes: <br/>
 					<label><input type="checkbox" id ="eqAll" name="eqselect" checked ="checked"/> All EQ's</label><br/>
 					<label><input type="checkbox" id ="eq4" name="eqselect"/> &gt; 4.0 </label><br/>
@@ -216,3 +219,4 @@
 		</script>
 	</body>
 </html>
+
