@@ -52,14 +52,14 @@
 				$volcanoes = array('spurr', 'redoubt', 'iliamna', 'augustine', 'katmai');
 				foreach($volcanoes as $volcanoitem) {
 		    			if ($volcanoitem == $volcano) {
-						print "<option SELECTED>$volcano</option>\n";
+						print "\t\t<option value=\"$volcano\" selected>$volcano</option>\n";
 	    	    			}
 	    	    			else
 	    	    			{
-	    					print "<option>$volcanoitem</option>\n";
+	    					print "\t\t<option value=\"$volcanoitem\" >$volcanoitem</option>\n";
 	     	    			}
 	        		}
-				print "</select>\n";
+				print "\t</select>\n";
 				print "<span>$volcano Volcanic Group</span>\n";
 			?>
 		</div>
