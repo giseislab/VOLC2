@@ -56,7 +56,7 @@
 	    	    			}
 	    	    			else
 	    	    			{
-	    					print "<OPTION>$volcanoitem</option>\n";
+	    					print "<option>$volcanoitem</option>\n";
 	     	    			}
 	        		}
 				print "</select>\n";
