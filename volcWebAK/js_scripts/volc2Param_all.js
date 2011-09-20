@@ -12,9 +12,9 @@ thelenwes@gmail.com
 //define map center and zoom level here by entering map lat and lon center and zoom level.
 //the greater the zoom level the larger the scale
 var mapParam = {
-	lat: 61.2989,
- 	lon: -152.2539,
-	zoom: 9
+	lat: 56.0,
+ 	lon: -160.0,
+	zoom: 4
 };
 
 //define event file path here. This is the file that comes from merge.xml
