@@ -32,19 +32,8 @@
 		<b>Choose volcano</b>
 		<select name="volcano">
 		<?php
-		$volcano = !isset($_REQUEST['volcano'])? "katmai" : $REQUEST['volcano'];
-		$volcanoes = array('spurr', 'redoubt', 'iliamna', 'augustine', 'katmai');
-		foreach($volcanoes as $volcanoitem) {
-		    if ($volcanoitem == $volcano) {
-			print "<option SELECTED>$volcano</option>\n";
-	    	    }
-	    	    else
-	    	    {
-	    		print "<OPTION>$volcanoitem</option>\n";
-	     	    }
-	        }
-		print "</select>\n";
-		print "<script src = \"js_scripts/volc2Param_$volcano.js\" type=\"text/javascript\"> </script>\n";
+			$volcano = !isset($_REQUEST['volcano'])? "katmai" : $REQUEST['volcano'];
+			print "<script src = \"js_scripts/volc2Param_$volcano.js\" type=\"text/javascript\"> </script>\n";
 		?>
 		<script src = "js_scripts/volcCalStuff.js" type="text/javascript"> </script>
 		<script src = "js_scripts/menu.js" type="text/javascript"> </script>
@@ -56,8 +45,22 @@
 	<body>
 		<div id ="header"><a href ="http://avo.wr.usgs.gov"><img id = "logo" src = "images/avoLogo.jpg" alt = "logo"/></a>
 			<img id = "req2Logo" src = "images/volc2logoAVO.png" alt = "Volcano Earthquakes in an Igloo"/>
+			<form name="volcano" method="get'>
+			<b>Choose volcano</b>
+			<select name="volcano">
 			<?php
-			print "<span>$volcano Volcanic Group</span>\n";
+				$volcanoes = array('spurr', 'redoubt', 'iliamna', 'augustine', 'katmai');
+				foreach($volcanoes as $volcanoitem) {
+		    			if ($volcanoitem == $volcano) {
+						print "<option SELECTED>$volcano</option>\n";
+	    	    			}
+	    	    			else
+	    	    			{
+	    					print "<OPTION>$volcanoitem</option>\n";
+	     	    			}
+	        		}
+				print "</select>\n";
+				print "<span>$volcano Volcanic Group</span>\n";
 			?>
 		</div>
 		<div class = "clear"></div>
