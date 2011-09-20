@@ -33,8 +33,8 @@ var corr = 0;   //Elevation of velocity model datum
 var authorNW = "AK";
 
 //Location of xml file for stations
-#staXML = "xml/stations_alaska.xml";
-staXML = "xml/sta_file_AK.xml";
+//staXML = "xml/sta_file.xml";
+staXML = "../hvo_staweb/purplepig/sta_file_AK.xml";
 
 //Station size
 SP_icon.iconSize = new GSize(15, 15);
