@@ -26,15 +26,18 @@
 		<!--Better Webicorder Stuff--!>
 		<script src = "../hvo_staweb/js_scripts/effects.js" type="text/javascript"> </script>
 		<script src = "../hvo_staweb/js_scripts/checkMobile.js" type="text/javascript"> </script>
-		<script src = "../hvo_staweb/js_scripts/plotStationsAlaska.js" type="text/javascript"> </script>
+		<script src = "js_scripts/plotStationsAlaska.js" type="text/javascript"> </script>
 		<!--Volc2 stuff--!>
 		<form name="volcano" method="get'>
 		<b>Volcano: </b>
 		<select name="volcano">
 		<?php
-			$volcano = !isset($_GET['volcano'])? "spurr" : $_GET['volcano'];
-			print "<script src = \"js_scripts/volc2Param_$volcano.js\" type=\"text/javascript\"> </script>\n";
+			$volcano = !isset($_GET['volcano'])? "Spurr" : $_GET['volcano'];
 		?>
+		<script type="text/javascript">
+			//var volcname = "<?php print "$volcano"; ?>";
+		</script>
+		<script src = "js_scripts/volc2Param.js" type="text/javascript"> </script>
 		<script src = "js_scripts/volcCalStuff.js" type="text/javascript"> </script>
 		<script src = "js_scripts/menu.js" type="text/javascript"> </script>
 		<script src = "js_scripts/volc2.js" type="text/javascript"> </script>
@@ -63,10 +66,10 @@
 				<div id = "controlLeft">
 					<tr>
 					<td><form name="volcano" method="get">
-					<b>Volcano</b>
+					<b>Volcano:</b>
 					<select name="volcano">
 					<?php
-						$volcanoes = array('spurr', 'redoubt', 'iliamna', 'augustine', 'katmai', 'all');
+						$volcanoes = array('Spurr', 'Redoubt', 'Iliamna', 'Augustine', 'Fourpeaked', 'Snowy', 'Griggs', 'Katmai', 'Martin', 'Peulik', 'Aniakchak', 'Veniaminof', 'Pavlof', 'Dutton', 'Shishaldin', 'Westdahl', 'Akutan', 'Makushin', 'Okmok', 'Korovin', 'Great_Sitkin', 'Kanaga', 'Tanaga', 'Gareloi', 'Semisopochnoi', 'Little_Sitkin', 'all');
 						foreach($volcanoes as $volcanoitem) {
 		    					if ($volcanoitem == $volcano) {
 								print "\t\t<option value=\"$volcano\" selected>".ucfirst($volcano)."</option>\n";
@@ -88,6 +91,20 @@
 					<label><input type="checkbox" id ="eq2" name="eqselect"/> 2.0 - 2.9 </label><br/>
 					<label><input type="checkbox" id ="eq1" name="eqselect" /> 1.0 - 1.9 </label><br/>
 					<label><input type="checkbox" id ="eq0" name="eqselect"/> &lt; 1.0 </label><br/><br/>
+					<table>
+					<script type="text/javascript">
+						document.write("<tr><td>volcano in JS = " + volcanoname + "</td></tr>");
+					</script>
+					<script type="text/javascript">
+						document.write("<tr><td>staXML = " + staXML + "</td></tr>");
+					</script>
+					<script type="text/javascript">
+						document.write("<tr><td>eventXml20 = " + eventXml20 + "</td></tr>");
+					</script>
+					</table>
+		<?php
+			print "volcano = $volcano<br/>\n";
+		?>
 					</div>
 					<div id = "controlRight">
 					 Plot EQ's by:<br/>

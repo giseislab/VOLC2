@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<markers>
+	<!-- created by css2volcxml from database: /avort/oprun/dbmaster/master_stations on  9/21/2011  20:26:48.701 UTC -->
+<marker lat="56.9127" lng="-158.0589" station="ANNE" channel="SHZ" network="AV" location="--" type="BB"/>
+<marker lat="56.9127" lng="-158.0589" station="ANNE" channel="EHZ" network="AV" location="--" type="BB"/>
+<marker lat="56.9664" lng="-158.2149" station="ANNW" channel="SHZ" network="AV" location="--" type="BB"/>
+<marker lat="56.9664" lng="-158.2149" station="ANNW" channel="EHZ" network="AV" location="--" type="BB"/>
+<marker lat="56.9198" lng="-158.1716" station="ANON" channel="SHZ" network="AV" location="--" type="BB"/>
+<marker lat="56.9198" lng="-158.1716" station="ANON" channel="EHZ" network="AV" location="--" type="BB"/>
+<marker lat="56.8024" lng="-158.2808" station="ANPB" channel="SHZ" network="AV" location="--" type="BB"/>
+<marker lat="56.8024" lng="-158.2808" station="ANPB" channel="EHZ" network="AV" location="--" type="BB"/>
+<marker lat="56.8417" lng="-158.1262" station="ANPK" channel="SHZ" network="AV" location="--" type="BB"/>
+<marker lat="56.8417" lng="-158.1262" station="ANPK" channel="EHZ" network="AV" location="--" type="BB"/>
+<marker lat="56.8954" lng="-158.2307" station="AZAC" channel="SHZ" network="AV" location="--" type="BB"/>
+<marker lat="56.8954" lng="-158.2307" station="AZAC" channel="EHZ" network="AV" location="--" type="BB"/>
+<marker lat="56.5897" lng="-158.4526" station="BPBC" channel="SHZ" network="AV" location="--" type="BB"/>
+<marker lat="56.5897" lng="-158.4526" station="BPBC" channel="EHZ" network="AV" location="--" type="BB"/>
+</markers>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<markers>
+	<!-- created by css2volcxml from database: /avort/oprun/dbmaster/master_stations on  9/21/2011  20:26:03.397 UTC -->
+<marker lat="51.9802" lng="-176.6017" station="ADAG" channel="SHZ" network="AV" location="--" type="BB"/>
+<marker lat="51.9802" lng="-176.6017" station="ADAG" channel="EHZ" network="AV" location="--" type="BB"/>
+<marker lat="51.8619" lng="-176.4059" station="ETKA" channel="SHZ" network="AV" location="--" type="BB"/>
+<marker lat="51.8619" lng="-176.4059" station="ETKA" channel="EHZ" network="AV" location="--" type="BB"/>
+<marker lat="52.0119" lng="-176.1620" station="GSCK" channel="SHZ" network="AV" location="--" type="BB"/>
+<marker lat="52.0119" lng="-176.1620" station="GSCK" channel="EHZ" network="AV" location="--" type="BB"/>
+<marker lat="51.9864" lng="-175.9250" station="GSIG" channel="SHZ" network="AV" location="--" type="BB"/>
+<marker lat="51.9864" lng="-175.9250" station="GSIG" channel="EHZ" network="AV" location="--" type="BB"/>
+<marker lat="52.0432" lng="-176.0563" station="GSMY" channel="SHZ" network="AV" location="--" type="BB"/>
+<marker lat="52.0432" lng="-176.0563" station="GSMY" channel="EHZ" network="AV" location="--" type="BB"/>
+<marker lat="52.0928" lng="-176.1757" station="GSSP" channel="SHZ" network="AV" location="--" type="BB"/>
+<marker lat="52.0928" lng="-176.1757" station="GSSP" channel="EHZ" network="AV" location="--" type="BB"/>
+<marker lat="52.0559" lng="-176.1448" station="GSTD" channel="SHZ" network="AV" location="--" type="BB"/>
+<marker lat="52.0559" lng="-176.1448" station="GSTD" channel="EHZ" network="AV" location="--" type="BB"/>
+<marker lat="52.0943" lng="-176.0591" station="GSTR" channel="SHZ" network="AV" location="--" type="BB"/>
+<marker lat="52.0943" lng="-176.0591" station="GSTR" channel="EHZ" network="AV" location="--" type="BB"/>
+</markers>
