@@ -6,13 +6,14 @@
 		<title>Volc2, Your Source for Volcanic Earthquakes</title>
 		<!-- Calendar Stuff --!>
 		<script src="js_scripts/JSCal2-1.7/src/js/jscal2.js"></script>
-    	<script src="js_scripts/JSCal2-1.7/src/js/lang/en.js"></script>
+    		<script src="js_scripts/JSCal2-1.7/src/js/lang/en.js"></script>
 		<link rel="stylesheet" type="text/css" href="js_scripts/JSCal2-1.7/src/css/jscal2.css">
 		<link rel="stylesheet" type="text/css" href="js_scripts/JSCal2-1.7/src/css/border-radius.css">
 		<link rel="stylesheet" type="text/css" href="js_scripts/JSCal2-1.7/src/css/steel/steel.css">
 		
 		<!--Misc stuff--!>
-  		<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA08sgpfMO8KIySKvJkekPIRTXrO8TDN3d9zJDDLg-faokzzewNxRRg8YyWsFjL8Yj63junmxsjjZL9g" type="text/javascript"></script>
+		<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA08sgpfMO8KIySKvJkekPIRTXrO8TDN3d9zJDDLg-faokzzewNxRRg8YyWsFjL8Yj63junmxsjjZL9g" type="text/javascript"></script>
+		<!--<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA08sgpfMO8KIySKvJkekPIRREw0x-nvV5HWQ0bYSOiQRMdxRq8xSlBULRi7QrQkbN_79v-qJ2voI8Wg" type="text/javascript"></script>-->
 		<!--[if IE]><script language="javascript" type="text/javascript" src="js_scripts/flotr/excanvas.js"></script><![endif]-->
 		<script src = "js_scripts/prototype-1.6.0.2.js"  type="text/javascript"></script>
 		<script src = "js_scripts/scriptaculous.js" type="text/javascript"></script>
@@ -26,17 +27,40 @@
 		<!--Better Webicorder Stuff--!>
 		<script src = "../hvo_staweb/js_scripts/effects.js" type="text/javascript"> </script>
 		<script src = "../hvo_staweb/js_scripts/checkMobile.js" type="text/javascript"> </script>
-		<script src = "js_scripts/plotStationsAlaska.js" type="text/javascript"> </script>
+		<script src = "../hvo_staweb/js_scripts/plotStationsAlaska.js" type="text/javascript"> </script>
 		<!--Volc2 stuff--!>
-		<form name="volcano" method="get'>
-		<b>Volcano: </b>
-		<select name="volcano">
 		<?php
-			$volcano = !isset($_GET['volcano'])? "Spurr" : $_GET['volcano'];
+			$volcano = !isset($_GET['volcano'])? "Katmai" : $_GET['volcano'];
+			$xmlfile = "xml/volcanoes.xml";
+			$xml = simplexml_load_file($xmlfile) or die("file not found\n");
+			$c=0;
+			while ($volcano_name[$c] = $xml->volcano[$c]['name']): 
+				$volcano_lat[$c] = $xml->volcano[$c]['lat'];
+				$volcano_lon[$c] = $xml->volcano[$c]['lon'];
+				$volcano_zoomlevel[$c] = $xml->volcano[$c]['zoomlevel'];
+				if (strcmp($volcano_name[$c],$volcano)==0) {
+					$vindex=$c;
+				#	print "<p>vindex = $c</p>\n";
+				#	print "<p>lat: $volcano_lat[$vindex]</p>\n";
+				#	print "<p>lon: $volcano_lon[$vindex]</p>\n";
+				#	print "<p>zoom: $volcano_zoomlevel[$vindex]</p>\n";
+					$c++;
+				};
+			endwhile;
+			print <<< END
+			<script type="text/javascript">
+			mapParam = {
+				lat: $volcano_lat[$vindex],
+				lon: $volcano_lon[$vindex],
+				zoom: $volcano_zoomlevel[$vindex]
+			};
+			</script>
+END;
 		?>
 		<script type="text/javascript">
-			//var volcname = "<?php print "$volcano"; ?>";
+			volcanoname = "<?php print $volcano; ?>";
 		</script>
+
 		<script src = "js_scripts/volc2Param.js" type="text/javascript"> </script>
 		<script src = "js_scripts/volcCalStuff.js" type="text/javascript"> </script>
 		<script src = "js_scripts/menu.js" type="text/javascript"> </script>
@@ -49,7 +73,7 @@
 		<div id ="header"><a href ="http://avo.wr.usgs.gov"><img id = "logo" src = "images/avoLogo.jpg" alt = "logo"/></a>
 			<img id = "req2Logo" src = "images/volc2logoAVO.png" alt = "Volcano Earthquakes in an Igloo"/>
 			<?php
-				print "<span>".ucfirst($volcano)." Volcano</span>\n";
+				print "<span>$volcano Volcano</span>\n";
 			?>
 		</div>
 		<div class = "clear"></div>
@@ -69,21 +93,22 @@
 					<b>Volcano:</b>
 					<select name="volcano">
 					<?php
-						$volcanoes = array('Spurr', 'Redoubt', 'Iliamna', 'Augustine', 'Fourpeaked', 'Snowy', 'Griggs', 'Katmai', 'Martin', 'Peulik', 'Aniakchak', 'Veniaminof', 'Pavlof', 'Dutton', 'Shishaldin', 'Westdahl', 'Akutan', 'Makushin', 'Okmok', 'Korovin', 'Great_Sitkin', 'Kanaga', 'Tanaga', 'Gareloi', 'Semisopochnoi', 'Little_Sitkin', 'all');
+						$volcanoes = $volcano_name;
+						#$volcanoes = array('Spurr', 'Redoubt', 'Iliamna', 'Augustine', 'Fourpeaked', 'Snowy', 'Griggs', 'Katmai', 'Martin', 'Peulik', 'Aniakchak', 'Veniaminof', 'Pavlof', 'Dutton', 'Shishaldin', 'Westdahl', 'Akutan', 'Makushin', 'Okmok', 'Korovin', 'Great_Sitkin', 'Kanaga', 'Tanaga', 'Gareloi', 'Semisopochnoi', 'Little_Sitkin', 'all');
 						foreach($volcanoes as $volcanoitem) {
 		    					if ($volcanoitem == $volcano) {
-								print "\t\t<option value=\"$volcano\" selected>".ucfirst($volcano)."</option>\n";
+								print "\t\t<option value=\"$volcano\" selected=\"yes\">$volcano</option>\n";
 	    	 		   			}		
 	    	    					else
 	    	    					{
-	    							print "\t\t<option value=\"$volcanoitem\" >".ucfirst($volcanoitem)."</option>\n";
+	    							print "\t\t<option value=\"$volcanoitem\" >$volcanoitem</option>\n";
 	     	    					}
 	        				}
 					?>
 					</select>
 					</td>
 					<td><input type="submit" value="Go" /></td>
-					</tr>
+					</tr></form>
 					Magnitudes: <br/>
 					<label><input type="checkbox" id ="eqAll" name="eqselect" checked ="checked"/> All EQ's</label><br/>
 					<label><input type="checkbox" id ="eq4" name="eqselect"/> &gt; 4.0 </label><br/>

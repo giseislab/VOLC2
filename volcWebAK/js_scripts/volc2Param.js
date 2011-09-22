@@ -11,17 +11,17 @@ thelenwes@gmail.com
 
 //define map center and zoom level here by entering map lat and lon center and zoom level.
 //the greater the zoom level the larger the scale
-var mapParam = {
+var mapParamOld = {
 	lat: 59.3626,
  	lon: -153.435,
 	zoom: 9
 };
 
 //define event file path here. This is the file that comes from merge.xml
-var volcanoname = "<?php print "$volcano"; ?>";
-volcanoname = 'Spurr';
-var eventXml20 = "xml/origins_" + volcanoname + ".xml";
-var eventXmlAll = eventXml20;
+//var volcanoname = "<?php print "$volcano"; ?>";
+//volcanoname = 'Spurr';
+eventXml20 = "xml/origins_" + volcanoname + ".xml";
+eventXmlAll = eventXml20;
 var initialPlot = 1;
 var initialMarkerPlot = 20;
 var maxMarkerPlot = 5000;

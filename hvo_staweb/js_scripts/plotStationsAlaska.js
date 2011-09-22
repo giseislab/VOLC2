@@ -1,4 +1,4 @@
-var staXML = "../xml/stations_all.xml";
+//var staXML = "../xml/stations_all.xml";
 var server = 'pubavo1.wr.usgs.gov';
 var port = '16022';
 var staList = [];
