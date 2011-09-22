@@ -36,7 +36,7 @@
 			$c=0;
 			#print "<p>".$_SERVER['SERVER_NAME']."</p>\n";
 			while ($volcano_name[$c] = $xml->volcano[$c]['name']): 
-				print "<p>$volcano_name[$c]</p>\n";
+				#print "<p>$volcano_name[$c]</p>\n";
 				$volcano_lat[$c] = $xml->volcano[$c]['lat'];
 				$volcano_lon[$c] = $xml->volcano[$c]['lon'];
 				$volcano_zoomlevel[$c] = $xml->volcano[$c]['zoomlevel'];
@@ -90,9 +90,7 @@ END;
 					<b>Volcano:</b>
 					<select name="volcano">
 					<?php
-						$volcanoes = $volcano_name;
-						#$volcanoes = array('Spurr', 'Redoubt', 'Iliamna', 'Augustine', 'Fourpeaked', 'Snowy', 'Griggs', 'Katmai', 'Martin', 'Peulik', 'Aniakchak', 'Veniaminof', 'Pavlof', 'Dutton', 'Shishaldin', 'Westdahl', 'Akutan', 'Makushin', 'Okmok', 'Korovin', 'Great_Sitkin', 'Kanaga', 'Tanaga', 'Gareloi', 'Semisopochnoi', 'Little_Sitkin', 'all');
-						foreach($volcanoes as $volcanoitem) {
+						foreach($volcano_name as $volcanoitem) {
 		    					if ($volcanoitem == $volcano) {
 								print "\t\t<option value=\"$volcano\" selected=\"yes\">$volcano</option>\n";
 	    	 		   			}		
@@ -113,20 +111,6 @@ END;
 					<label><input type="checkbox" id ="eq2" name="eqselect"/> 2.0 - 2.9 </label><br/>
 					<label><input type="checkbox" id ="eq1" name="eqselect" /> 1.0 - 1.9 </label><br/>
 					<label><input type="checkbox" id ="eq0" name="eqselect"/> &lt; 1.0 </label><br/><br/>
-					<table>
-					<script type="text/javascript">
-						document.write("<tr><td>volcano in JS = " + volcanoname + "</td></tr>");
-					</script>
-					<script type="text/javascript">
-						document.write("<tr><td>staXML = " + staXML + "</td></tr>");
-					</script>
-					<script type="text/javascript">
-						document.write("<tr><td>eventXml20 = " + eventXml20 + "</td></tr>");
-					</script>
-					</table>
-		<?php
-			print "volcano = $volcano<br/>\n";
-		?>
 					</div>
 					<div id = "controlRight">
 					 Plot EQ's by:<br/>

@@ -17,8 +17,8 @@ while ($line = <FIN>) {
 	print FOUT "<volcano name=\"$volcano\" lat=\"$lat\" lon=\"$lon\" zoomlevel=\"9\" />\n";
 }
 system("bin/css2volcxml -x -b -e \"time>$MINTIME\" /Seis/Kiska4/picks/Total/Total  > $XMLDIR/origins_all.xml");
-system("bin/css2volcxml -x -s -e  /avort/oprun/dbmaster/master_stations > $XMLDIR/stations_all.xml");
-print FOUT "<volcano name=\"all\" lat=\"56.0\" lon=\"-155.0\" zoomlevel=\"4\" />\n";
+system("bin/css2volcxml -x -s  /avort/oprun/dbmaster/master_stations > $XMLDIR/stations_all.xml");
+print FOUT "<volcano name=\"all\" lat=\"55.5\" lon=\"-164.0\" zoomlevel=\"4\" />\n";
 print FOUT "</volcanoes>\n";
 close(FIN);
 close(FOUT);
