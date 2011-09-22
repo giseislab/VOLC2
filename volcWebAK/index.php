@@ -30,27 +30,29 @@
 		<script src = "../hvo_staweb/js_scripts/plotStationsAlaska.js" type="text/javascript"> </script>
 		<!--Volc2 stuff--!>
 		<?php
-			$volcano = !isset($_GET['volcano'])? "Katmai" : $_GET['volcano'];
+			$volcano = !isset($_GET['volcano'])? "Spurr" : $_GET['volcano'];
 			$xmlfile = "xml/volcanoes.xml";
 			$xml = simplexml_load_file($xmlfile) or die("file not found\n");
 			$c=0;
 			#print "<p>".$_SERVER['SERVER_NAME']."</p>\n";
 			while ($volcano_name[$c] = $xml->volcano[$c]['name']): 
+				print "<p>$volcano_name[$c]</p>\n";
 				$volcano_lat[$c] = $xml->volcano[$c]['lat'];
 				$volcano_lon[$c] = $xml->volcano[$c]['lon'];
 				$volcano_zoomlevel[$c] = $xml->volcano[$c]['zoomlevel'];
-			#	if (strcmp($volcano_name[$c],$volcano)==0) 
-			#		$vindex=$c++;
+				if (strcmp($volcano_name[$c],$volcano)==0) 
+					$vindex=$c;
+				$c++;
 			endwhile;
-			#print <<< END
-			#<script type="text/javascript">
-			#mapParam = {
-			#	lat: $volcano_lat[$vindex],
-			#	lon: $volcano_lon[$vindex],
-			#	zoom: $volcano_zoomlevel[$vindex]
-			#};
-			#</script>
-#END;
+			print <<< END
+			<script type="text/javascript">
+			mapParam = {
+				lat: $volcano_lat[$vindex],
+				lon: $volcano_lon[$vindex],
+				zoom: $volcano_zoomlevel[$vindex]
+			};
+			</script>
+END;
 		?>
 		<script type="text/javascript">
 			volcanoname = "<?php print $volcano; ?>";
