@@ -12,14 +12,16 @@ thelenwes@gmail.com
 //define map center and zoom level here by entering map lat and lon center and zoom level.
 //the greater the zoom level the larger the scale
 var mapParam = {
-	lat: 56.0,
- 	lon: -160.0,
-	zoom: 4
+	lat: 59.3626,
+ 	lon: -153.435,
+	zoom: 9
 };
 
 //define event file path here. This is the file that comes from merge.xml
-var eventXml20 = "xml/origins_all.xml";
-var eventXmlAll = "xml/origins_all.xml";
+var volcanoname = "<?php print "$volcano"; ?>";
+volcanoname = 'Spurr';
+var eventXml20 = "xml/origins_" + volcanoname + ".xml";
+var eventXmlAll = eventXml20;
 var initialPlot = 1;
 var initialMarkerPlot = 20;
 var maxMarkerPlot = 5000;
@@ -33,8 +35,7 @@ var corr = 0;   //Elevation of velocity model datum
 var authorNW = "AK";
 
 //Location of xml file for stations
-//staXML = "xml/sta_file.xml";
-staXML = "xml/stations_all.xml";
+staXML = "xml/stations_" + volcanoname + ".xml";
 
 //Station size
 SP_icon.iconSize = new GSize(15, 15);

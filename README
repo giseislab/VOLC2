@@ -1,12 +1,24 @@
- bin/css2volcxml  -x -b -e 'time>"2011/06/01"' /Seis/Kiska4/picks/Total/Total  > origins_all.xml
- bin/css2volcxml  -x -b -e 'time>"2011/06/01" && deg2km(distance(61.2989, -152.2539, lat, lon))<50.0' /Seis/Kiska4/picks/Total/Total  > origins_spurr.xml
- bin/css2volcxml  -x -b -e 'time>"2011/06/01" && deg2km(distance(60.4852, -152.7438, lat, lon))<50.0' /Seis/Kiska4/picks/Total/Total  > origins_redoubt.xml
- bin/css2volcxml  -x -b -e 'time>"2011/06/01" && deg2km(distance(60.0319, -153.0918, lat, lon))<50.0' /Seis/Kiska4/picks/Total/Total  > origins_iliamna.xml
- bin/css2volcxml  -x -b -e 'time>"2011/06/01" && deg2km(distance(59.3626, -153.435, lat, lon))<50.0' /Seis/Kiska4/picks/Total/Total  > origins_augustine.xml
- bin/css2volcxml  -x -b -e 'time>"2011/06/01" && deg2km(distance(58.279, -154.9533, lat, lon))<50.0' /Seis/Kiska4/picks/Total/Total  > origins_katmai.xml
- bin/css2volcxml -s -x /avort/oprun/dbmaster/master_stations > stations_all.xml
- bin/css2volcxml  -x -s -e 'deg2km(distance(61.2989, -152.2539, lat, lon))<50.0' /avort/oprun/dbmaster/master_stations  > stations_spurr.xml
- bin/css2volcxml  -x -s -e 'deg2km(distance(60.4852, -152.7438, lat, lon))<50.0' /avort/oprun/dbmaster/master_stations  > stations_redoubt.xml
- bin/css2volcxml  -x -s -e 'deg2km(distance(60.0319, -153.0918, lat, lon))<50.0' /avort/oprun/dbmaster/master_stations  > stations_iliamna.xml
- bin/css2volcxml  -x -s -e 'deg2km(distance(59.3626, -153.435, lat, lon))<50.0' /avort/oprun/dbmaster/master_stations  > stations_augustine.xml
- bin/css2volcxml  -x -s -e 'deg2km(distance(58.279, -154.9533, lat, lon))<50.0' /avort/oprun/dbmaster/master_stations  > stations_katmai.xml
+#!/usr/bin/perl
+$PFFILE = "/avort/oprun/pf/avo_volcs.pf";
+$XMLDIR = "volcWebAK/xml";
+$MINTIME = "'2011/08/01'";
+open(FIN,$PFFILE) or die $!; 
+open(FOUT,">$XMLDIR/volcanoes.xml") or die $!; 
+print FOUT "<volcanoes>\n";
+while ($line = <FIN>) {
+	chomp($line);
+	@fields = split(/ /, $line);
+	$volcano = $fields[0];
+	$lat = $fields[1];
+	$lon = $fields[2];
+	print "volcano = $volcano, lat = $lat, lon = $lon\n";
+	system("bin/css2volcxml -x -b -e \"time>$MINTIME && deg2km(distance($lat, $lon, lat, lon))<50.0\" /Seis/Kiska4/picks/Total/Total  > $XMLDIR/origins_$volcano.xml");
+	system("bin/css2volcxml  -x -s -e \"deg2km(distance($lat, $lon, lat, lon))<50.0\" /avort/oprun/dbmaster/master_stations  > $XMLDIR/stations_$volcano.xml");
+	print FOUT "<volcano name=\"$volcano\" lat=\"$lat\" lon=\"$lon\" zoomlevel=\"9\" />\n";
+}
+system("bin/css2volcxml -x -b -e \"time>$MINTIME\" /Seis/Kiska4/picks/Total/Total  > $XMLDIR/origins_all.xml");
+system("bin/css2volcxml -x -s -e  /avort/oprun/dbmaster/master_stations > $XMLDIR/stations_all.xml");
+print FOUT "<volcano name=\"all\" lat=\"56.0\" lon=\"-155.0\" zoomlevel=\"4\" />\n";
+print FOUT "</volcanoes>\n";
+close(FIN);
+close(FOUT);

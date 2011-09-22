@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<markers>
+	<!-- created by css2volcxml from database: /avort/oprun/dbmaster/master_stations on  9/21/2011  20:27:43.088 UTC -->
+<marker lat="61.9863" lng="-144.3284" station="WACK" channel="SHZ" network="AV" location="--" type="BB"/>
+<marker lat="61.9863" lng="-144.3284" station="WACK" channel="EHZ" network="AV" location="--" type="BB"/>
+<marker lat="62.0032" lng="-144.0699" station="WANC" channel="SHZ" network="AV" location="--" type="BB"/>
+<marker lat="62.0032" lng="-144.0699" station="WANC" channel="EHZ" network="AV" location="--" type="BB"/>
+<marker lat="61.9282" lng="-144.1724" station="WASW" channel="SHZ" network="AV" location="--" type="BB"/>
+<marker lat="61.9282" lng="-144.1724" station="WASW" channel="EHZ" network="AV" location="--" type="BB"/>
+<marker lat="62.0751" lng="-144.1522" station="WAZA" channel="SHZ" network="AV" location="--" type="BB"/>
+<marker lat="62.0751" lng="-144.1522" station="WAZA" channel="EHZ" network="AV" location="--" type="BB"/>
+</markers>

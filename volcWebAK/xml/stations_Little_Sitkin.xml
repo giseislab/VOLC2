@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<markers>
+	<!-- created by css2volcxml from database: /avort/oprun/dbmaster/master_stations on  9/21/2011  20:25:41.244 UTC -->
+<marker lat="51.9705" lng="178.5168" station="LSNW" channel="SHZ" network="AV" location="--" type="BB"/>
+<marker lat="51.9496" lng="178.5132" station="LSSA" channel="SHZ" network="AV" location="--" type="BB"/>
+<marker lat="51.9569" lng="178.5734" station="LSPA" channel="SHZ" network="AV" location="--" type="BB"/>
+<marker lat="51.9332" lng="178.5690" station="LSSE" channel="SHZ" network="AV" location="--" type="BB"/>
+</markers>
