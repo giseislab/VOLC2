@@ -30,7 +30,7 @@
 		<script src = "../hvo_staweb/js_scripts/plotStationsAlaska.js" type="text/javascript"> </script>
 		<!--Volc2 stuff--!>
 		<?php
-			$volcano = !isset($_GET['volcano'])? "Spurr" : $_GET['volcano'];
+			$volcano = !isset($_GET['volcano'])? "Arc" : $_GET['volcano'];
 			$xmlfile = "xml/volcanoes.xml";
 			$xml = simplexml_load_file($xmlfile) or die("file not found\n");
 			$c=0;
@@ -70,7 +70,11 @@ END;
 		<div id ="header"><a href ="http://avo.wr.usgs.gov"><img id = "logo" src = "images/avoLogo.jpg" alt = "logo"/></a>
 			<img id = "req2Logo" src = "images/volc2logoAVO.png" alt = "Volcano Earthquakes in an Igloo"/>
 			<?php
-				print "<span>$volcano Volcano</span>\n";
+				if ($volcano == "Arc") {
+					print "<span>Whole Aleutian Arc</span>\n";
+				} else {	
+					print "<span>$volcano Volcano</span>\n";
+				};
 			?>
 		</div>
 		<div class = "clear"></div>
