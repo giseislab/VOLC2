@@ -34,28 +34,23 @@
 			$xmlfile = "xml/volcanoes.xml";
 			$xml = simplexml_load_file($xmlfile) or die("file not found\n");
 			$c=0;
+			#print "<p>".$_SERVER['SERVER_NAME']."</p>\n";
 			while ($volcano_name[$c] = $xml->volcano[$c]['name']): 
 				$volcano_lat[$c] = $xml->volcano[$c]['lat'];
 				$volcano_lon[$c] = $xml->volcano[$c]['lon'];
 				$volcano_zoomlevel[$c] = $xml->volcano[$c]['zoomlevel'];
-				if (strcmp($volcano_name[$c],$volcano)==0) {
-					$vindex=$c;
-				#	print "<p>vindex = $c</p>\n";
-				#	print "<p>lat: $volcano_lat[$vindex]</p>\n";
-				#	print "<p>lon: $volcano_lon[$vindex]</p>\n";
-				#	print "<p>zoom: $volcano_zoomlevel[$vindex]</p>\n";
-					$c++;
-				};
+			#	if (strcmp($volcano_name[$c],$volcano)==0) 
+			#		$vindex=$c++;
 			endwhile;
-			print <<< END
-			<script type="text/javascript">
-			mapParam = {
-				lat: $volcano_lat[$vindex],
-				lon: $volcano_lon[$vindex],
-				zoom: $volcano_zoomlevel[$vindex]
-			};
-			</script>
-END;
+			#print <<< END
+			#<script type="text/javascript">
+			#mapParam = {
+			#	lat: $volcano_lat[$vindex],
+			#	lon: $volcano_lon[$vindex],
+			#	zoom: $volcano_zoomlevel[$vindex]
+			#};
+			#</script>
+#END;
 		?>
 		<script type="text/javascript">
 			volcanoname = "<?php print $volcano; ?>";
