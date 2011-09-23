@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <markers>
-	<!-- created by css2volcxml from database: /avort/oprun/dbmaster/master_stations on  9/21/2011  20:26:53.095 UTC -->
-<marker lat="57.6998" lng="-156.8189" station="PLBL" channel="SHZ" network="AV" location="--" type="BB"/>
-<marker lat="57.6998" lng="-156.8189" station="PLBL" channel="EHZ" network="AV" location="--" type="BB"/>
-<marker lat="57.8019" lng="-156.6072" station="PLK1" channel="SHZ" network="AV" location="--" type="BB"/>
-<marker lat="57.8019" lng="-156.6072" station="PLK1" channel="EHZ" network="AV" location="--" type="BB"/>
-<marker lat="57.7642" lng="-156.3243" station="PLK2" channel="SHZ" network="AV" location="--" type="BB"/>
-<marker lat="57.7642" lng="-156.3243" station="PLK2" channel="EHZ" network="AV" location="--" type="BB"/>
-<marker lat="57.6887" lng="-156.2674" station="PLK3" channel="SHZ" network="AV" location="--" type="BB"/>
-<marker lat="57.6887" lng="-156.2674" station="PLK3" channel="EHZ" network="AV" location="--" type="BB"/>
-<marker lat="57.6321" lng="-156.3577" station="PLK4" channel="SHZ" network="AV" location="--" type="BB"/>
-<marker lat="57.6321" lng="-156.3577" station="PLK4" channel="EHZ" network="AV" location="--" type="BB"/>
-<marker lat="57.9977" lng="-156.8777" station="PLK5" channel="SHZ" network="AV" location="--" type="BB"/>
-<marker lat="57.9977" lng="-156.8777" station="PLK5" channel="EHZ" network="AV" location="--" type="BB"/>
-<marker lat="58.0449" lng="-156.3413" station="PLWL" channel="SHZ" network="AV" location="--" type="BB"/>
-<marker lat="58.0449" lng="-156.3413" station="PLWL" channel="EHZ" network="AV" location="--" type="BB"/>
+	<!-- created by css2volcxml from database: /avort/oprun/dbmaster/master_stations on  9/23/2011   6:08:31.556 UTC -->
+<marker lat="57.6998" lng="-156.8189" station="PLBL" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="57.8019" lng="-156.6072" station="PLK1" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="57.7642" lng="-156.3243" station="PLK2" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="57.6887" lng="-156.2674" station="PLK3" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="57.6321" lng="-156.3577" station="PLK4" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="57.9977" lng="-156.8777" station="PLK5" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.0449" lng="-156.3413" station="PLWL" channel="EHZ" network="AV" location="--" type="SP"/>
 </markers>

@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <markers>
-	<!-- created by css2volcxml from database: /avort/oprun/dbmaster/master_stations on  9/21/2011  20:25:49.954 UTC -->
-<marker lat="51.5545" lng="-178.8121" station="GAKI" channel="SHZ" network="AV" location="--" type="BB"/>
-<marker lat="51.5545" lng="-178.8121" station="GAKI" channel="EHZ" network="AV" location="--" type="BB"/>
-<marker lat="51.7617" lng="-178.7715" station="GALA" channel="SHZ" network="AV" location="--" type="BB"/>
-<marker lat="51.7617" lng="-178.7715" station="GALA" channel="EHZ" network="AV" location="--" type="BB"/>
-<marker lat="51.8189" lng="-178.7767" station="GANE" channel="SHZ" network="AV" location="--" type="BB"/>
-<marker lat="51.8189" lng="-178.7767" station="GANE" channel="EHZ" network="AV" location="--" type="BB"/>
-<marker lat="51.7830" lng="-178.7468" station="GAEA" channel="SHZ" network="AV" location="--" type="BB"/>
-<marker lat="51.7830" lng="-178.7468" station="GAEA" channel="EHZ" network="AV" location="--" type="BB"/>
-<marker lat="51.8203" lng="-178.8038" station="GANO" channel="SHZ" network="AV" location="--" type="BB"/>
-<marker lat="51.8203" lng="-178.8038" station="GANO" channel="EHZ" network="AV" location="--" type="BB"/>
-<marker lat="51.7789" lng="-178.8546" station="GASW" channel="SHZ" network="AV" location="--" type="BB"/>
-<marker lat="51.7789" lng="-178.8546" station="GASW" channel="EHZ" network="AV" location="--" type="BB"/>
-<marker lat="51.8632" lng="-178.1394" station="TACS" channel="SHZ" network="AV" location="--" type="BB"/>
-<marker lat="51.8632" lng="-178.1394" station="TACS" channel="EHZ" network="AV" location="--" type="BB"/>
-<marker lat="51.9157" lng="-178.1208" station="TANO" channel="SHZ" network="AV" location="--" type="BB"/>
-<marker lat="51.9157" lng="-178.1208" station="TANO" channel="EHZ" network="AV" location="--" type="BB"/>
+	<!-- created by css2volcxml from database: /avort/oprun/dbmaster/master_stations on  9/23/2011   6:09:34.469 UTC -->
+<marker lat="51.5545" lng="-178.8121" station="GAKI" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.7617" lng="-178.7715" station="GALA" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.8189" lng="-178.7767" station="GANE" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.7830" lng="-178.7468" station="GAEA" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.8203" lng="-178.8038" station="GANO" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.7789" lng="-178.8546" station="GASW" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.8632" lng="-178.1394" station="TACS" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.9157" lng="-178.1208" station="TANO" channel="EHZ" network="AV" location="--" type="SP"/>
 </markers>
