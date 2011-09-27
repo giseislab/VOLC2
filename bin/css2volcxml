@@ -123,7 +123,8 @@ sub get_orig_records {	##### extract origin records
 	@db = dbsort(@db,'-r','time');
 	$nrecords = dbquery(@db,"dbRECORD_COUNT");
 	if ($nrecords == 0) { # changed by GTHO
-		die ("no records returned from $dbname matching $opt_e");
+		print STDERR "no records returned from $dbname matching $opt_e\n";
+		return;
 	}
 	if (($nrecords > $maxevents) && (! $opt_f) ) {
 		$nrecords = $maxevents;
@@ -412,7 +413,8 @@ sub get_site_records {	##### extract site records
 
 	$nrecords = dbquery(@db,"dbRECORD_COUNT");
 	if ($nrecords == 0) {
-		die ("database $dbname does not exist or site table contains no records\n");
+		print "database $dbname does not exist or site table contains no records\n";
+		return;
 	}
 	print STDERR "number of station placemarks: $nrecords\n";
 	$theTime = strtime(now);

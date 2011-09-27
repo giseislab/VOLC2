@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 $PFFILE = "/avort/oprun/pf/avo_volcs.pf";
 $XMLDIR = "volcWebAK/xml";
-$MINTIME = "'2011/01/01'";
+$MINTIME = "'2011/08/27'";
 open(FIN,$PFFILE) or die $!; 
 open(FOUT,">$XMLDIR/volcanoes.xml") or die $!; 
 print FOUT "<volcanoes>\n";
