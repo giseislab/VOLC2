@@ -11,7 +11,9 @@ http://econym.googlepages.com/index.htm
 Event.observe(window, 'load', function(){
 	loadMap();
 	getEqs();
-	plotStations();
+	if (plotStas ==1){
+		plotStations();
+	}
 	//eqs
 	$("eqAll").observe('click',shide);
 	$("eq4").observe('click', shide);
@@ -21,6 +23,8 @@ Event.observe(window, 'load', function(){
 	$("eq0").observe('click', shide);
 	$("plotTime").observe('click', changePlot);
 	$("plotDepth").observe('click', changePlot);
+	$("plotStaTrue").observe('click', toggleStas);
+	$("plotStaFalse").observe('click', toggleStas);
 	//reset map view
 	$('reset').observe('click', function(){
 		initialPlot = 1;
@@ -28,9 +32,14 @@ Event.observe(window, 'load', function(){
 		killMarkers();
 		getEqs();
 		resetControl();
+		clearXsec();
+		toggleStas();
+		plotStations();
 		document.getElementById("oneday").checked==true
 		document.getElementById("range").checked==false
 		document.getElementById("time_options").innerHTML=single_day_html;
+		document.getElementById("plotStaTrue").checked==true
+		document.getElementById("plotStaFalse").checked==false
 	});
 	
 	//scriptacolous effects
@@ -56,7 +65,8 @@ window.unload = function(){
 //Global varaibles
 var map;
 var side_bar_html = "";
-var gmarkers = [];
+var gmarkers = []; //Eq markers
+var markers = []; //Station markers
 var count = 0;
 var zIndex = 10000;
 var depthOn = false; //if true, eq's plotted by depth, else eq's plotted by time
@@ -104,7 +114,7 @@ function loadMap() {
 		//google.setOnLoadCallback(initializeXSec());
 		document.getElementById("time_options").innerHTML=single_day_html;
 	}else{
-	alert("Javascript must be enabled in order for you to use REQ2. To view, you must first enable JavaScript in your browser options and try again");
+	alert("Javascript must be enabled in order for you to use volcWeb. To view, you must first enable JavaScript in your browser options and try again");
 	}
 }
 
@@ -116,7 +126,7 @@ function getEqs(){
 	if (initialPlot == 1){
 		new Ajax.Request(
 				eventXml20,
-			{
+			{			
 				method: "post",
 				contentType: 'text/xml',
 				onSuccess: parseEqs
@@ -124,7 +134,18 @@ function getEqs(){
 		);
 	}
 	else{
-		updateEqs();
+		//updateEqs();
+		killMarkers();
+		clearXsec();
+		alert("This is going to take a little while, be patient!");
+		new Ajax.Request(
+				eventXmlAll,
+			{
+				method: "post",
+				contentType: 'text/xml',
+				onSuccess: parseEqs2
+			}
+		);
 	}
 }
 
@@ -157,12 +178,59 @@ function parseEqs(ajax){
                           }
 			}
 			eq = new Eq(eqParam);
-			eventArray.push(eq); 
+		 	eventArray.push(eq); 
 			map.addOverlay(eq.plotEq());
 			eq.makeList();
 			eqNum++;
 			eq_markers.push(eq);
 			if (eqNum > maxMarkerPlot){break;} 
+		}
+		$("numberEQs").innerHTML= eqNum;
+}
+
+//parse quake xml
+function parseEqs2(ajax){
+	$('loading').style.visibility = "hidden";
+	$("loadText").style.visibility = "hidden";
+	document.body.style.cursor="default";
+	eventArray = [];
+	eqNum = 0;
+	gmarkers = [];
+	count = 0;
+	if(window.ActiveXObject){ // If IE
+	var xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+	xmlDoc.loadXML(ajax.responseText);
+	} else {
+	var xmlDoc = ajax.responseXML;
+	}
+	var timeNow = xmlDoc.getElementsByTagName('merge')[0].getAttribute('fileTime_loc');
+	timeUtc = xmlDoc.getElementsByTagName('merge')[0].getAttribute('fileTime_utc');
+	updateTime(timeNow)
+	var eventTag = xmlDoc.getElementsByTagName("event");
+	eq_markers = new Array ();
+		//for (var i = eventTag.length-1; i >= 0; i--) {//younger events first
+		for (var i = 0; i <= eventTag.length-1; i++) {
+			var param = eventTag[i].getElementsByTagName("param");
+			var eqParam = new Hash();
+			eqParam.set("id", eventTag[i].getAttribute("id"));
+			for(var j = 0; j< param.length; j++){
+                                var test = eqParam.get(param[j].getAttribute("name"));
+                                if (test == null){
+				eqParam.set(param[j].getAttribute("name"), param[j].getAttribute("value"));
+                          }
+			}
+			eq = new Eq(eqParam);
+			
+			var eqLoc = new Date(eqParam.get('year'), eqParam.get('month')-1, eqParam.get('day'), eqParam.get('hour'), eqParam.get('minute'), eqParam.get('second'));
+			//var eqLoc = new Date(eq.loc);
+			if (eqLoc>= date1 && eqLoc < date2) {
+				eventArray.push(eq); 
+				map.addOverlay(eq.plotEq());
+				eq.makeList();
+				eqNum++;
+				eq_markers.push(eq);
+			if (eqNum > maxMarkerPlot){ break;}
+			}
 		}
 		$("numberEQs").innerHTML= eqNum;
 }
@@ -344,14 +412,52 @@ function changePlot(){
 	count = 0;
 	if(this.id =="plotDepth"){
 		depthOn = true;
-		$('legend').src = "images/legendVolcDepth.png";
+		if (typeof(req)=="undefined"){
+			$('legend').src = "images/legendVolcDepth.png";
+		}else{
+		    if (req == 1){
+		    	$('legend').src = "images/legendVolcDepthRegional.png";
+		     }else{
+		     	if (symSize == 1){
+		     		$('legend').src = "images/legendVolcDepthSm.png";
+		     	}else{
+		     		$('legend').src = "images/legendVolcDepth.png";
+		     	}
+		     }
+		}
 	}else{
 		depthOn = false;
-		$('legend').src = "images/legendVolcTime.png";
+		// Check to see which kind of time legend should be used
+		if (typeof(req)=="undefined"){
+			$('legend').src = "images/legendVolcTime.png";
+		}else{
+		     if (req == 1){
+		     	$('legend').src = "images/legendVolc2week.png";
+		     }else{
+		     	if (symSize == 1){
+		     		$('legend').src = "images/legendVolcTimeSmSym.png";
+		     	}else{
+		     		$('legend').src = "images/legendVolcTime.png";
+		     	}
+		     }
+		}
 	}
 	getEqs();
 }
-
+//Either plot the stations or do not plot the stations based on the button toggle
+function toggleStas(){
+	map.closeInfoWindow();
+	count = 0;
+	if(this.id =="plotStaTrue"){
+		plotStas = 1;
+		plotStations();
+	}else{
+		plotStas = 0;
+		for (var i = 0; i<stamarker.length; i++){
+			stamarker[i].remove();
+		}
+	}
+}
 //kill all markers and re-plot eqAll when when plot by time/depth is clicked
 function killMarkers(){
 	$("eqlist").innerHTML =""; 
@@ -383,7 +489,7 @@ Eq = Class.create({
 	initialize: function(eq){
 		this.eId = eq.get('id');
 		//this.net = eq.get('network-code');
-		this.net = "AK";
+		this.net = "HV";
 		this.ver = eq.get('version');
 		this.yr = eq.get('year');
 		this.mon = eq.get('month');
@@ -455,7 +561,15 @@ Eq = Class.create({
 	
 	//determine magnitude to size icons
 	getMag: function(){
-		var scale = 10; //these allow for tuning the size of icons (was 4)
+	    if (typeof(symSize)=="undefined"){
+			var scale = 10; //these allow for tuning the size of icons (was 4)
+			}else{
+		     if (symSize == 1){
+		     	scale = 4;
+		     }else{
+		     	scale = 10;
+		     }
+		}
 		var base =5;
 		if (this.mag <= 0){
 			magAdjust = 0.1;
@@ -544,13 +658,13 @@ Eq = Class.create({
 	//of  the event's webicorders sorted by distance from event
 	updateWindow: function(){
 		var windowHtml = this.getHtml();
-		var marker = this.marker;
+		var emarker = this.marker;
 		var listId = this.listId;
 		var point = this.point;
 		var time = this.yr + this.mon + this.day + this.hr;
 		//add listeners and html to windows
-		GEvent.addListener(marker, "click", function() {
-		    marker.openInfoWindowHtml(windowHtml);
+		GEvent.addListener(emarker, "click", function() {
+		    emarker.openInfoWindowHtml(windowHtml);
 			$(listId).style.backgroundColor = "yellow";
 		  });
 	},

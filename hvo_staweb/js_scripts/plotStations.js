@@ -11,6 +11,7 @@ hot_icon.shadowSize = new GSize(0,0);
 hot_icon.iconAnchor = new GPoint(3,3);
 hot_icon.image = "images/hotsta.png";
 var hotmarker = new GMarker (new GLatLng(0, 0), {icon:hot_icon, zIndexProcess:importanceOrder});
+var stamarker = new Array ();
 
 
 var thisIcon = new GIcon();
@@ -185,12 +186,13 @@ function createMarker(point,html,name,statype) {
 		var new_icon=SM_icon;
 		var order = 0;
 	}
-	var marker = new GMarker(point,{icon:new_icon, zIndexProcess:importanceOrder});
-  GEvent.addListener(marker, "click", function() {
-		marker.openInfoWindowHtml(html);
+	stamarker[markeridx] = new GMarker(point,{icon:new_icon, zIndexProcess:importanceOrder});
+	var nowmarker = stamarker[markeridx];
+  GEvent.addListener(nowmarker, "click", function() {
+		nowmarker.openInfoWindowHtml(html);
 	});
-	marker.importance=markeridx+order;
-	coldmarkers.push(marker);
+	stamarker[markeridx].importance = markeridx+order;
+	coldmarkers.push(stamarker[markeridx]);
 	htmls.push(html);
 	side_bar_html = 'javascript:myclick(' + markeridx + ')';
 	if (sidebar ==1){
