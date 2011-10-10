@@ -4,23 +4,18 @@ Google Maps key http://code.google.com/apis/maps/signup.html and put it into the
 This key will only work on the domain that you register it to and on your local machine.
 
 
-Author: Weston Thelen
+Authors: Weston Thelen
 Pacific Northwest Seismic Network, University of Washington
 thelenwes@gmail.com
+Glenn Thompson
+Alaska Volcano Observatory
+gthompson@alaska.edu
 */
-
-//define map center and zoom level here by entering map lat and lon center and zoom level.
-//the greater the zoom level the larger the scale
-var mapParamOld = {
-	lat: 59.3626,
- 	lon: -153.435,
-	zoom: 9
-};
 
 //define event file path here. This is the file that comes from merge.xml
 //var volcanoname = "<?php print "$volcano"; ?>";
 //volcanoname = 'Spurr';
-eventXml20 = "xml/origins_" + volcanoname + ".xml";
+eventXml20 = "../xml/origins_" + volcanoname + ".xml";
 eventXmlAll = eventXml20;
 var initialPlot = 1;
 var initialMarkerPlot = 20;
@@ -35,7 +30,7 @@ var corr = 0;   //Elevation of velocity model datum
 var authorNW = "AK";
 
 //Location of xml file for stations
-staXML = "xml/stations_" + volcanoname + ".xml";
+staXML = "../xml/stations_" + volcanoname + ".xml";
 
 //Station size
 SP_icon.iconSize = new GSize(15, 15);

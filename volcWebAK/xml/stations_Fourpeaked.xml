@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<markers>
-	<!-- created by css2volcxml from database: /avort/oprun/dbmaster/master_stations on  9/27/2011  20:10:38.615 UTC -->
-<marker lat="58.9296" lng="-153.6426" station="CDD" channel="EHZ" network="AV" location="--" type="SP"/>
-<marker lat="58.5968" lng="-154.3468" station="KAPH" channel="EHZ" network="AV" location="--" type="SP"/>
-<marker lat="58.7580" lng="-153.4739" station="FOPK" channel="EHZ" network="AV" location="--" type="SP"/>
-<marker lat="58.7994" lng="-153.6945" station="FOSS" channel="EHZ" network="AV" location="--" type="SP"/>
-<marker lat="58.8348" lng="-153.9184" station="FONW" channel="EHZ" network="AV" location="--" type="SP"/>
-</markers>

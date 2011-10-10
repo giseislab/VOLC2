@@ -31,7 +31,7 @@
 		<!--Volc2 stuff--!>
 		<?php
 			$volcano = !isset($_GET['volcano'])? "Arc" : $_GET['volcano'];
-			$xmlfile = "xml/volcanoes.xml";
+			$xmlfile = "../xml/volcanoes.xml";
 			$xml = simplexml_load_file($xmlfile) or die("file not found\n");
 			$c=0;
 			#print "<p>".$_SERVER['SERVER_NAME']."</p>\n";
