@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<markers>
+	<!-- created by css2volcxml from database: /avort/oprun/dbmaster/master_stations on 10/10/2011  21:49:24.355 UTC -->
+<marker lat="58.2107" lng="-155.3260" station="ACH" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.1988" lng="-155.4940" station="ANCK" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.0525" lng="-155.3015" station="CAHL" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.1312" lng="-154.9692" station="KABR" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.6490" lng="-155.0060" station="KAHC" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.4940" lng="-154.5463" station="KAHG" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.4850" lng="-155.0458" station="KAIC" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.4978" lng="-154.7033" station="KARR" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.3837" lng="-154.7992" station="KAWH" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.2750" lng="-155.2017" station="KBM" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.2433" lng="-155.1833" station="KCE" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.3076" lng="-155.1114" station="KCG" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.4400" lng="-155.7407" station="KEL" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.0540" lng="-155.5732" station="KJL" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.3817" lng="-155.2950" station="KVT" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.1343" lng="-155.1608" station="MGLS" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.2709" lng="-155.2822" station="KABU" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="58.2970" lng="-155.0611" station="KAKN" channel="BHZ" network="AV" location="--" type="BB"/>
+</markers>

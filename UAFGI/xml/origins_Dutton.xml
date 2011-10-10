@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<merge>
+	<!-- created by css2volcxml from database: /Seis/Kiska4/picks/Total/Total on 10/10/2011  21:49:21.909 UTC -->
+<event id="38100093" network-code="AK" time-stamp="2011/10/10_21:49:21" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="09"/>
+<param name="day" value="15"/>
+<param name="hour" value="00"/>
+<param name="minute" value="16"/>
+<param name="second" value="27"/>
+<param name="latitude" value="55.0797"/>
+<param name="longitude" value="-162.2202"/>
+<param name="depth" value="-3.0"/>
+<param name="magnitude" value="0.4"/>
+<param name="num-stations" value="10"/>
+<param name="num-phases" value="10"/>
+<param name="local-time" value="Thu Sep 15, 2011 00:16:27 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="38100071" network-code="AK" time-stamp="2011/10/10_21:49:21" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="09"/>
+<param name="day" value="11"/>
+<param name="hour" value="01"/>
+<param name="minute" value="39"/>
+<param name="second" value="06"/>
+<param name="latitude" value="55.0978"/>
+<param name="longitude" value="-162.3605"/>
+<param name="depth" value="1.0"/>
+<param name="magnitude" value="0.7"/>
+<param name="num-stations" value="9"/>
+<param name="num-phases" value="9"/>
+<param name="local-time" value="Sun Sep 11, 2011 01:39:06 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="38000316" network-code="AK" time-stamp="2011/10/10_21:49:21" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="08"/>
+<param name="day" value="30"/>
+<param name="hour" value="17"/>
+<param name="minute" value="52"/>
+<param name="second" value="53"/>
+<param name="latitude" value="55.4003"/>
+<param name="longitude" value="-161.8420"/>
+<param name="depth" value="9.4"/>
+<param name="magnitude" value="1.0"/>
+<param name="num-stations" value="11"/>
+<param name="num-phases" value="10"/>
+<param name="local-time" value="Tue Aug 30, 2011 17:52:53 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+</merge>
