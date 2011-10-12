@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<merge>
+	<!-- created by css2volcxml from database: /Seis/Kiska4/picks/Total/Total on  9/27/2011  20:10:39.310 UTC -->
+<event id="38100110" network-code="AK" time-stamp="2011/09/27_20:10:39" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="09"/>
+<param name="day" value="17"/>
+<param name="hour" value="01"/>
+<param name="minute" value="18"/>
+<param name="second" value="43"/>
+<param name="latitude" value="60.2022"/>
+<param name="longitude" value="-152.7548"/>
+<param name="depth" value="6.3"/>
+<param name="magnitude" value="0.5"/>
+<param name="num-stations" value="10"/>
+<param name="num-phases" value="10"/>
+<param name="local-time" value="Sat Sep 17, 2011 01:18:43 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+</merge>

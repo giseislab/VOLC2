@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<volcanoes>
+<volcano name="All" lat="19.55" lon="-155.5" zoomlevel="8" />
+<volcano name="Kilauea" lat="19.36" lon="-155.24" zoomlevel="11" />
+<volcano name="Haleakala" lat="20.712" lon="-156.252" zoomlevel="11" />
+<volcano name="Hualalai" lat="19.690" lon="-155.868" zoomlevel="11" />
+<volcano name="Loihi" lat="18.908" lon="-155.252" zoomlevel="11" />
+<volcano name="MaunaKea" lat="19.8253" lon="-155.4743" zoomlevel="11" />
+<volcano name="MaunaLoa" lat="19.47" lon="-155.59" zoomlevel="11" />
+</volcanoes>

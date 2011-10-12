@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<markers>
+	<!-- created by css2volcxml from database: /avort/oprun/dbmaster/master_stations on  9/27/2011  20:10:32.707 UTC -->
+<marker lat="53.3958" lng="-168.1362" station="OKCF" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="53.4546" lng="-168.0493" station="OKER" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="53.4774" lng="-167.8162" station="OKID" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="53.5202" lng="-168.1641" station="OKRE" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="53.2526" lng="-168.2905" station="OKSP" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="53.3839" lng="-168.0411" station="OKTU" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="53.4721" lng="-168.2398" station="OKWE" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="53.4347" lng="-168.2056" station="OKWR" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="53.4123" lng="-168.3580" station="OKAK" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="53.4570" lng="-168.1237" station="OKNC" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="53.4270" lng="-168.1643" station="OKCE" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="53.4117" lng="-167.9095" station="OKFG" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="53.3575" lng="-168.1599" station="OKSO" channel="BHZ" network="AV" location="--" type="BB"/>
+</markers>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<markers>
+	<!-- created by css2volcxml from database: /avort/oprun/dbmaster/master_stations on  9/27/2011  20:10:40.183 UTC -->
+<marker lat="61.2669" lng="-152.3890" station="BGL" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="61.0702" lng="-152.2626" station="BKG" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="61.3077" lng="-152.0067" station="CGL" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="61.1964" lng="-152.3378" station="CKL" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="61.2240" lng="-152.1815" station="CKN" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="61.2008" lng="-152.2062" station="CKT" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="61.2642" lng="-152.2418" station="CP2" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="61.2670" lng="-152.1555" station="CRP" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="61.4037" lng="-152.1567" station="NCG" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="61.1817" lng="-152.0543" station="SPU" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="61.4988" lng="-151.8327" station="STLK" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="61.2734" lng="-152.5591" station="SPWE" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="61.2597" lng="-152.3699" station="SPBG" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="61.2919" lng="-152.0205" station="SPCG" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="61.2250" lng="-152.1832" station="SPCN" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="61.2661" lng="-152.1529" station="SPCP" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="61.2009" lng="-152.2068" station="SPCR" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="61.3333" lng="-152.6991" station="SPNN" channel="BHZ" network="AV" location="--" type="BB"/>
+</markers>

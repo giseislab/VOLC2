@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<markers>
+	<!-- created by css2volcxml from database: /avort/oprun/dbmaster/master_stations on  9/27/2011  20:10:31.521 UTC -->
+<marker lat="51.9802" lng="-176.6017" station="ADAG" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.9189" lng="-177.1953" station="KICM" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.8788" lng="-177.1704" station="KIKV" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.7616" lng="-177.2349" station="KIMD" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.9314" lng="-177.1276" station="KINC" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.8996" lng="-177.0935" station="KIRH" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.8531" lng="-177.1508" station="KIWB" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.8155" lng="-177.8128" station="TAPA" channel="EHZ" network="AV" location="--" type="SP"/>
+</markers>
