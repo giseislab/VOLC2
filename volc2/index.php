@@ -29,7 +29,7 @@
 	        	print "<script src=\"http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=$GMap2Key\" type=\"text/javascript\"></script>\n";
 		?>
 
-	<!--[if IE]><script language="javascript" type="text/javascript" src="js_scripts/flotr/excanvas.js"></script><![endif]-->
+		<!--[if IE]><script language="javascript" type="text/javascript" src="js_scripts/flotr/excanvas.js"></script><![endif]-->
 		<script src = "js_scripts/prototype-1.6.0.2.js"  type="text/javascript"></script>
 		<script src = "js_scripts/scriptaculous.js" type="text/javascript"></script>
 		<script type="text/javascript" src="http://www.google.com/jsapi"></script>
