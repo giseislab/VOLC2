@@ -1,10 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<volc2_configuration_parameters>
-<xml_directory>../xmlfiles/hvo</xml_directory>
-<title>VolcWeb, Your Source for Earthquakes in Hawaii!</title>
-<logo src="images/hvoLogo.gif" alt="HVO logo" />
-<public_site>http://hvo.wr.usgs.gov</public_site>
-<banner src="images/volc2logoHVO.png" alt="Volcano Earthquakes from HVO" />
-<legend>images/legendVolcTimeSmSym.png</legend>
-<network_code>HV</network_code>
-</volc2_configuration_parameters>
+volc2config_avo_uaf.xml
