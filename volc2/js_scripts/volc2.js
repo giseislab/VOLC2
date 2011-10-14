@@ -114,7 +114,7 @@ function loadMap() {
 		//google.setOnLoadCallback(initializeXSec());
 		document.getElementById("time_options").innerHTML=single_day_html;
 	}else{
-	alert("Javascript must be enabled in order for you to use volcWeb. To view, you must first enable JavaScript in your browser options and try again");
+	alert("Javascript must be enabled in order for you to use VOLC2. To view, you must first enable JavaScript in your browser options and try again");
 	}
 }
 
