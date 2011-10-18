@@ -60,7 +60,7 @@
                         $network_code = $config->network_code;
                         print "<title>$title $domain</title>\n";
 
-                        $volcano = !isset($_GET['volcano'])? "Arc" : $_GET['volcano'];
+                        $volcano = !isset($_GET['volcano'])? "All" : $_GET['volcano'];
 
                         # Read in the list of volcanoes
                         $xmlfile = "$xml_directory/volcanoes.xml";
