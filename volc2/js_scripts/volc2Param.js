@@ -22,9 +22,9 @@ var authorNW = network_code;
 plotStas = 1;
 
 //Station size
-SP_icon.iconSize = new GSize(15, 15);
-BB_icon.iconSize = new GSize(15, 15);
-SM_icon.iconSize = new GSize(15, 15);
+SP_icon.iconSize = new GSize(20, 20);
+BB_icon.iconSize = new GSize(20, 20);
+SM_icon.iconSize = new GSize(20, 20);
 
 //Variables for plotStations
 sidebar = 0;		//no sidebar
