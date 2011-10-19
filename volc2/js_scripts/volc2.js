@@ -20,6 +20,13 @@ Event.observe(window, 'load', function(){
 	}
 	$("plotVolcanoesTrue").observe('click', toggleVolcanoes);
 	$("plotVolcanoesFalse").observe('click', toggleVolcanoes);
+	/* GT: Easier to implement this functionality through changing the XML file at PHP level - see index.php
+	$("plotLastall").observe('click',shide);
+	$("plotLastyear").observe('click',shide);
+	$("plotLastmonth").observe('click',shide);
+	$("plotLastweek").observe('click',shide);
+	$("plotLastday").observe('click',shide);
+	*/
 	
 	//eqs
 	$("eqAll").observe('click',shide);
@@ -545,14 +552,13 @@ Eq = Class.create({
 	},
 	
 	getAge: function(){
-	  var millennium =new Date(this.yr, this.month-1, this.day) 
 	  //Get 1 day in milliseconds
-	  one_day=1000*60*60*24
-	  today=new Date()
+	  one_day=1000*60*60*24;
+	  today=new Date();
 	  age=today-this.epoch;
 	  ageInDays = age/one_day;
-	  return (ageInDays);
-	}
+	  return ageInDays;
+	},
 	
 	//plot the earthquake
 	plotEq: function(){

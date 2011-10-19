@@ -19,7 +19,8 @@ var symSize = 1;  //1 means use small earthquake symbols, 2 means use larger ear
 // circles and all non- network events to plot as squares
 var authorNW = network_code;
 
-plotStas = 1;
+plotStas = 0;
+plotVolcanoIcons = 0;
 
 //Station size
 SP_icon.iconSize = new GSize(20, 20);

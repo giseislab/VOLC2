@@ -120,6 +120,11 @@ END;
 		<script src = "js_scripts/plotVolcanoes.js" type="text/javascript"> </script>
 		<link rel="stylesheet" type="text/css" href="volc2.css" />
 		<link rel="Shortcut Icon" href="images/volc2shortcut.png"/>
+		<script>
+			function changeXMLFile(someObj) {
+				window.open('?volcano=' + volcanoname + '&timerange=' + someObj.value, '_top');
+			}
+		</script>
 	</head>
 	<body>
 		<div id ="header">
@@ -177,15 +182,15 @@ END;
                                         <form name="timerange">
                                         Show last:</br>
                                         <?php
-                                                $timeranges = array("day", "week", "month", "year");
+                                                $timeranges = array("day", "week", "month", "year", "all");
                                                 $timerange = !isset($_GET['timerange'])? "week" : $_GET['timerange'];
                                                 foreach($timeranges as $item) {
                                                         if ($item == $timerange) {
-                                                                print "\t\t<input type=radio id = \"plotLast$item\" Name=r1 Value=$item onClick =GetSelectedItem() checked>$item</input><br/>\n";
+                                                                print "\t\t<input type=radio onchange=\"changeXMLFile(this)\" Name=r1 Value=$item checked>$item</input><br/>\n";
                                                         }
                                                         else
                                                         {
-                                                                print "\t\t<input type=radio id = \"plotLast$item\"Name=r1 Value=$item onClick =GetSelectedItem()>$item</input><br/>\n";
+                                                                print "\t\t<input type=radio onchange=\"changeXMLFile(this)\" Name=r1 Value=$item >$item</input><br/>\n";
                                                         }
                                                 }
                                         ?>
@@ -193,22 +198,20 @@ END;
                                         </td></tr></table>
 					</div>
 					<div id = "controlRight">
-					 Plot EQ's by:<br/>
-					    <form>
-						<label><input type="radio" id ="plotTime" name="plot" checked = "checked" />Time</label><br/>
-						<label><input type="radio" id ="plotDepth" name="plot" />Depth</label><br/>
-					    </form>
-					<br/>
-					Plot Stations:<br/>
-					    <form>
-					    <label><input type="radio" id ="plotStaTrue" name="plot2" checked = "checked" />True</label><br/>
-						<label><input type="radio" id ="plotStaFalse" name="plot2" />False</label><br/>
-					    </form>
-					Plot Volcanoes:<br/>
-					    <form>
-					    <label><input type="radio" id ="plotVolcanoesTrue" name="plot3" checked = "checked" />True</label><br/>
-						<label><input type="radio" id ="plotVolcanoesFalse" name="plot3" />False</label><br/>
-					    </form>
+					<form>
+					 	Plot EQ's by:
+
+						<label><input type="radio" id ="plotTime" name="plot" checked = "checked" />Time</label>
+						<label><input type="radio" id ="plotDepth" name="plot" />Depth</label>
+						<br/>
+						Plot Stations: 
+					    	<label><input type="radio" id ="plotStaTrue" name="plot2" />Yes</label>
+					    	<label><input type="radio" id ="plotStaFalse" checked = "checked" name="plot2" />No</label>
+						<br/>
+						Plot Volcanoes:
+					    	<label><input type="radio" id ="plotVolcanoesTrue" name="plot3" />Yes</label>
+					    	<label><input type="radio" id ="plotVolcanoesFalse" checked = "checked" name="plot3" />No</label>
+					</form>
 					</div>
 					<div class = "clear"></div>
 					<hr/>
@@ -334,4 +337,6 @@ END;
 		urchinTracker();
 		</script>
 	</body>
+
+
 </html>
