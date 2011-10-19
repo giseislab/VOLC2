@@ -45,9 +45,17 @@ function getLink(net, id){
 	if(net.toUpperCase()=="NC"){
 		return "<a href ='http://quake.wr.usgs.gov/recenteqs/Quakes/nc" + id + ".htm'>"
 	}
-	if(net.toUpperCase()=="AK"){
+	/*
+	if(net.toUpperCase()=="AK"){ 
 		return "<a href ='http://thisIsADummyAddress/recenteqs/Quakes/nc" + id + ".htm'>"
 	}
+	if(net.toUpperCase()=="AT"){
+		return "<a href ='http://thisIsADummyAddress/recenteqs/Quakes/nc" + id + ".htm'>"
+	}
+	if(net.toUpperCase()=="AV"){
+		return "<a href ='http://thisIsADummyAddress/recenteqs/Quakes/nc" + id + ".htm'>"
+	}
+	*/
         if(net.toUpperCase()=="HV"){
                 return "<a href ='http://tux.wr.usgs.gov/Quakes/hv" + id + ".html'>"
         }

@@ -14,6 +14,13 @@ Event.observe(window, 'load', function(){
 	if (plotStas ==1){
 		plotStations();
 	}
+	// GT
+	if (plotVolcanoIcons ==1){
+		plotVolcanoes();
+	}
+	$("plotVolcanoesTrue").observe('click', toggleVolcanoes);
+	$("plotVolcanoesFalse").observe('click', toggleVolcanoes);
+	
 	//eqs
 	$("eqAll").observe('click',shide);
 	$("eq4").observe('click', shide);
@@ -35,6 +42,7 @@ Event.observe(window, 'load', function(){
 		clearXsec();
 		toggleStas();
 		plotStations();
+		plotVolcanoes();
 		document.getElementById("oneday").checked==true
 		document.getElementById("range").checked==false
 		document.getElementById("time_options").innerHTML=single_day_html;
@@ -67,6 +75,7 @@ var map;
 var side_bar_html = "";
 var gmarkers = []; //Eq markers
 var markers = []; //Station markers
+var volcanoMarker = []; //Volcano markers
 var count = 0;
 var zIndex = 10000;
 var depthOn = false; //if true, eq's plotted by depth, else eq's plotted by time
@@ -149,7 +158,7 @@ function getEqs(){
 	}
 }
 
-//parse quake xml
+//parse eventXml20 XML file
 function parseEqs(ajax){
 	$('loading').style.visibility = "hidden";
 	$("loadText").style.visibility = "hidden";
@@ -188,7 +197,7 @@ function parseEqs(ajax){
 		$("numberEQs").innerHTML= eqNum;
 }
 
-//parse quake xml
+//parse eventXmlAll XML file
 function parseEqs2(ajax){
 	$('loading').style.visibility = "hidden";
 	$("loadText").style.visibility = "hidden";
@@ -198,41 +207,41 @@ function parseEqs2(ajax){
 	gmarkers = [];
 	count = 0;
 	if(window.ActiveXObject){ // If IE
-	var xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
-	xmlDoc.loadXML(ajax.responseText);
+	  var xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+	  xmlDoc.loadXML(ajax.responseText);
 	} else {
-	var xmlDoc = ajax.responseXML;
+	  var xmlDoc = ajax.responseXML;
 	}
 	var timeNow = xmlDoc.getElementsByTagName('merge')[0].getAttribute('fileTime_loc');
 	timeUtc = xmlDoc.getElementsByTagName('merge')[0].getAttribute('fileTime_utc');
 	updateTime(timeNow)
 	var eventTag = xmlDoc.getElementsByTagName("event");
 	eq_markers = new Array ();
-		//for (var i = eventTag.length-1; i >= 0; i--) {//younger events first
-		for (var i = 0; i <= eventTag.length-1; i++) {
-			var param = eventTag[i].getElementsByTagName("param");
-			var eqParam = new Hash();
-			eqParam.set("id", eventTag[i].getAttribute("id"));
-			for(var j = 0; j< param.length; j++){
-                                var test = eqParam.get(param[j].getAttribute("name"));
-                                if (test == null){
-				eqParam.set(param[j].getAttribute("name"), param[j].getAttribute("value"));
-                          }
-			}
-			eq = new Eq(eqParam);
-			
-			var eqLoc = new Date(eqParam.get('year'), eqParam.get('month')-1, eqParam.get('day'), eqParam.get('hour'), eqParam.get('minute'), eqParam.get('second'));
-			//var eqLoc = new Date(eq.loc);
-			if (eqLoc>= date1 && eqLoc < date2) {
-				eventArray.push(eq); 
-				map.addOverlay(eq.plotEq());
-				eq.makeList();
-				eqNum++;
-				eq_markers.push(eq);
-			if (eqNum > maxMarkerPlot){ break;}
-			}
+	//for (var i = eventTag.length-1; i >= 0; i--) {//younger events first
+	for (var i = 0; i <= eventTag.length-1; i++) {
+		var param = eventTag[i].getElementsByTagName("param");
+		var eqParam = new Hash();
+		eqParam.set("id", eventTag[i].getAttribute("id"));
+		for(var j = 0; j< param.length; j++){
+		  var test = eqParam.get(param[j].getAttribute("name"));
+		  if (test == null){
+		    eqParam.set(param[j].getAttribute("name"), param[j].getAttribute("value"));
+                  }
 		}
-		$("numberEQs").innerHTML= eqNum;
+		eq = new Eq(eqParam);
+			
+		var eqLoc = new Date(eqParam.get('year'), eqParam.get('month')-1, eqParam.get('day'), eqParam.get('hour'), eqParam.get('minute'), eqParam.get('second'));
+		//var eqLoc = new Date(eq.loc);
+		if (eqLoc>= date1 && eqLoc < date2) {
+			eventArray.push(eq); 
+			map.addOverlay(eq.plotEq());
+			eq.makeList();
+			eqNum++;
+			eq_markers.push(eq);
+			if (eqNum > maxMarkerPlot){ break;}
+		}
+	}
+	$("numberEQs").innerHTML= eqNum;
 }
 
 //add time range earthquake parser
@@ -286,12 +295,12 @@ function updateEqs(){
 //add listener to sidebar list items
 function myclick(count) {
         GEvent.trigger(gmarkers[count], "click");
-      }
+}
 
 //////the following three functions are to manage the user checkbox clicks////////////
 
 //show or hide (shide) selected markers
-function shide(){
+function shide(){ // GT: Looks like this controls only which magnitude range is shown
 	var grp = this.id;
 	var checked = this.checked;
 	checkBoxes(grp);
@@ -312,7 +321,7 @@ function shide(){
 				}	
 			}
 		}else{
-      		if (gmarkers[i].grp == grp){//individual button clicked
+			if (gmarkers[i].grp == grp){//individual button clicked
 				if(checked){
         			gmarkers[i].show();
 					eqNum++;
@@ -322,8 +331,8 @@ function shide(){
 					map.closeInfoWindow();
 				}	
 			}
-      	}
-    }  	
+		}
+	}  	
 	$("numberEQs").innerHTML= eqNum;
 	updateXsec();
 }
@@ -458,6 +467,20 @@ function toggleStas(){
 		}
 	}
 }
+//Either plot the volcanoes or do not plot the volcanoes based on the button toggle
+function toggleVolcanoes(){
+	map.closeInfoWindow();
+	count = 0;
+	if(this.id =="plotStaTrue"){
+		plotVolcanoIcons = 1;
+		plotVolcanoes();
+	}else{
+		plotVolcanoIcons = 0;
+		for (var i = 0; i<volcanoMarker.length; i++){
+			volcanoMarker[i].remove();
+		}
+	}
+}
 //kill all markers and re-plot eqAll when when plot by time/depth is clicked
 function killMarkers(){
 	$("eqlist").innerHTML =""; 
@@ -488,8 +511,8 @@ function clearXmarks(){
 Eq = Class.create({
 	initialize: function(eq){
 		this.eId = eq.get('id');
-		//this.net = eq.get('network-code');
-		this.net = network_code; // this is now a global created in index.php and loaded from volc2config.xml
+		//this.net = eq.get('network-code'); // edited out by GT
+		this.net = network_code; // GT: this is now a global created in index.php and loaded from volc2config.xml
 		this.ver = eq.get('version');
 		this.yr = eq.get('year');
 		this.mon = eq.get('month');
@@ -506,6 +529,8 @@ Eq = Class.create({
 		this.listId;
 		this.marker;
 		this.point = new GLatLng(this.lat, this.lon);
+		this.epoch = new Date(this.yr, this.month-1, this.day); //Month is 0-11 in JavaScript
+		this.age = this.getAge();
 	},
 	//create a date string
 	getDate: function(){
@@ -514,19 +539,30 @@ Eq = Class.create({
 				+ " " + this.hr + ":" + this.min + ":0" + this.sec.substr(1,1));
 		}
 		else{
-		return 	(this.yr + "/" + this.mon + "/" + this.day
-				+ " " + this.hr + ":" + this.min + ":" + this.sec.substr(0,2));
+		  return 	(this.yr + "/" + this.mon + "/" + this.day
+		    + " " + this.hr + ":" + this.min + ":" + this.sec.substr(0,2));
 		}
 	},
+	
+	getAge: function(){
+	  var millennium =new Date(this.yr, this.month-1, this.day) 
+	  //Get 1 day in milliseconds
+	  one_day=1000*60*60*24
+	  today=new Date()
+	  age=today-this.epoch;
+	  ageInDays = age/one_day;
+	  return (ageInDays);
+	}
 	
 	//plot the earthquake
 	plotEq: function(){
 		side_bar_html = "";
 		//plot either depth or time
 		if(depthOn){
-			var image = this.getDepth();
+			var image = this.getDepthIcon();
 		}else{
-			var image = this.icon;
+			//var image = this.icon;
+			var image = this.getAgeIcon();
 		}
 		if(this.net.toUpperCase() != authorNW){
 			image += "_nonNet";
@@ -580,7 +616,7 @@ Eq = Class.create({
 	},
 	
 	//check depth of event to assign proper colored icon
-	 getDepth: function(){
+	 getDepthIcon: function(){
 		var z = this.dep;
 		if (vdepth ==1){
 			if (z < 1){
@@ -616,13 +652,30 @@ Eq = Class.create({
 			return "2";
 		}
 		if (z < 50){
-			return "orange"
+			return "orange";
 		}
 		if(z < 1000){
-			return "0"
+			return "0";
 		}}
 	},
 	
+	//check age of event to assign proper colored icon
+	 getAgeIcon: function(){
+		var days = this.age;
+		if (days < 1){
+			return "1";
+		}
+		if (days < 7){
+			return "blueGreen";
+		}
+		if (days < 30){
+			return "green";	
+		}
+		if (days < 365){
+			return "2";
+		}
+		return "orange";
+	},	
 	//create the side bar
 	makeList: function(){
 		var z = this.dep.split(".")[0];

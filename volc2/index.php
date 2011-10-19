@@ -63,8 +63,8 @@
                         $volcano = !isset($_GET['volcano'])? "Arc" : $_GET['volcano'];
 
                         # Read in the list of volcanoes
-                        $xmlfile = "$xml_directory/volcanoes.xml";
-                        $xml = simplexml_load_file($xmlfile); # or die("file not found: $xmlfile\n");
+                        $volcanoesxmlfile = "$xml_directory/volcanoes.xml";
+                        $xml = simplexml_load_file($volcanoesxmlfile); # or die("file not found: $xmlfile\n");
                         $c=0;
                         while ($volcano_name[$c] = $xml->volcano[$c]['name']):
                                 #print "<p>$volcano_name[$c]</p>\n";
@@ -106,6 +106,7 @@ END;
 			}
 		?>
                 <script type="text/javascript">
+                        volcanoesxmlfile = "<?php print $volcanoesxmlfile; ?>";
                         eventXml20 = "<?php print $eventXml20; ?>";
                         eventXmlAll = "<?php print $eventXmlAll; ?>";
                         staXML = "<?php print $staXML; ?>";
@@ -116,11 +117,9 @@ END;
 		<script src = "js_scripts/menu.js" type="text/javascript"> </script>
 		<script src = "js_scripts/volc2.js" type="text/javascript"> </script>
 		<script src = "js_scripts/xsec.js" type="text/javascript"> </script>
+		<script src = "js_scripts/plotVolcanoes.js" type="text/javascript"> </script>
 		<link rel="stylesheet" type="text/css" href="volc2.css" />
 		<link rel="Shortcut Icon" href="images/volc2shortcut.png"/>
-
-
-
 	</head>
 	<body>
 		<div id ="header">
@@ -182,11 +181,11 @@ END;
                                                 $timerange = !isset($_GET['timerange'])? "week" : $_GET['timerange'];
                                                 foreach($timeranges as $item) {
                                                         if ($item == $timerange) {
-                                                                print "\t\t<input type=radio Name=r1 Value=$item onClick =GetSelectedItem() checked>$item</input><br/>\n";
+                                                                print "\t\t<input type=radio id = \"plotLast$item\" Name=r1 Value=$item onClick =GetSelectedItem() checked>$item</input><br/>\n";
                                                         }
                                                         else
                                                         {
-                                                                print "\t\t<input type=radio Name=r1 Value=$item onClick =GetSelectedItem()>$item</input><br/>\n";
+                                                                print "\t\t<input type=radio id = \"plotLast$item\"Name=r1 Value=$item onClick =GetSelectedItem()>$item</input><br/>\n";
                                                         }
                                                 }
                                         ?>
@@ -204,6 +203,11 @@ END;
 					    <form>
 					    <label><input type="radio" id ="plotStaTrue" name="plot2" checked = "checked" />True</label><br/>
 						<label><input type="radio" id ="plotStaFalse" name="plot2" />False</label><br/>
+					    </form>
+					Plot Volcanoes:<br/>
+					    <form>
+					    <label><input type="radio" id ="plotVolcanoesTrue" name="plot3" checked = "checked" />True</label><br/>
+						<label><input type="radio" id ="plotVolcanoesFalse" name="plot3" />False</label><br/>
 					    </form>
 					</div>
 					<div class = "clear"></div>

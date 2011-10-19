@@ -6,7 +6,7 @@ function make_ALLcal() {
 	request.open("GET", summaryXML, true);
 	request.onreadystatechange = function() {
 		if (request.readyState == 4) {
-      var xmlDoc = GXml.parse(request.responseText);
+			var xmlDoc = GXml.parse(request.responseText);
 			var uptimes = xmlDoc.documentElement.getElementsByTagName("uptime");
 			
 			lastd = uptimes[0].getAttribute("upday");
@@ -15,25 +15,25 @@ function make_ALLcal() {
 			var ttt = xmlDoc.documentElement.getElementsByTagName("total");
 			for (var i = 0; i < ttt.length; i++) {
 			  dates[i] = Calendar.dateToInt(Calendar.printDate(new Date(ttt[i].getAttribute("date")),"%Y%m%d"));
-      }
-      for (var j=0; j < ALLXML.length; j++) {
-        var thisarray=[];
-        for (var i=0; i < ttt.length; i++) {
-          thisarray[i] = parseFloat(ttt[i].getAttribute(ALLXML[j]+"hours"));			    
-        }
-        var xmlstring=ALLXML[j];
-        XML[xmlstring]=thisarray;
-      }
-			savedatesALL(dates,ALLXML);
-			 cal = Calendar.setup({
-       min: 20070101,
-       max: Calendar.dateToInt(Calendar.printDate(lastd,"%Y%m%d")),
-       fdow: 0,
-       bottomBar: false,
-       dateInfo: getDateInfoALL,
-       onSelect: function(cal) { cal.hide() }      
-     });
-     loadCal();
+		}
+		for (var j=0; j < ALLXML.length; j++) {
+		  var thisarray=[];
+		  for (var i=0; i < ttt.length; i++) {
+		    thisarray[i] = parseFloat(ttt[i].getAttribute(ALLXML[j]+"hours"));			    
+		  }
+		  var xmlstring=ALLXML[j];
+		  XML[xmlstring]=thisarray;
+		}
+		savedatesALL(dates,ALLXML);
+		cal = Calendar.setup({
+		  min: 20070101,
+		  max: Calendar.dateToInt(Calendar.printDate(lastd,"%Y%m%d")),
+		  fdow: 0,
+		  bottomBar: false,
+		  dateInfo: getDateInfoALL,
+		  onSelect: function(cal) { cal.hide() }      
+		});
+		loadCal();
 		}
 	}
 	request.send(null);
@@ -44,10 +44,10 @@ function savedatesALL(dates,ALLXML) {
   var j=0;
   for (var i = 0; i < dates.length; i++) {
     var testhour=0;
-	  for (k = 0; k < ALLXML.length; k++) {
-	    var xmlstring=ALLXML[k];
-	    var testhours=XML[xmlstring];
-	    testhour=testhour+testhours[i];
+    for (k = 0; k < ALLXML.length; k++) {
+	var xmlstring=ALLXML[k];
+	var testhours=XML[xmlstring];
+	testhour=testhour+testhours[i];
     }
     if (testhour>=1) {
       for (k = 0; k < ALLXML.length; k++) {
