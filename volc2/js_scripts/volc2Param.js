@@ -72,13 +72,52 @@ var TDExist = 0;
 var CMMExist = 0;
 
 //HTML code for date range
-var date_control_html = '<table><td><label><input type="radio" id ="oneday" name="dtselect" onClick="getRange()" checked="yes"> Single</label></td><td><label><input type="radio" id ="range" name="dtselect" onClick="getRange()"> Range</label></td></table>'
-var single_day_html='<table><td>Date:<br><input id="day" type="text" style="width:70px;" name="singleday" value="mm/dd/yyyy" onkeypress="if(event.keyCode==13){updateDates()}"></td></table><table><td><input id="mybutton" type="submit" value="Plot" onClick="updateDates()"></td><td><input id="this1" type="button" value="Prev" onClick="prevday()"></td><td><input id="that1" type="button" value="Next" onClick="nextday()"></td></table>';
-var new_single_day_html='<table><td>Date:<br><input id="day" type="text" style="width:70px;"name="singleday" value="mm/dd/yyyy" onkeypress="if(event.keyCode==13){updateDates()}"></td></table><table><td><input id="mybutton" type="submit" value="Plot" onClick="updateDates()"></td><td><input id="this1" type="button" value="Prev" onClick="prevday()"></td><td><input id="that1" type="button" value="Next" onClick="nextday()"></td></table>';
-var range_days_html='<table><td>Start:<br><input id="dayone" type="text" style="width:70px;" name="dayone" value="mm/dd/yyyy" onkeypress="if(event.keyCode==13){updateDates()}"></td><td></td><td>End:<br><input id="daytwo" type="text" style="width:70px;" name="daytwo" value="mm/dd/yyyy" onkeypress="if(event.keyCode==13){updateDates()}"></td></table><table><td><input id="mybutton" type="button" value="Plot" onClick="updateDates()"></td></table>';
+var date_control_html = 	'<table>' + 
+					'<td><label><input type="radio" id ="oneday" name="dtselect" onClick="getRange()"> Single</label></td>' +
+					'<td><label><input type="radio" id ="range" name="dtselect" onClick="getRange()"> Range</label></td>' +
+					'<td><label><input type="radio" id = "last" name="dtselect" onClick="getRange()" checked="yes"> Last</label></td>' + 
+				'</table>';
+
+var single_day_html=		'<table>' + 
+					'<td>Date:<br><input id="day" type="text" style="width:70px;" name="singleday" value="mm/dd/yyyy" onkeypress="if(event.keyCode==13){updateDates()}"></td>' +
+				'</table>' + 
+				'<table>' + 
+					'<td><input id="mybutton" type="submit" value="Plot" onClick="updateDates()"></td>' + 
+					'<td><input id="this1" type="button" value="Prev" onClick="prevday()"></td>' + '<td><input id="that1" type="button" value="Next" onClick="nextday()"></td>' + 
+				'</table>';
+
+var new_single_day_html=	'<table>' + 
+					'<td>Date:<br><input id="day" type="text" style="width:70px;"name="singleday" value="mm/dd/yyyy" onkeypress="if(event.keyCode==13){updateDates()}"></td>' + 
+				'</table>' + 
+				'<table>' + 
+					'<td><input id="mybutton" type="submit" value="Plot" onClick="updateDates()"></td><td><input id="this1" type="button" value="Prev" onClick="prevday()"></td>' + 
+					'<td><input id="that1" type="button" value="Next" onClick="nextday()"></td>' + 
+				'</table>';
+
+var range_days_html=		'<table>' + 
+					'<td>Start:<br><input id="dayone" type="text" style="width:70px;" name="dayone" value="mm/dd/yyyy" onkeypress="if(event.keyCode==13){updateDates()}"></td>' + 
+					'<td></td>' + 
+					'<td>End:<br><input id="daytwo" type="text" style="width:70px;" name="daytwo" value="mm/dd/yyyy" onkeypress="if(event.keyCode==13){updateDates()}"></td>' + 
+				'</table>' + 
+				'<table>' + 
+					'<td><input id="mybutton" type="button" value="Plot" onClick="updateDates()"></td>' + 
+				'</table>';
 
 //HTML code for xsec
 var initialXsec ='To generate a cross-sectional plot, first define the cross-sectional area by clicking on the map to define the two endpoints, then enter in a Cross Section Width (default is 10 km), then click the "Plot X-section" button';
-var twoClickXsec = '<table><td>Cross Section Width (km):<br><input id="Xwidth" type="text" style="width:80px;" name="Xwidth" value="10" onkeypress="if(event.keyCode==13){getXsec()}"></td></table><table><td><input id="plotX" type="submit" value="Plot X-section" onClick="getXsec()"></td><td><input id="this1" type="button" value="Clear X-Section" onClick="clearXsec()"></td></table>';
-var xsecPlotted = '<table><td>Cross Section Width (km):<br><input id="Xwidth" type="text" style="width:80px;" name="Xwidth" value="10" onkeypress="if(event.keyCode==13){getXsec()}"></td></table><td><input id="this1" type="button" value="Clear" onClick="clearXsec()"></td></table>';
+
+var twoClickXsec = 		'<table>' + 
+					'<td>Cross Section Width (km):<br><input id="Xwidth" type="text" style="width:80px;" name="Xwidth" value="10" onkeypress="if(event.keyCode==13){getXsec()}"></td>' + 
+				'</table>' + 
+				'<table>' + 
+					'<td><input id="plotX" type="submit" value="Plot X-section" onClick="getXsec()"></td>' + 
+					'<td><input id="this1" type="button" value="Clear X-Section" onClick="clearXsec()"></td>' + 
+				'</table>';
+
+var xsecPlotted = 		'<table>' + 
+					'<td>Cross Section Width (km):<br><input id="Xwidth" type="text" style="width:80px;" name="Xwidth" value="10" onkeypress="if(event.keyCode==13){getXsec()}"></td>' + 
+				'</table>' + 
+				'<table>' + 
+					'<td><input id="this1" type="button" value="Clear" onClick="clearXsec()"></td>' + 
+				'</table>';
 

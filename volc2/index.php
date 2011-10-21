@@ -97,14 +97,41 @@ END;
 
 		<!-- # Set XML filenames here -->
 		<?php
-			$eventXml20 = "$xml_directory/origins_$volcano.xml";
-			$eventXmlAll = "$xml_directory/origins_$volcano.xml";
+                        $timerange = !isset($_GET['timerange'])? "week" : $_GET['timerange'];
+			$eventXml20 = "$xml_directory/origins_$volcano"."_".$timerange.".xml";
+			$eventXmlAll = $eventXml20;
 			$staXML = "$xml_directory/stations_$volcano.xml";
 			if (!file_exists($staXML)) { # GT 2011/11/12: This is a hack so I can use the
-			# HVO sta_file.xml file from Wes
+			# HVO sta_file.xml file from Wes for HVO data
 				$staXML = "$xml_directory/sta_file.xml";
 			}
+			if (!file_exists($staXML)) { 
+				die("</head><body>Station XML file ($staXML) not found</body></html>");
+			}
+			if (!file_exists($eventXml20)) { 
+				die("</head><body>Event XML file ($eventXml20) not found</body></html>");
+			}
 		?>
+                <script type="text/javascript">
+			radioTimeRangeHTML =	'<form name="timerange">' + 
+                                   			'Show last:</br>' + 
+                                   			<?php
+                                           			$timeranges = array("day"=>1, "week"=>7, "month"=>30, "year"=>365, "all"=>0);
+
+                                           			foreach($timeranges as $item=>$numdays) {
+                                                   			if ($item == $timerange) {
+                                                        			#print "\t\t'<input type=radio onchange=\"changeXMLFile(this)\" Name=radioTimeRange Value=$numdays checked>$item</input><br/>' + \n";
+                                                        			print "\t\t'<input type=radio onchange=\"timeRangeChanged(this)\" Name=radioTimeRange Value=$numdays checked>$item</input><br/>' + \n";
+                                                   			}
+                                                   			else
+                                                   			{
+                                                        			#print "\t\t'<input type=radio onchange=\"changeXMLFile(this)\" Name=radioTimeRange Value=$numdays >$item</input><br/>' + \n";
+                                                        			print "\t\t'<input type=radio onchange=\"timeRangeChanged(this)\" Name=radioTimeRange Value=$numdays >$item</input><br/>' + \n";
+                                                   			}
+                                           			}	
+                                   			?> 
+                                   		'</form>';
+		</script>
                 <script type="text/javascript">
                         volcanoesxmlfile = "<?php print $volcanoesxmlfile; ?>";
                         eventXml20 = "<?php print $eventXml20; ?>";
@@ -168,57 +195,42 @@ END;
                                         </select>
 
                                         <table>
-                                        <tr><td>
-					Magnitudes: <br/>
-					<label><input type="checkbox" id ="eqAll" name="eqselect" checked ="checked"/> All EQ's</label><br/>
-					<label><input type="checkbox" id ="eq4" name="eqselect"/> &gt; 4.0 </label><br/>
-					<label><input type="checkbox" id ="eq3" name="eqselect"/> 3.0 - 3.9 </label><br/>
-					<label><input type="checkbox" id ="eq2" name="eqselect"/> 2.0 - 2.9 </label><br/>
-					<label><input type="checkbox" id ="eq1" name="eqselect" /> 1.0 - 1.9 </label><br/>
-					<label><input type="checkbox" id ="eq0" name="eqselect"/> &lt; 1.0 </label><br/><br/>
-                                   </td>
-                                        <td>&nbsp;&nbsp;</td>
-                                        <td valign="top">
-                                        <form name="timerange">
-                                        Show last:</br>
-                                        <?php
-                                                $timeranges = array("day", "week", "month", "year", "all");
-                                                $timerange = !isset($_GET['timerange'])? "week" : $_GET['timerange'];
-                                                foreach($timeranges as $item) {
-                                                        if ($item == $timerange) {
-                                                                print "\t\t<input type=radio onchange=\"changeXMLFile(this)\" Name=r1 Value=$item checked>$item</input><br/>\n";
-                                                        }
-                                                        else
-                                                        {
-                                                                print "\t\t<input type=radio onchange=\"changeXMLFile(this)\" Name=r1 Value=$item >$item</input><br/>\n";
-                                                        }
-                                                }
-                                        ?>
-                                        </form>
-                                        </td></tr></table>
-					</div>
-					<div id = "controlRight">
+                                        	<tr>
+							<td>
+								Magnitudes: <br/>
+								<label><input type="checkbox" id ="eqAll" name="eqselect" checked ="checked"/> All EQ's</label><br/>
+								<label><input type="checkbox" id ="eq4" name="eqselect"/> &gt; 4.0 </label><br/>
+								<label><input type="checkbox" id ="eq3" name="eqselect"/> 3.0 - 3.9 </label><br/>
+								<label><input type="checkbox" id ="eq2" name="eqselect"/> 2.0 - 2.9 </label><br/>
+								<label><input type="checkbox" id ="eq1" name="eqselect" /> 1.0 - 1.9 </label><br/>
+								<label><input type="checkbox" id ="eq0" name="eqselect"/> &lt; 1.0 </label><br/><br/>
+                                   			</td>
+                                   			<td>&nbsp;&nbsp;</td>
+                                   			<td valign="top">
+                                   			</td>
+						</tr>
+					</table>
+				</div>
+				<div id = "controlRight">
 					<form>
-					 	Plot EQ's by:
-
+					 	Color EQ's by:
 						<label><input type="radio" id ="plotTime" name="plot" checked = "checked" />Time</label>
 						<label><input type="radio" id ="plotDepth" name="plot" />Depth</label>
 						<br/>
-						Plot Stations: 
+						Show Stations: 
 					    	<label><input type="radio" id ="plotStaTrue" name="plot2" />Yes</label>
 					    	<label><input type="radio" id ="plotStaFalse" checked = "checked" name="plot2" />No</label>
 						<br/>
-						Plot Volcanoes:
+						Show Volcanoes:
 					    	<label><input type="radio" id ="plotVolcanoesTrue" name="plot3" />Yes</label>
 					    	<label><input type="radio" id ="plotVolcanoesFalse" checked = "checked" name="plot3" />No</label>
 					</form>
-					</div>
-					<div class = "clear"></div>
-					<hr/>
-					<div id="xsec_options"></div>
-					<hr/>
-					<div id = "controlLeft">
-					Time Options: 
+				</div>
+				<div class = "clear"></div>
+				<hr/>
+				<div id="xsec_options"></div>
+				<hr/>
+				<div id = "controlLeft">
 					<img id = "helpWebi" src ="images/help.png" alt ="help"/><br/>
 					<!--webicorder help box-->
 					<div id = 'webiHelpBox' style = "display: none">
@@ -235,20 +247,22 @@ END;
 							for that particular station.  Webicorders show a record of how the
 							 ground moved at a particular seismograph station. They are divided into the following types of
 							stations:
-							</p>
-							<ul>
-								<li>Short-period (red)</li>
-								<li>Broadband(blue)</li>
-								<li>Strong Motion(black)</a></li>
-							</ul>
+						</p>
+						<ul>
+							<li>Short-period (red)</li>
+							<li>Broadband(blue)</li>
+							<li>Strong Motion(black)</a></li>
+						</ul>
 						<p>
 							The 12 and 24 hour webicorders are updated hourly.  The 6 hour webicorders are 
 							live.
 						</p>	
 					</div>
-						<div id="time_options"></div>
-						<div id="datecontrol"></div><p>
-					</div>
+					Time Options: 
+					<div id="datecontrol"></div><p>
+					<div id="timerange_options"></div>
+					<div id="time_options"></div>
+				</div>
 				
 				<div class = "clear"></div>
 				<!--<div id = 'webiEventDisplay' style = "display: none"></div>-->
@@ -271,72 +285,74 @@ END;
 		<!-- Begin code to get single date or range of dates -->
 		<script type="text/javascript">
      	 
-		if (GBrowserIsCompatible()) {
-      
-      		document.getElementById("datecontrol").innerHTML=date_control_html;
-      		document.getElementById("xsec_options").innerHTML=initialXsec;
-      		var stop_id = 0;
-			//var map;      
-      		var prev_trem =[];
-      		var tremtime = [];
-      		var dailyhours = [];
-			var dailynum = [];
-			var daycount = 0;
-			var thiscount = 0;         
-      		var stamarkers=[];     
-			var lastd;
-     		var DATE_INFO = [];
-      		var NEWhours = [];
-			var NEWdates = [];
+			if (GBrowserIsCompatible()) {
+	      			document.getElementById("timerange_options").innerHTML=radioTimeRangeHTML;
+	      			document.getElementById("datecontrol").innerHTML=date_control_html;
+      				document.getElementById("xsec_options").innerHTML=initialXsec;
+
+      				var stop_id = 0;
+				//var map;      
+      				var prev_trem =[];
+      				var tremtime = [];
+      				var dailyhours = [];
+				var dailynum = [];
+				var daycount = 0;
+				var thiscount = 0;         
+      				var stamarkers=[];     
+				var lastd;
+     				var DATE_INFO = [];
+      				var NEWhours = [];
+				var NEWdates = [];
 			
-		
-		//Start the calendar setup
-		var cal = Calendar.setup({
-          	onSelect: function(cal) { cal.hide(); }
-     	 });	
+				//Start the calendar setup
+				var cal = Calendar.setup({
+          			onSelect: function(cal) { cal.hide(); }
+     	 		});	
 
 		    
-		function datetostr(day) {
+			function datetostr(day) {
 				var mon = day.getMonth(); var d = day.getDate(); var Y = day.getFullYear();
 				var textdate = mon+1 + '/' + d + '/' + Y;
 				return textdate;
 			};
       
-      function getRange() {
-        if (document.getElementById("oneday").checked==true) {
-          document.getElementById("time_options").innerHTML = new_single_day_html;
-          cal.manageFields("day", "day", "%m/%d/%Y");
-        } else {
-          document.getElementById("time_options").innerHTML = range_days_html;
-          cal.manageFields("dayone", "dayone", "%m/%d/%Y");
-          cal.manageFields("daytwo", "daytwo", "%m/%d/%Y");
-				}
-      };
+      			function getRange() {
+        			if (document.getElementById("oneday").checked==true) {
+          				document.getElementById("time_options").innerHTML = new_single_day_html;
+					document.getElementById("timerange_options").innerHTML = "";
+          				cal.manageFields("day", "day", "%m/%d/%Y");
+        			} else {
+        				if (document.getElementById("range").checked==true) {
+          					document.getElementById("time_options").innerHTML = range_days_html;
+						document.getElementById("timerange_options").innerHTML = "";
+          					cal.manageFields("dayone", "dayone", "%m/%d/%Y");
+          					cal.manageFields("daytwo", "daytwo", "%m/%d/%Y");
+					} else { // last
+						document.getElementById("timerange_options").innerHTML = radioTimeRangeHTML;
+						document.getElementById("time_options").innerHTML = "";
+					}
+					
+				}		
+      			};
       
-			function rangeChanged(range) {
-				if (document.getElementById("oneday").checked==true) {
-					document.getElementById("range").checked=true;
-					getRange();
-				}
-				D1=new Date(range.start);D1.setDate(D1.getDate()+1);
-				m1=D1.getMonth()+1;d1=D1.getDate();y1=D1.getFullYear();
-				D2=new Date(range.end);D2.setDate(D2.getDate()+1);
-				m2=D2.getMonth()+1;d2=D2.getDate();y2=D2.getFullYear();
-				document.getElementById("dayone").value=m1+'/'+d1+'/'+y1;
-				document.getElementById("daytwo").value=m2+'/'+d2+'/'+y2;
-			};
-}
+			function timeRangeChanged(someObj) {
+                      		numDays = someObj.value;
+                      		date1 = new Date();
+                      		date2 = new Date();
+                      		date1.setDate(date2.getDate()-numDays);
+				getEqs();
+			}
 
-</script>
+		}
+		</script>
 		
 		
-	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+		<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
 		</script>
 		<script type="text/javascript">
-		_uacct = "UA-4670028-1";
-		urchinTracker();
+			_uacct = "UA-4670028-1";
+			urchinTracker();
 		</script>
 	</body>
-
 
 </html>

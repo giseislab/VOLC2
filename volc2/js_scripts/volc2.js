@@ -52,9 +52,9 @@ Event.observe(window, 'load', function(){
 		plotVolcanoes();
 		document.getElementById("oneday").checked==true
 		document.getElementById("range").checked==false
-		document.getElementById("time_options").innerHTML=single_day_html;
-		document.getElementById("plotStaTrue").checked==true
-		document.getElementById("plotStaFalse").checked==false
+		//document.getElementById("time_options").innerHTML=single_day_html;
+		document.getElementById("plotStaTrue").checked==false
+		document.getElementById("plotStaFalse").checked==true
 	});
 	
 	//scriptacolous effects
@@ -128,7 +128,7 @@ function loadMap() {
 			}
 		}});
 		//google.setOnLoadCallback(initializeXSec());
-		document.getElementById("time_options").innerHTML=single_day_html;
+		//document.getElementById("time_options").innerHTML=single_day_html;
 	}else{
 	alert("Javascript must be enabled in order for you to use VOLC2. To view, you must first enable JavaScript in your browser options and try again");
 	}
@@ -502,7 +502,7 @@ function resetControl(){
 	for(var i =0; i < 5; i++){
 		$('eq' + i).checked = false;
 	}
-	$("time_options").innerHTML=single_day_html;
+	//$("time_options").innerHTML=single_day_html;
 	//killMarkers();
 	//loadMap();
 	//getEqs();
@@ -536,7 +536,7 @@ Eq = Class.create({
 		this.listId;
 		this.marker;
 		this.point = new GLatLng(this.lat, this.lon);
-		this.epoch = new Date(this.yr, this.month-1, this.day); //Month is 0-11 in JavaScript
+		this.epoch = new Date(this.yr, this.mon-1, this.day, this.hr, this.min, this.sec); //Month is 0-11 in JavaScript
 		this.age = this.getAge();
 	},
 	//create a date string
@@ -730,11 +730,13 @@ Eq = Class.create({
 	
 	//html for info window
 	getHtml: function(){
-		var name = ["Magnitude: ", "Time (UTC):", "Time (Local):", "Depth (Km): ", "Event Id:" ];
+		//var name = ["Magnitude: ", "Time (UTC):", "Time (Local):", "Depth (Km): ", "Event Id:", "Origin time:", "Age (Days):" ];
+		var name = ["Magnitude: ", "Depth (Km): ", "Event Id:", "Origin time:", "Age (Days):" ];
 		var eqDate = new Date(this.yr, this.mon, this.day, this.hr, this.min, this.sec);
 		var noPage = new Date();
 		noPage.setDate(noPage.getDate()-14);
-		var param = [this.mag, this.getDate(), this.loc, this.dep, this.eId ];
+		//var param = [this.mag, this.getDate(), this.loc, this.dep, this.eId, this.epoch, this.age ];
+		var param = [this.mag, this.dep, this.eId, this.epoch, this.age.toFixed(1) ];
 		var html = "<div class = 'eqWin'> \n";
 		if (eqDate > noPage ){
 		var link = getLink(this.net, this.eId);

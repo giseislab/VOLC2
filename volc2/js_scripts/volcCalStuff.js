@@ -171,8 +171,16 @@ function updateDates() {
 		date1 = new Date(document.getElementById("day").value);
 		date2 = new Date(document.getElementById("day").value);
 	}else {
-		date1 = new Date(document.getElementById("dayone").value);
-		date2 = new Date(document.getElementById("daytwo").value);
+		if (document.getElementById("range").checked==true) {
+			date1 = new Date(document.getElementById("dayone").value);
+			date2 = new Date(document.getElementById("daytwo").value);
+		} else {
+// Added by GT but omitted because was getting "Uncaught TypeError: Cannot read property 'value' of null"
+//			numDays = document.getElementById("radioTimeRange").value;
+//			date1 = new Date();
+//			date2 = new Date();
+//			date1.setDate(date2.getDate()-numDays); 
+		}
 	}
 	date2.setDate(date2.getDate()+1);
 	if (date1.getYear()<70) {
