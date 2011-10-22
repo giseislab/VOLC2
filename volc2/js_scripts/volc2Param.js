@@ -8,8 +8,8 @@ Glenn Thompson, Alaska Volcano Observatory
 var initialPlot = 1;
 var initialMarkerPlot = 20;
 var maxMarkerPlot = 5000;
-var date1 = new Date(1970, 0, 1, 0, 0, 0);
-var date2 = new Date();
+//var date1 = new Date(1970, 0, 1, 0, 0, 0);
+//var date2 = new Date();
 var vdepth = 1;
 var corr = 0;   //Elevation of velocity model datum
 var req = 0;    //Uses smaller earthquake symbols, plots different legends

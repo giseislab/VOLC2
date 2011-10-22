@@ -93,11 +93,13 @@ END;
                         volcanoname = "<?php print $volcano; ?>";
                         xml_directory = "<?php print $xml_directory; ?>";
                         network_code = "<?php print $network_code; ?>";
+			var date1 = new Date(1970, 0, 1, 0, 0, 0);
+			var date2 = new Date();
                 </script>
 
 		<!-- # Set XML filenames here -->
 		<?php
-                        $timerange = !isset($_GET['timerange'])? "week" : $_GET['timerange'];
+                        $timerange = !isset($_GET['timerange'])? "year" : $_GET['timerange'];
 			$eventXml20 = "$xml_directory/origins_$volcano"."_".$timerange.".xml";
 			$eventXmlAll = $eventXml20;
 			$staXML = "$xml_directory/stations_$volcano.xml";
@@ -112,6 +114,14 @@ END;
 				die("</head><body>Event XML file ($eventXml20) not found</body></html>");
 			}
 		?>
+		<script src = "js_scripts/volc2Param.js" type="text/javascript"> </script>
+		<script src = "js_scripts/volcCalStuff.js" type="text/javascript"> </script>
+		<script src = "js_scripts/menu.js" type="text/javascript"> </script>
+		<script src = "js_scripts/volc2.js" type="text/javascript"> </script>
+		<script src = "js_scripts/xsec.js" type="text/javascript"> </script>
+		<script src = "js_scripts/plotVolcanoes.js" type="text/javascript"> </script>
+		<link rel="stylesheet" type="text/css" href="volc2.css" />
+		<link rel="Shortcut Icon" href="images/volc2shortcut.png"/>
                 <script type="text/javascript">
 			radioTimeRangeHTML =	'<form name="timerange">' + 
                                    			'Show last:</br>' + 
@@ -138,15 +148,6 @@ END;
                         eventXmlAll = "<?php print $eventXmlAll; ?>";
                         staXML = "<?php print $staXML; ?>";
                 </script>
-
-		<script src = "js_scripts/volc2Param.js" type="text/javascript"> </script>
-		<script src = "js_scripts/volcCalStuff.js" type="text/javascript"> </script>
-		<script src = "js_scripts/menu.js" type="text/javascript"> </script>
-		<script src = "js_scripts/volc2.js" type="text/javascript"> </script>
-		<script src = "js_scripts/xsec.js" type="text/javascript"> </script>
-		<script src = "js_scripts/plotVolcanoes.js" type="text/javascript"> </script>
-		<link rel="stylesheet" type="text/css" href="volc2.css" />
-		<link rel="Shortcut Icon" href="images/volc2shortcut.png"/>
 		<script>
 			function changeXMLFile(someObj) {
 				window.open('?volcano=' + volcanoname + '&timerange=' + someObj.value, '_top');
@@ -330,6 +331,8 @@ END;
 					} else { // last
 						document.getElementById("timerange_options").innerHTML = radioTimeRangeHTML;
 						document.getElementById("time_options").innerHTML = "";
+          					cal.manageFields("dayone", "dayone", "%m/%d/%Y");
+          					cal.manageFields("daytwo", "daytwo", "%m/%d/%Y");
 					}
 					
 				}		
@@ -337,9 +340,14 @@ END;
       
 			function timeRangeChanged(someObj) {
                       		numDays = someObj.value;
+          			//cal.manageFields("dayone", "dayone", "%m/%d/%Y");
+          			//cal.manageFields("daytwo", "daytwo", "%m/%d/%Y");
                       		date1 = new Date();
                       		date2 = new Date();
                       		date1.setDate(date2.getDate()-numDays);
+				//document.getElementById("day").value=datetostr(date1);
+				//document.getElementById("dayone").value=datetostr(date1);
+				//document.getElementById("daytwo").value=datetostr(date2);
 				getEqs();
 			}
 
