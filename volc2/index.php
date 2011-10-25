@@ -99,8 +99,9 @@ END;
 
 		<!-- # Set XML filenames here -->
 		<?php
-                        $timerange = !isset($_GET['timerange'])? "year" : $_GET['timerange'];
-			$eventXml20 = "$xml_directory/origins_$volcano"."_".$timerange.".xml";
+                        $timerange = !isset($_GET['timerange'])? "week" : $_GET['timerange'];
+			#$eventXml20 = "$xml_directory/origins_$volcano"."_".$timerange.".xml";
+			$eventXml20 = "$xml_directory/origins_$volcano.xml";
 			$eventXmlAll = $eventXml20;
 			$staXML = "$xml_directory/stations_$volcano.xml";
 			if (!file_exists($staXML)) { # GT 2011/11/12: This is a hack so I can use the
@@ -331,8 +332,8 @@ END;
 					} else { // last
 						document.getElementById("timerange_options").innerHTML = radioTimeRangeHTML;
 						document.getElementById("time_options").innerHTML = "";
-          					cal.manageFields("dayone", "dayone", "%m/%d/%Y");
-          					cal.manageFields("daytwo", "daytwo", "%m/%d/%Y");
+          					//cal.manageFields("dayone", "dayone", "%m/%d/%Y");
+          					//cal.manageFields("daytwo", "daytwo", "%m/%d/%Y");
 					}
 					
 				}		
@@ -345,10 +346,7 @@ END;
                       		date1 = new Date();
                       		date2 = new Date();
                       		date1.setDate(date2.getDate()-numDays);
-				//document.getElementById("day").value=datetostr(date1);
-				//document.getElementById("dayone").value=datetostr(date1);
-				//document.getElementById("daytwo").value=datetostr(date2);
-				getEqs();
+				getEqs(date1, date2);
 			}
 
 		}
