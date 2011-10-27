@@ -78,6 +78,7 @@ var map;
 var side_bar_html = "";
 var gmarkers = []; //Eq markers
 var markers = []; //Station markers
+var stamarker = []; //Station markers
 var vmarkers = []; //Volcano markers
 var count = 0;
 var zIndex = 10000;
