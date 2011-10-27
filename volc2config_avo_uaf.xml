@@ -6,7 +6,7 @@
 <logo src="images/avoLogo.jpg" alt="AVO logo" />
 <public_site>www.avo.alaska.edu</public_site>
 <banner src="images/volc2logoAVO.png" alt="Volcano Earthquakes from AVO" />
-<legend>images/legendVolcTimeRange.png</legend>
+<legend>images/legendVolc2TimeRange.png</legend>
 <volcanomarkersxmlfile>volcanomarkers.xml</volcanomarkersxmlfile>
 <volcanoviewsxmlfile>volcanoviews.xml</volcanoviewsxmlfile>
 <initialview>Spurr</initialview>
