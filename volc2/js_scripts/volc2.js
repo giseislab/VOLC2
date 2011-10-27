@@ -20,13 +20,6 @@ Event.observe(window, 'load', function(){
 	}
 	$("plotVolcanoesTrue").observe('click', toggleVolcanoes);
 	$("plotVolcanoesFalse").observe('click', toggleVolcanoes);
-	/* GT: Easier to implement this functionality through changing the XML file at PHP level - see index.php
-	$("plotLastall").observe('click',shide);
-	$("plotLastyear").observe('click',shide);
-	$("plotLastmonth").observe('click',shide);
-	$("plotLastweek").observe('click',shide);
-	$("plotLastday").observe('click',shide);
-	*/
 	
 	//eqs
 	$("eqAll").observe('click',shide);
@@ -50,11 +43,14 @@ Event.observe(window, 'load', function(){
 		toggleStas();
 		plotStations();
 		plotVolcanoes();
-		document.getElementById("oneday").checked==true
+		document.getElementById("oneday").checked==false
 		document.getElementById("range").checked==false
+		document.getElementById("last").checked==true
 		//document.getElementById("time_options").innerHTML=single_day_html;
-		document.getElementById("plotStaTrue").checked==false
-		document.getElementById("plotStaFalse").checked==true
+		document.getElementById("plotStaTrue").checked==true
+		document.getElementById("plotStaFalse").checked==false
+		document.getElementById("plotVolcanoesTrue").checked==true
+		document.getElementById("plotVolcanoesFalse").checked==false
 	});
 	
 	//scriptacolous effects
@@ -82,7 +78,8 @@ var map;
 var side_bar_html = "";
 var gmarkers = []; //Eq markers
 var markers = []; //Station markers
-var volcanoMarker = []; //Volcano markers
+var stamarker = []; //Station markers
+var vmarkers = []; //Volcano markers
 var count = 0;
 var zIndex = 10000;
 var depthOn = false; //if true, eq's plotted by depth, else eq's plotted by time
@@ -153,7 +150,7 @@ function getEqs(){
 		//updateEqs();
 		killMarkers();
 		clearXsec();
-		alert("This is going to take a little while, be patient!");
+		//alert("This is going to take a little while, be patient!");
 		new Ajax.Request(
 				eventXmlAll,
 			{
@@ -478,13 +475,13 @@ function toggleStas(){
 function toggleVolcanoes(){
 	map.closeInfoWindow();
 	count = 0;
-	if(this.id =="plotStaTrue"){
+	if(this.id =="plotVolcanoesTrue"){
 		plotVolcanoIcons = 1;
 		plotVolcanoes();
 	}else{
 		plotVolcanoIcons = 0;
-		for (var i = 0; i<volcanoMarker.length; i++){
-			volcanoMarker[i].remove();
+		for (var i = 0; i<vmarkers.length; i++){
+			vmarkers[i].remove();
 		}
 	}
 }
@@ -618,7 +615,9 @@ Eq = Class.create({
 		}else{
 			magAdjust = this.mag;
 		}
-		return size = magAdjust * scale + base;
+		//return size = magAdjust * scale + base;
+		return size = (magAdjust * scale + base) * 2.0;
+
 	},
 	
 	//check depth of event to assign proper colored icon

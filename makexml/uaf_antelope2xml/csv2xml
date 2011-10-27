@@ -1,0 +1,20 @@
+#!/usr/bin/perl
+my $epoch = time()+8*60*60;
+$XMLDIR = "../../xmlfiles/avo_uaf";
+$CSVFILE = "$XMLDIR/AKvolclatlong.csv";
+print "$CSVFILE\n";
+open(FIN,$CSVFILE) or die $!; 
+open(FOUT,">$XMLDIR/allvolcanoes.xml") or die $!; 
+print FOUT "<volcanoes>\n";
+while ($line = <FIN>) {
+	chomp($line);
+	@fields = split(/,/, $line);
+	$volcano = $fields[0];
+	$lat = $fields[1];
+	$lon = $fields[2];
+	print "volcano = $volcano, lat = $lat, lon = $lon\n";
+	print FOUT "<volcano name=$volcano lat=\"$lat\" lon=\"$lon\" zoomlevel=\"9\" />\n";
+}
+print FOUT "</volcanoes>\n";
+close(FIN);
+close(FOUT);

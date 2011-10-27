@@ -7,4 +7,7 @@
 <banner src="images/volc2logoHVO.png" alt="Volcano Earthquakes from HVO" />
 <legend>images/legendVolcTimeSmSym.png</legend>
 <network_code>HV</network_code>
+<volcanomarkersxmlfile>volcanoes.xml</volcanomarkersxmlfile>
+<volcanoviewsxmlfile>volcanoes.xml</volcanoviewsxmlfile>
+<initialview>All</initialview>
 </volc2_configuration_parameters>

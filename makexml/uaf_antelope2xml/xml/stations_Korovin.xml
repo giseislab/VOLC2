@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<markers>
+	<!-- created by css2volcxml from database: /avort/oprun/dbmaster/master_stations on 10/19/2011  22:04:42.108 UTC -->
+<marker lat="52.2751" lng="-174.0972" station="KOFP" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="52.3614" lng="-174.1653" station="KOKV" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="52.3232" lng="-174.2002" station="KOKL" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="52.3936" lng="-174.1193" station="KONE" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="52.3965" lng="-174.2105" station="KONW" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="52.3458" lng="-174.0485" station="KOSE" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="52.3657" lng="-174.2507" station="KOWE" channel="EHZ" network="AV" location="--" type="SP"/>
+</markers>

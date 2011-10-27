@@ -16,6 +16,7 @@ var pix2 = [];
 function getXsec(){
 	TDExist = 0;
 	CMMExist = 0;
+	CCExist = 0;
 	if (xsecExist == 0){		//xsecExist should only be 1 at this point if it is coming in from the shide function
 		// Calculate rectangle for cross section and plot on map-----------------------
 		doRectangle();
@@ -41,7 +42,12 @@ function getXsec(){
 	xsecLength = Math.ceil(loc1.distanceFrom(loc2)/1000);
 	plotXsec(xsecLength);
 	// Update html
-	document.getElementById("xsec_options").innerHTML='<table><td>Cross Section Options:</td></table><table><td><input id="this1" type="button" value="Time-Depth Plot" onClick="timeDepthPlot()"></td><td><input id="this1" type="button" value="Cumulative Energy" onClick="cumEnergy()"></td></table><table><td><input id="this1" type="button" value="Clear X-Section" onClick="clearXsec()"></td></table>';
+	document.getElementById("xsec_options").innerHTML=
+		'<table><td>Cross Section Options:</td></table>' + 
+		'<table><td><input id="this1" type="button" value="Time-Depth Plot" onClick="timeDepthPlot()"></td>' +
+		'<td><input id="this1" type="button" value="Cumulative Energy" onClick="cumEnergy()"></td></table>' +
+		'<table><td><input id="this1" type="button" value="Cumulative Counts" onClick="cumCounts()"></td>' +
+		'<td><input id="this1" type="button" value="Clear X-Section" onClick="clearXsec()"></td></table>';
 }	
 
 // Projects earthquake onto line (input is pixels, output is lat/lon)
@@ -140,6 +146,7 @@ function clearXsec(){
 	xsecExist = 0;
 	TDExist = 0;
 	CMMExist = 0;
+	CCExist = 0;
 	}
 	
 	function doRectangle(){
@@ -265,6 +272,7 @@ function clearXsec(){
 // Calculates and plots timeDepthPlot
 function timeDepthPlot(){
 	CMMexist = 0;
+	CCexist = 0;
 	var plotTD = [];
 	var minT = new Date('2100/01/01 00:00');
 	var maxT = new Date('1970/01/01 00:00');
@@ -326,7 +334,11 @@ function timeDepthPlot(){
 	});
 	//--------------------------------------------------------------------------------------------------
 	// Update html
-	document.getElementById("xsec_options").innerHTML='<table><td>Cross Section Options:</td></table><table><td><input id="this1" type="button" value="X-Section" onClick="getXsec()"></td><td><input id="this1" type="button" value="Cumulative Energy" onClick="cumEnergy()"></td></table><table><td><input id="this1" type="button" value="Clear X-Section" onClick="clearXsec()"></td></table>';
+	document.getElementById("xsec_options").innerHTML='<table><td>Cross Section Options:</td></table>' +
+ 		'<table><td><input id="this1" type="button" value="X-Section" onClick="getXsec()"></td>' + 
+		'<td><input id="this1" type="button" value="Cumulative Energy" onClick="cumEnergy()"></td></table>' + 
+		'<table><td><input id="this1" type="button" value="Cumulative Counts" onClick="cumCounts()"></td>' + 
+		'<td><input id="this1" type="button" value="Clear X-Section" onClick="clearXsec()"></td></table>';
 	TDExist = 1;
 }
 
@@ -404,8 +416,90 @@ function cumEnergy(){
 	});
 	//--------------------------------------------------------------------------------------------------
 	// Update html
-	document.getElementById("xsec_options").innerHTML='<table><td>Cross Section Options:</td></table><table><td><input id="this1" type="button" value="X-Section" onClick="getXsec()"></td><td><input id="this1" type="button" value="Time-Depth Plot" onClick="timeDepthPlot()"></td></table><table><td><input id="this1" type="button" value="Clear X-Section" onClick="clearXsec()"></td></table>';
+	document.getElementById("xsec_options").innerHTML='<table><td>Cross Section Options:</td></table>' +
+ 		'<table><td><input id="this1" type="button" value="X-Section" onClick="getXsec()"></td>' + 
+		'<td><input id="this1" type="button" value="Cumulative Energy" onClick="cumEnergy()"></td></table>' + 
+		'<table><td><input id="this1" type="button" value="Cumulative Counts" onClick="cumCounts()"></td>' + 
+		'<td><input id="this1" type="button" value="Clear X-Section" onClick="clearXsec()"></td></table>';
+	//document.getElementById("xsec_options").innerHTML='<table><td>Cross Section Options:</td></table><table><td><input id="this1" type="button" value="X-Section" onClick="getXsec()"></td><td><input id="this1" type="button" value="Time-Depth Plot" onClick="timeDepthPlot()"></td></table><table><td><input id="this1" type="button" value="Clear X-Section" onClick="clearXsec()"></td></table>';
 	CMMExist = 1;
+}
+
+// Calculates and plots cumulative counts 
+function cumCounts(){
+	TDExist = 0;
+	var plotCC = new Array();
+	var numCC = [];
+	var minT = new Date('2100/01/01 00:00');
+	var maxT = new Date('1970/01/01 00:00');
+	// Get points within polygon----------------------------------------------------------------
+	for (var i = 0; i <= eq_markers.length-1;i++){
+		var pt = eq_markers[i].point;
+		//Following function is from gmaps.polygon.containsLatLng
+		var inPoly = Xpoly.containsLatLng(pt);
+		if (inPoly){
+			d = new Date(eq_markers[i].getDate());
+			eqTime = d.getTime();	 //Milliseconds since 1/1/1970 (good for plotting (maybe))
+			plotCC[plotCC.length++] = new CE( eqTime, 1.0 );
+			//Update minimum and maximum
+			if (d < minT){
+				minT = d;
+			}
+			if (d > maxT){
+				maxT = d;
+			}
+		}
+	  }
+	  
+	// Must sort array on eqTime so line doesn't look funky
+	plotCC.sort(sortByMilli);
+	// Now get plottable array
+	numCC = new Array();
+	for (var i=0; i<plotCC.length; i++) {
+		numCC.push([plotCC[i].dateMilli, i]);
+	}
+	if (initialPlot == 0){
+		minT = date1;
+		maxT = date2;
+	}
+	
+	// Plot cross-section
+	f = Flotr.draw(
+		$('chart_div'),[ 
+			{data:numCC, label:'eq_Xsec', lines: {show: true}}
+		],{
+			title: 'Cumulative Counts',
+			fontSize: 14,
+			xaxis:{
+				tickFormatter: dateTickFormat, 
+				labelsAngle:45,
+				title: 'Time',
+				min: minT.getTime(),
+				max: maxT.getTime()
+			},
+			yaxis:{
+				tickDecimals: 0,
+				title: '',
+				autoscaleMargin: 5
+			},
+			grid:{
+				verticalLines: true,
+				backgroundColor: 'white'
+			},
+			HtmlText: false,
+			legend: {
+				show: false
+			}
+	});
+	//--------------------------------------------------------------------------------------------------
+	// Update html
+	document.getElementById("xsec_options").innerHTML='<table><td>Cross Section Options:</td></table>' +
+ 		'<table><td><input id="this1" type="button" value="X-Section" onClick="getXsec()"></td>' + 
+		'<td><input id="this1" type="button" value="Cumulative Energy" onClick="cumEnergy()"></td></table>' + 
+		'<table><td><input id="this1" type="button" value="Cumulative Counts" onClick="cumCounts()"></td>' + 
+		'<td><input id="this1" type="button" value="Clear X-Section" onClick="clearXsec()"></td></table>';
+	//document.getElementById("xsec_options").innerHTML='<table><td>Cross Section Options:</td></table><table><td><input id="this1" type="button" value="X-Section" onClick="getXsec()"></td><td><input id="this1" type="button" value="Time-Depth Plot" onClick="timeDepthPlot()"></td></table><table><td><input id="this1" type="button" value="Clear X-Section" onClick="clearXsec()"></td></table>';
+	CCExist = 1;
 }
 
 // Format date on plots
@@ -414,10 +508,10 @@ function dateTickFormat ( n ){
 	mydate.setTime(n);
 	// Return your formated date as you like.
 	if (mydate.getUTCMinutes() > 10){
-		dTick = mydate.getUTCMonth()+'/'+mydate.getUTCDay()+'/'+mydate.getUTCFullYear()+'  '+mydate.getUTCHours()+':'+mydate.getUTCMinutes();
+		dTick = mydate.getUTCFullYear()+'/'+mydate.getUTCMonth()+'/'+mydate.getUTCDay()+'  '+mydate.getUTCHours()+':'+mydate.getUTCMinutes();
 	}
 	else{
-		dTick = mydate.getUTCMonth()+'/'+mydate.getUTCDay()+'/'+mydate.getUTCFullYear()+'  '+mydate.getUTCHours()+':0'+mydate.getUTCMinutes();
+		dTick = mydate.getUTCFullYear()+'/'+mydate.getUTCMonth()+'/'+mydate.getUTCDay()+'  '+mydate.getUTCHours()+':0'+mydate.getUTCMinutes();
 	}
 	return dTick
 }

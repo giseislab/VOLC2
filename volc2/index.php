@@ -40,8 +40,8 @@
 		<!--Better Webicorder Stuff-->
 		<script src = "../hvo_staweb/js_scripts/effects.js" type="text/javascript"> </script>
 		<script src = "../hvo_staweb/js_scripts/checkMobile.js" type="text/javascript"> </script>
-		<script src = "../hvo_staweb/js_scripts/plotStations.js" type="text/javascript"> </script>
-                <!-- <script src = "../hvo_staweb/js_scripts/plotStationsAlaska.js" type="text/javascript"> </script>-->
+		<!-- <script src = "../hvo_staweb/js_scripts/plotStations.js" type="text/javascript"> </script> -->
+                <script src = "../hvo_staweb/js_scripts/plotStationsAlaska.js" type="text/javascript"> </script>
 		<!--Volc2 stuff-->
 	
 
@@ -50,6 +50,9 @@
                         $configfile = "../volc2config.xml";
                         $config = simplexml_load_file($configfile) or die("file not found: $configfile\n");
                         $xml_directory = $config->xml_directory;
+                        $volcanoviewsxmlfile = $xml_directory."/".$config->volcanoviewsxmlfile;
+                        $volcanomarkersxmlfile = $xml_directory."/".$config->volcanomarkersxmlfile;
+                        $initialview = $config->initialview;
                         $title = $config->title;
                         $public_site = $config->public_site;
                         $logo_src = $config->logo['src'];
@@ -60,21 +63,23 @@
                         $network_code = $config->network_code;
                         print "<title>$title $domain</title>\n";
 
-                        $volcano = !isset($_GET['volcano'])? "All" : $_GET['volcano'];
-
                         # Read in the list of volcanoes
-                        $volcanoesxmlfile = "$xml_directory/volcanoes.xml";
-                        $xml = simplexml_load_file($volcanoesxmlfile); # or die("file not found: $xmlfile\n");
+                        $xml = simplexml_load_file($volcanoviewsxmlfile); # or die("file not found: $xmlfile\n");
                         $c=0;
                         while ($volcano_name[$c] = $xml->volcano[$c]['name']):
                                 #print "<p>$volcano_name[$c]</p>\n";
                                 $volcano_lat[$c] = $xml->volcano[$c]['lat'];
                                 $volcano_lon[$c] = $xml->volcano[$c]['lon'];
                                 $volcano_zoomlevel[$c] = $xml->volcano[$c]['zoomlevel'];
-                                if (strcmp($volcano_name[$c],$volcano)==0)
-                                        $vindex=$c;
                                 $c++;
                         endwhile;
+                        $volcano = !isset($_GET['volcano'])? $initialview : $_GET['volcano'];
+
+                        for ($c = 0; $c < sizeof($volcano_name); $c++) {
+                                if (strcmp($volcano_name[$c],$volcano)==0)
+                                        $vindex=$c;
+			};
+
 
                         # Build Javascript mapParam variable
                         print <<< END
@@ -102,18 +107,25 @@ END;
                         $timerange = !isset($_GET['timerange'])? "week" : $_GET['timerange'];
 			#$eventXml20 = "$xml_directory/origins_$volcano"."_".$timerange.".xml";
 			$eventXml20 = "$xml_directory/origins_$volcano.xml";
+			if (!file_exists($eventXml20)) { 
+				$eventXml20 = "$xml_directory/origins_All.xml";
+			}
+			if (!file_exists($eventXml20)) { 
+				die("</head><body>Event XML file ($eventXml20) not found</body></html>");
+			}
 			$eventXmlAll = $eventXml20;
 			$staXML = "$xml_directory/stations_$volcano.xml";
 			if (!file_exists($staXML)) { # GT 2011/11/12: This is a hack so I can use the
 			# HVO sta_file.xml file from Wes for HVO data
 				$staXML = "$xml_directory/sta_file.xml";
 			}
+			if (!file_exists($staXML)) {
+				$staXML = "$xml_directory/stations_All.xml";
+			}
 			if (!file_exists($staXML)) { 
 				die("</head><body>Station XML file ($staXML) not found</body></html>");
 			}
-			if (!file_exists($eventXml20)) { 
-				die("</head><body>Event XML file ($eventXml20) not found</body></html>");
-			}
+
 		?>
 		<script src = "js_scripts/volc2Param.js" type="text/javascript"> </script>
 		<script src = "js_scripts/volcCalStuff.js" type="text/javascript"> </script>
@@ -144,7 +156,8 @@ END;
                                    		'</form>';
 		</script>
                 <script type="text/javascript">
-                        volcanoesxmlfile = "<?php print $volcanoesxmlfile; ?>";
+                        volcanoviewsxmlfile = "<?php print $volcanoviewsxmlfile; ?>";
+                        volcanomarkersxmlfile = "<?php print $volcanomarkersxmlfile; ?>";
                         eventXml20 = "<?php print $eventXml20; ?>";
                         eventXmlAll = "<?php print $eventXmlAll; ?>";
                         staXML = "<?php print $staXML; ?>";
@@ -220,12 +233,12 @@ END;
 						<label><input type="radio" id ="plotDepth" name="plot" />Depth</label>
 						<br/>
 						Show Stations: 
-					    	<label><input type="radio" id ="plotStaTrue" name="plot2" />Yes</label>
-					    	<label><input type="radio" id ="plotStaFalse" checked = "checked" name="plot2" />No</label>
+					    	<label><input type="radio" id ="plotStaTrue" checked="checked" name="plot2" />Yes</label>
+					    	<label><input type="radio" id ="plotStaFalse" name="plot2" />No</label>
 						<br/>
 						Show Volcanoes:
-					    	<label><input type="radio" id ="plotVolcanoesTrue" name="plot3" />Yes</label>
-					    	<label><input type="radio" id ="plotVolcanoesFalse" checked = "checked" name="plot3" />No</label>
+					    	<label><input type="radio" id ="plotVolcanoesTrue" checked="checked" name="radioPlotVolcanoes" />Yes</label>
+					    	<label><input type="radio" id ="plotVolcanoesFalse" name="radioPlotVolcanoes" />No</label>
 					</form>
 				</div>
 				<div class = "clear"></div>
@@ -332,22 +345,24 @@ END;
 					} else { // last
 						document.getElementById("timerange_options").innerHTML = radioTimeRangeHTML;
 						document.getElementById("time_options").innerHTML = "";
-          					//cal.manageFields("dayone", "dayone", "%m/%d/%Y");
-          					//cal.manageFields("daytwo", "daytwo", "%m/%d/%Y");
 					}
 					
 				}		
       			};
       
 			function timeRangeChanged(someObj) {
-                      		numDays = someObj.value;
-          			//cal.manageFields("dayone", "dayone", "%m/%d/%Y");
-          			//cal.manageFields("daytwo", "daytwo", "%m/%d/%Y");
+                      		var numDays = parseInt(someObj.value);
                       		date1 = new Date();
                       		date2 = new Date();
                       		date1.setDate(date2.getDate()-numDays);
+                      		initialPlot = 0;
 				getEqs(date1, date2);
 			}
+                      	date1 = new Date();
+                      	date2 = new Date();
+                      	date1.setDate(date2.getDate()-7);
+			initialPlot = 0;
+			getEqs(date1, date2);
 
 		}
 		</script>
