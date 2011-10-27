@@ -340,12 +340,13 @@ END;
       			};
       
 			function timeRangeChanged(someObj) {
-                      		numDays = someObj.value;
+                      		var numDays = parseInt(someObj.value);
           			//cal.manageFields("dayone", "dayone", "%m/%d/%Y");
           			//cal.manageFields("daytwo", "daytwo", "%m/%d/%Y");
                       		date1 = new Date();
                       		date2 = new Date();
                       		date1.setDate(date2.getDate()-numDays);
+                      		initialPlot = 0;
 				getEqs(date1, date2);
 			}
 
