@@ -1,4 +1,4 @@
-var staXML = "purplepig/sta_file_AK.xml";
+//var staXML = "purplepig/sta_file_AK.xml";
 var server = 'pubavo1.wr.usgs.gov';
 var port = '16022';
 var staList = [];
@@ -188,8 +188,14 @@ function createMarker(point,html,name,statype) {
 		var order = 0;
 	}
 	var marker = new GMarker(point,{icon:new_icon, zIndexProcess:importanceOrder});
-  GEvent.addListener(marker, "click", function() {
+  	GEvent.addListener(marker, "click", function() {
 		marker.openInfoWindowHtml(html);
+	});
+  	GEvent.addListener(marker, "mouseover", function() {
+		marker.openInfoWindowHtml(name);
+	});
+  	GEvent.addListener(marker, "mouseout", function() {
+		marker.closeInfoWindow();
 	});
 	marker.importance=markeridx+order;
 	coldmarkers.push(marker);

@@ -7,5 +7,8 @@
 <public_site>www.avo.alaska.edu</public_site>
 <banner src="images/volc2logoAVO.png" alt="Volcano Earthquakes from AVO" />
 <legend>images/legendVolcTime.png</legend>
+<volcanomarkersxmlfile>volcanomarkers.xml</volcanomarkersxmlfile>
+<volcanoviewsxmlfile>volcanoviews.xml</volcanoviewsxmlfile>
+<initialview>Spurr</initialview>
 <network_code>AK</network_code>
 </volc2_configuration_parameters>

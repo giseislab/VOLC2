@@ -1,0 +1,43 @@
+#!/usr/bin/perl
+use XML::Parser;
+my $epoch = time()+8*60*60;
+$XMLDIR = "../../xmlfiles/avo_uaf";
+$VIEWSFILE = "$XMLDIR/volcanoviews.xml";
+ 
+# initialize parser and read the file
+$parser = new XML::Parser( Style => 'Tree' );
+my $tree = $parser->parsefile($VIEWSFILE);
+ 
+# serialize the structure
+use Data::Dumper;
+print Dumper( $tree );
+
+die("");
+system("mkdir -p $XMLDIR");
+open(FIN,$VIEWSFILE) or die $!; 
+open(FOUT,">$XMLDIR/volcanolist.xml") or die $!; 
+print FOUT "<volcanoes>\n";
+print FOUT "<volcano name=\"Arc\" lat=\"55.5\" lon=\"-164.0\" zoomlevel=\"4\" />\n";
+%timerange = ("day", 1, "week", 7, "month", 30, "year", 365, "all", (365*5));
+while ($line = <FIN>) {
+	chomp($line);
+	@fields = split(/ /, $line);
+	$volcano = $fields[0];
+	$lat = $fields[1];
+	$lon = $fields[2];
+	print "volcano = $volcano, lat = $lat, lon = $lon\n";
+	while (($key, $value) = each(%timerange)) {
+		$MINTIME = $epoch - $value * 24 * 60 * 60;
+		system("css2volcxml -x -b -f -e \"time>$MINTIME && deg2km(distance($lat, $lon, lat, lon))<20.0\" /Seis/Kiska4/picks/Total/Total  > $XMLDIR/origins_".$volcano."_".$key.".xml");
+	}
+	system("css2volcxml  -x -s -f -e \"deg2km(distance($lat, $lon, lat, lon))<20.0\" /avort/oprun/dbmaster/master_stations  > $XMLDIR/stations_$volcano.xml");
+	print FOUT "<volcano name=\"$volcano\" lat=\"$lat\" lon=\"$lon\" zoomlevel=\"9\" />\n";
+}
+while (($key, $value) = each(%timerange)) {
+	$MINTIME = $epoch - $value * 24 * 60 * 60;
+	system("css2volcxml -x -b -f -e \"time>$MINTIME\" /Seis/Kiska4/picks/Total/Total  > $XMLDIR/origins_All_$key.xml");
+}
+system("css2volcxml -x -s -f  /avort/oprun/dbmaster/master_stations > $XMLDIR/stations_All.xml");
+print FOUT "</volcanoes>\n";
+close(FIN);
+close(FOUT);

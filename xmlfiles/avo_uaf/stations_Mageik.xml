@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<markers>
+	<!-- created by css2volcxml from database: /avort/oprun/dbmaster/master_stations on 10/27/2011   6:13:46.982 UTC -->
+<marker lat="58.2107" lng="-155.3260" station="ACH" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.2750" lng="-155.2017" station="KBM" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.2433" lng="-155.1833" station="KCE" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.1343" lng="-155.1608" station="MGLS" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.2709" lng="-155.2822" station="KABU" channel="BHZ" network="AV" location="--" type="BB"/>
+</markers>
