@@ -345,21 +345,17 @@ END;
 					} else { // last
 						document.getElementById("timerange_options").innerHTML = radioTimeRangeHTML;
 						document.getElementById("time_options").innerHTML = "";
-          					//cal.manageFields("dayone", "dayone", "%m/%d/%Y");
-          					//cal.manageFields("daytwo", "daytwo", "%m/%d/%Y");
 					}
 					
 				}		
       			};
       
 			function timeRangeChanged(someObj) {
-                      		numDays = parseInt(someObj.value);
-          			//cal.manageFields("dayone", "dayone", "%m/%d/%Y");
-          			//cal.manageFields("daytwo", "daytwo", "%m/%d/%Y");
+                      		var numDays = parseInt(someObj.value);
                       		date1 = new Date();
                       		date2 = new Date();
                       		date1.setDate(date2.getDate()-numDays);
-				initialPlot = 0;
+                      		initialPlot = 0;
 				getEqs(date1, date2);
 			}
                       	date1 = new Date();
