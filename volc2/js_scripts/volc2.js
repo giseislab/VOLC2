@@ -616,7 +616,7 @@ Eq = Class.create({
 			magAdjust = this.mag;
 		}
 		//return size = magAdjust * scale + base;
-		return size = (magAdjust * scale + base) * 1.5;
+		return size = (magAdjust * scale + base) * 2.0;
 
 	},
 	
