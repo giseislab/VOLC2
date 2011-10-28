@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 $MINTIME = (time() + 8 * 60 * 60) - 365 * 24 * 60 * 60;
-$XMLDIR = "../../xmlfiles/avo_uaf";
+$XMLDIR = "../xmlfiles/avo_uaf";
 $VIEWSFILE = "volcanoviews.txt";
 system("mkdir -p $XMLDIR");
 open(FIN,$VIEWSFILE) or die $!; 

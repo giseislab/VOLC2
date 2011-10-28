@@ -139,7 +139,8 @@ END;
 			radioTimeRangeHTML =	'<form name="timerange">' + 
                                    			'Show last:</br>' + 
                                    			<?php
-                                           			$timeranges = array("day"=>1, "week"=>7, "month"=>30, "year"=>365, "all"=>0);
+                                           			//$timeranges = array("day"=>1, "week"=>7, "month"=>30, "year"=>365, "all"=>999);
+                                           			$timeranges = array("day"=>1, "week"=>7, "month"=>30, "year"=>365);
 
                                            			foreach($timeranges as $item=>$numdays) {
                                                    			if ($item == $timerange) {
