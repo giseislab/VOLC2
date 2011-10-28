@@ -508,10 +508,10 @@ function dateTickFormat ( n ){
 	mydate.setTime(n);
 	// Return your formated date as you like.
 	if (mydate.getUTCMinutes() > 10){
-		dTick = mydate.getUTCFullYear()+'/'+mydate.getUTCMonth()+'/'+mydate.getUTCDay()+'  '+mydate.getUTCHours()+':'+mydate.getUTCMinutes();
+		dTick = mydate.getUTCFullYear()+'/'+mydate.getUTCMonth()+'/'+mydate.getUTCDate()+'  '+mydate.getUTCHours()+':'+mydate.getUTCMinutes();
 	}
 	else{
-		dTick = mydate.getUTCFullYear()+'/'+mydate.getUTCMonth()+'/'+mydate.getUTCDay()+'  '+mydate.getUTCHours()+':0'+mydate.getUTCMinutes();
+		dTick = mydate.getUTCFullYear()+'/'+mydate.getUTCMonth()+'/'+mydate.getUTCDate()+'  '+mydate.getUTCHours()+':0'+mydate.getUTCMinutes();
 	}
 	return dTick
 }
