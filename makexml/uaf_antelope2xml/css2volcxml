@@ -408,7 +408,7 @@ sub get_site_records {	##### extract site records
 	# added by GT 2010/11/17
 	my @db2 = dblookup(@db,"","affiliation","",1);
 	@db = dbjoin(@db, @db2);
-	@db = dbsubset(@db, "net=~/A[KTV]/ && chan=~/[BE]HZ/ && sitechan.offdate==NULL");
+	@db = dbsubset(@db, "net=~/A[KTV]/ && chan=~/[BES]HZ/ && sitechan.offdate==NULL");
 	# end of GT block
 
 	$nrecords = dbquery(@db,"dbRECORD_COUNT");

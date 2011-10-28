@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <markers>
-	<!-- created by css2volcxml from database: /avort/oprun/dbmaster/master_stations on 10/27/2011   6:13:51.610 UTC -->
+	<!-- created by css2volcxml from database: /avort/oprun/dbmaster/master_stations on 10/28/2011  23:40:33.777 UTC -->
 <marker lat="56.9127" lng="-158.0589" station="ANNE" channel="EHZ" network="AV" location="--" type="SP"/>
 <marker lat="56.9664" lng="-158.2149" station="ANNW" channel="EHZ" network="AV" location="--" type="SP"/>
 <marker lat="56.9198" lng="-158.1716" station="ANON" channel="EHZ" network="AV" location="--" type="SP"/>

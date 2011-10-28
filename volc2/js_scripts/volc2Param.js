@@ -21,6 +21,9 @@ var authorNW = network_code;
 
 plotStas = 1;
 plotVolcanoIcons = 1;
+var gmarkers = []; //Eq markers
+var markers = []; //Station markers
+var vmarkers = []; //Volcano markers
 
 //Station size
 SP_icon.iconSize = new GSize(20, 20);

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <merge>
-	<!-- created by css2volcxml from database: /Seis/Kiska4/picks/Total/Total on 10/27/2011   6:14:24.322 UTC -->
-<event id="38200258" network-code="AK" time-stamp="2011/10/27_06:14:24" version="1">
+	<!-- created by css2volcxml from database: /Seis/Kiska4/picks/Total/Total on 10/28/2011  23:41:27.981 UTC -->
+<event id="38200258" network-code="AK" time-stamp="2011/10/28_23:41:27" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="10"/>
 <param name="day" value="19"/>
@@ -17,7 +17,7 @@
 <param name="local-time" value="Wed Oct 19, 2011 01:56:40 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="38100025" network-code="AK" time-stamp="2011/10/27_06:14:24" version="1">
+<event id="38100025" network-code="AK" time-stamp="2011/10/28_23:41:27" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="09"/>
 <param name="day" value="03"/>
@@ -33,7 +33,7 @@
 <param name="local-time" value="Sat Sep 03, 2011 07:10:51 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="38000207" network-code="AK" time-stamp="2011/10/27_06:14:24" version="1">
+<event id="38000207" network-code="AK" time-stamp="2011/10/28_23:41:27" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="08"/>
 <param name="day" value="20"/>
@@ -49,7 +49,7 @@
 <param name="local-time" value="Sat Aug 20, 2011 04:36:59 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="38000205" network-code="AK" time-stamp="2011/10/27_06:14:24" version="1">
+<event id="38000205" network-code="AK" time-stamp="2011/10/28_23:41:27" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="08"/>
 <param name="day" value="19"/>
@@ -65,7 +65,7 @@
 <param name="local-time" value="Fri Aug 19, 2011 20:36:10 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="38000158" network-code="AK" time-stamp="2011/10/27_06:14:24" version="1">
+<event id="38000158" network-code="AK" time-stamp="2011/10/28_23:41:27" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="08"/>
 <param name="day" value="16"/>
@@ -81,7 +81,7 @@
 <param name="local-time" value="Tue Aug 16, 2011 05:58:45 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="38000116" network-code="AK" time-stamp="2011/10/27_06:14:24" version="1">
+<event id="38000116" network-code="AK" time-stamp="2011/10/28_23:41:27" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="08"/>
 <param name="day" value="11"/>
@@ -97,7 +97,7 @@
 <param name="local-time" value="Thu Aug 11, 2011 08:24:35 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="38000104" network-code="AK" time-stamp="2011/10/27_06:14:24" version="1">
+<event id="38000104" network-code="AK" time-stamp="2011/10/28_23:41:27" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="08"/>
 <param name="day" value="09"/>
@@ -113,7 +113,7 @@
 <param name="local-time" value="Tue Aug 09, 2011 22:36:33 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37900328" network-code="AK" time-stamp="2011/10/27_06:14:24" version="1">
+<event id="37900328" network-code="AK" time-stamp="2011/10/28_23:41:27" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="07"/>
 <param name="day" value="28"/>
@@ -129,7 +129,7 @@
 <param name="local-time" value="Thu Jul 28, 2011 20:16:18 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37900293" network-code="AK" time-stamp="2011/10/27_06:14:24" version="1">
+<event id="37900293" network-code="AK" time-stamp="2011/10/28_23:41:27" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="07"/>
 <param name="day" value="25"/>
@@ -145,7 +145,7 @@
 <param name="local-time" value="Mon Jul 25, 2011 05:02:41 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37900265" network-code="AK" time-stamp="2011/10/27_06:14:24" version="1">
+<event id="37900265" network-code="AK" time-stamp="2011/10/28_23:41:27" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="07"/>
 <param name="day" value="21"/>
@@ -161,7 +161,7 @@
 <param name="local-time" value="Thu Jul 21, 2011 09:13:39 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37900238" network-code="AK" time-stamp="2011/10/27_06:14:24" version="1">
+<event id="37900238" network-code="AK" time-stamp="2011/10/28_23:41:27" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="07"/>
 <param name="day" value="18"/>
@@ -177,7 +177,7 @@
 <param name="local-time" value="Mon Jul 18, 2011 18:03:29 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37900163" network-code="AK" time-stamp="2011/10/27_06:14:24" version="1">
+<event id="37900163" network-code="AK" time-stamp="2011/10/28_23:41:27" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="07"/>
 <param name="day" value="14"/>
@@ -193,7 +193,7 @@
 <param name="local-time" value="Thu Jul 14, 2011 08:58:58 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37900025" network-code="AK" time-stamp="2011/10/27_06:14:24" version="1">
+<event id="37900025" network-code="AK" time-stamp="2011/10/28_23:41:27" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="07"/>
 <param name="day" value="03"/>
@@ -209,7 +209,7 @@
 <param name="local-time" value="Sun Jul 03, 2011 00:27:09 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37800077" network-code="AK" time-stamp="2011/10/27_06:14:24" version="1">
+<event id="37800077" network-code="AK" time-stamp="2011/10/28_23:41:28" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="06"/>
 <param name="day" value="06"/>
@@ -225,7 +225,7 @@
 <param name="local-time" value="Mon Jun 06, 2011 14:32:07 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37700076" network-code="AK" time-stamp="2011/10/27_06:14:24" version="1">
+<event id="37700076" network-code="AK" time-stamp="2011/10/28_23:41:28" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="05"/>
 <param name="day" value="07"/>
@@ -241,7 +241,7 @@
 <param name="local-time" value="Sat May 07, 2011 03:17:27 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37600371" network-code="AK" time-stamp="2011/10/27_06:14:24" version="1">
+<event id="37600371" network-code="AK" time-stamp="2011/10/28_23:41:28" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="04"/>
 <param name="day" value="23"/>
@@ -257,7 +257,7 @@
 <param name="local-time" value="Sat Apr 23, 2011 01:29:25 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37600258" network-code="AK" time-stamp="2011/10/27_06:14:24" version="1">
+<event id="37600258" network-code="AK" time-stamp="2011/10/28_23:41:28" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="04"/>
 <param name="day" value="14"/>
@@ -273,7 +273,7 @@
 <param name="local-time" value="Thu Apr 14, 2011 13:34:44 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37600012" network-code="AK" time-stamp="2011/10/27_06:14:24" version="1">
+<event id="37600012" network-code="AK" time-stamp="2011/10/28_23:41:28" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="04"/>
 <param name="day" value="01"/>
@@ -289,7 +289,7 @@
 <param name="local-time" value="Fri Apr 01, 2011 19:43:07 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37600008" network-code="AK" time-stamp="2011/10/27_06:14:24" version="1">
+<event id="37600008" network-code="AK" time-stamp="2011/10/28_23:41:28" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="04"/>
 <param name="day" value="01"/>
@@ -305,7 +305,7 @@
 <param name="local-time" value="Fri Apr 01, 2011 17:15:16 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37200124" network-code="AK" time-stamp="2011/10/27_06:14:24" version="1">
+<event id="37200124" network-code="AK" time-stamp="2011/10/28_23:41:28" version="1">
 <param name="year" value="2010"/>
 <param name="month" value="12"/>
 <param name="day" value="15"/>
@@ -321,7 +321,7 @@
 <param name="local-time" value="Wed Dec 15, 2010 13:33:30 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37100267" network-code="AK" time-stamp="2011/10/27_06:14:24" version="1">
+<event id="37100267" network-code="AK" time-stamp="2011/10/28_23:41:28" version="1">
 <param name="year" value="2010"/>
 <param name="month" value="11"/>
 <param name="day" value="27"/>
@@ -337,7 +337,7 @@
 <param name="local-time" value="Sat Nov 27, 2010 03:55:58 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37100175" network-code="AK" time-stamp="2011/10/27_06:14:24" version="1">
+<event id="37100175" network-code="AK" time-stamp="2011/10/28_23:41:28" version="1">
 <param name="year" value="2010"/>
 <param name="month" value="11"/>
 <param name="day" value="18"/>

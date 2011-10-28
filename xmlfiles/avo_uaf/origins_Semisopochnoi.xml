@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <merge>
-	<!-- created by css2volcxml from database: /Seis/Kiska4/picks/Total/Total on 10/27/2011   6:14:31.275 UTC -->
-<event id="37400090" network-code="AK" time-stamp="2011/10/27_06:14:31" version="1">
+	<!-- created by css2volcxml from database: /Seis/Kiska4/picks/Total/Total on 10/28/2011  23:41:39.390 UTC -->
+<event id="37400090" network-code="AK" time-stamp="2011/10/28_23:41:39" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="02"/>
 <param name="day" value="09"/>
@@ -17,7 +17,7 @@
 <param name="local-time" value="Wed Feb 09, 2011 00:34:02 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37200044" network-code="AK" time-stamp="2011/10/27_06:14:31" version="1">
+<event id="37200044" network-code="AK" time-stamp="2011/10/28_23:41:39" version="1">
 <param name="year" value="2010"/>
 <param name="month" value="12"/>
 <param name="day" value="07"/>
@@ -33,7 +33,7 @@
 <param name="local-time" value="Tue Dec 07, 2010 05:45:40 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37200043" network-code="AK" time-stamp="2011/10/27_06:14:31" version="1">
+<event id="37200043" network-code="AK" time-stamp="2011/10/28_23:41:39" version="1">
 <param name="year" value="2010"/>
 <param name="month" value="12"/>
 <param name="day" value="07"/>
@@ -49,7 +49,7 @@
 <param name="local-time" value="Tue Dec 07, 2010 05:43:54 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37200041" network-code="AK" time-stamp="2011/10/27_06:14:31" version="1">
+<event id="37200041" network-code="AK" time-stamp="2011/10/28_23:41:39" version="1">
 <param name="year" value="2010"/>
 <param name="month" value="12"/>
 <param name="day" value="07"/>
@@ -65,7 +65,7 @@
 <param name="local-time" value="Tue Dec 07, 2010 04:09:34 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37200040" network-code="AK" time-stamp="2011/10/27_06:14:31" version="1">
+<event id="37200040" network-code="AK" time-stamp="2011/10/28_23:41:39" version="1">
 <param name="year" value="2010"/>
 <param name="month" value="12"/>
 <param name="day" value="07"/>

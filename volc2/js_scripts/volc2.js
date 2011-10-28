@@ -18,8 +18,8 @@ Event.observe(window, 'load', function(){
 	if (plotVolcanoIcons ==1){
 		plotVolcanoes();
 	}
-	$("plotVolcanoesTrue").observe('click', toggleVolcanoes);
-	$("plotVolcanoesFalse").observe('click', toggleVolcanoes);
+	//$("plotVolcanoesTrue").observe('click', toggleVolcanoes);
+	//$("plotVolcanoesFalse").observe('click', toggleVolcanoes);
 	
 	//eqs
 	$("eqAll").observe('click',shide);
@@ -30,8 +30,8 @@ Event.observe(window, 'load', function(){
 	$("eq0").observe('click', shide);
 	$("plotTime").observe('click', changePlot);
 	$("plotDepth").observe('click', changePlot);
-	$("plotStaTrue").observe('click', toggleStas);
-	$("plotStaFalse").observe('click', toggleStas);
+	//$("plotStaTrue").observe('click', toggleStas);
+	//$("plotStaFalse").observe('click', toggleStas);
 	//reset map view
 	$('reset').observe('click', function(){
 		initialPlot = 1;
@@ -76,9 +76,9 @@ window.unload = function(){
 //Global varaibles
 var map;
 var side_bar_html = "";
-var gmarkers = []; //Eq markers
-var markers = []; //Station markers
-var vmarkers = []; //Volcano markers
+//var gmarkers = []; //Eq markers
+//var markers = []; //Station markers
+//var vmarkers = []; //Volcano markers
 var count = 0;
 var zIndex = 10000;
 var depthOn = false; //if true, eq's plotted by depth, else eq's plotted by time
@@ -722,11 +722,20 @@ Eq = Class.create({
 		var listId = this.listId;
 		var point = this.point;
 		var time = this.yr + this.mon + this.day + this.hr;
+		var mag = this.mag;
 		//add listeners and html to windows
 		GEvent.addListener(emarker, "click", function() {
 		    emarker.openInfoWindowHtml(windowHtml);
 			$(listId).style.backgroundColor = "yellow";
 		  });
+		/* this.mag was empty so I removed this
+		GEvent.addListener(emarker, "mouseover", function() {
+		    emarker.openInfoWindowHtml($(mag).toFixed(1));
+		  });
+		GEvent.addListener(emarker, "mouseout", function() {
+		    emarker.closeInfoWindow();
+		  });
+		*/	
 	},
 	
 	//html for info window
@@ -740,15 +749,17 @@ Eq = Class.create({
 		var param = [this.mag, this.dep, this.eId, this.epoch, this.age.toFixed(1) ];
 		var html = "<div class = 'eqWin'> \n";
 		if (eqDate > noPage ){
-		var link = getLink(this.net, this.eId);
-		link += "View Event Page</a>";
-		html += link;	
-		html += "<ul> \n";
+			if (this.net != "AK") {
+				var link = getLink(this.net, this.eId);
+				link += "View Event Page</a>";
+				html += link;	
+			}
+			html += "<ul> \n";
 			for (var i = 0; i < name.length; i++){
 				html += "<li>" + name[i]  + "<span>" + param[i] + "</span> </li> \n";
 			}
-		html += "</ul>";
-		}
+			html += "</ul>";
+			}
 		else{
 			//html +="Event Page Unavailable";
 			html += "<ul> ";

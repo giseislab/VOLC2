@@ -15,6 +15,10 @@
 		
 		<!--Misc stuff-->
 		<?php
+			function curPageName() {
+ 				return substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
+			}
+
 			$domain = $_SERVER['HTTP_HOST'];
 			switch ($domain) {
 				case "hvo.wr.usgs.gov":
@@ -105,22 +109,18 @@ END;
 		<!-- # Set XML filenames here -->
 		<?php
                         $timerange = !isset($_GET['timerange'])? "week" : $_GET['timerange'];
-			#$eventXml20 = "$xml_directory/origins_$volcano"."_".$timerange.".xml";
-			$eventXml20 = "$xml_directory/origins_$volcano.xml";
-			if (!file_exists($eventXml20)) { 
-				$eventXml20 = "$xml_directory/origins_All.xml";
+			$eventXmlAll = "$xml_directory/origins_$volcano.xml";
+			if (!file_exists($eventXmlAll)) { 
+				die("</head><body>Event XML file ($eventXmlAll) not found</body></html>");
 			}
+			$eventXml20 = "$xml_directory/origins_$volcano_lastweek.xml";
 			if (!file_exists($eventXml20)) { 
-				die("</head><body>Event XML file ($eventXml20) not found</body></html>");
+				$eventXml20 = $eventXmlAll;
 			}
-			$eventXmlAll = $eventXml20;
 			$staXML = "$xml_directory/stations_$volcano.xml";
 			if (!file_exists($staXML)) { # GT 2011/11/12: This is a hack so I can use the
 			# HVO sta_file.xml file from Wes for HVO data
 				$staXML = "$xml_directory/sta_file.xml";
-			}
-			if (!file_exists($staXML)) {
-				$staXML = "$xml_directory/stations_All.xml";
 			}
 			if (!file_exists($staXML)) { 
 				die("</head><body>Station XML file ($staXML) not found</body></html>");
@@ -144,12 +144,10 @@ END;
 
                                            			foreach($timeranges as $item=>$numdays) {
                                                    			if ($item == $timerange) {
-                                                        			#print "\t\t'<input type=radio onchange=\"changeXMLFile(this)\" Name=radioTimeRange Value=$numdays checked>$item</input><br/>' + \n";
                                                         			print "\t\t'<input type=radio onchange=\"timeRangeChanged(this)\" Name=radioTimeRange Value=$numdays checked>$item</input><br/>' + \n";
                                                    			}
                                                    			else
                                                    			{
-                                                        			#print "\t\t'<input type=radio onchange=\"changeXMLFile(this)\" Name=radioTimeRange Value=$numdays >$item</input><br/>' + \n";
                                                         			print "\t\t'<input type=radio onchange=\"timeRangeChanged(this)\" Name=radioTimeRange Value=$numdays >$item</input><br/>' + \n";
                                                    			}
                                            			}	
@@ -163,22 +161,31 @@ END;
                         eventXmlAll = "<?php print $eventXmlAll; ?>";
                         staXML = "<?php print $staXML; ?>";
                 </script>
-		<script>
-			function changeXMLFile(someObj) {
-				window.open('?volcano=' + volcanoname + '&timerange=' + someObj.value, '_top');
-			}
-		</script>
 	</head>
 	<body>
 		<div id ="header">
                         <?php
 				print "<a href=\"$public_site\"><img id=\"logo\" src=\"$logo_src\" alt=\"$logo_alt\"/></a>\n";
 				print "<img id=\"req2Logo\" src=\"$banner_src\" alt=\"$banner_alt\"/>\n";
+				$previndex = $vindex - 1;
+				if ($previndex < 0) {
+					$previndex = count($volcano_name)-1;
+				}
+				$prevvolcano = $volcano_name[$previndex];		
+				$nextindex = $vindex + 1;
+				if ($nextindex > count($volcano_name)-1) {
+					$nextindex = 0;
+				}
+				$nextvolcano = $volcano_name[$nextindex];	
+				$thisPage = curPageName();
+                                print "<span><a href=\"$thisPage?volcano=$prevvolcano\">&lt&lt</a>\n";
                                 if ($volcano == "All") {
-                                        print "<span>All volcanoes</span>\n";
+                                        print "All volcanoes\n";
                                 } else {
-                                        print "<span>$volcano Volcano</span>\n";
+                                        print "$volcano Volcano\n";
                                 };
+                                print "<a href=\"$thisPage?volcano=$nextvolcano\">&gt&gt</a>\n";
+				print "</span>\n";
                         ?>
 		</div>
 		<div class = "clear"></div>
@@ -233,6 +240,7 @@ END;
 						<label><input type="radio" id ="plotTime" name="plot" checked = "checked" />Time</label>
 						<label><input type="radio" id ="plotDepth" name="plot" />Depth</label>
 						<br/>
+						<!-- Station toggling not working, and volcanoes layer never worked, so comment out for now - GT 2011/10/28
 						Show Stations: 
 					    	<label><input type="radio" id ="plotStaTrue" checked="checked" name="plot2" />Yes</label>
 					    	<label><input type="radio" id ="plotStaFalse" name="plot2" />No</label>
@@ -240,6 +248,7 @@ END;
 						Show Volcanoes:
 					    	<label><input type="radio" id ="plotVolcanoesTrue" checked="checked" name="radioPlotVolcanoes" />Yes</label>
 					    	<label><input type="radio" id ="plotVolcanoesFalse" name="radioPlotVolcanoes" />No</label>
+						-->
 					</form>
 				</div>
 				<div class = "clear"></div>
@@ -370,6 +379,7 @@ END;
 		
 		
 		<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+
 		</script>
 		<script type="text/javascript">
 			_uacct = "UA-4670028-1";

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <merge>
-	<!-- created by css2volcxml from database: /Seis/Kiska4/picks/Total/Total on 10/27/2011   6:14:33.516 UTC -->
-<event id="37400207" network-code="AK" time-stamp="2011/10/27_06:14:33" version="1">
+	<!-- created by css2volcxml from database: /Seis/Kiska4/picks/Total/Total on 10/28/2011  23:41:43.165 UTC -->
+<event id="37400207" network-code="AK" time-stamp="2011/10/28_23:41:43" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="02"/>
 <param name="day" value="20"/>
@@ -17,7 +17,7 @@
 <param name="local-time" value="Sun Feb 20, 2011 08:19:41 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37400171" network-code="AK" time-stamp="2011/10/27_06:14:33" version="1">
+<event id="37400171" network-code="AK" time-stamp="2011/10/28_23:41:43" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="02"/>
 <param name="day" value="18"/>
@@ -33,7 +33,7 @@
 <param name="local-time" value="Fri Feb 18, 2011 01:27:49 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37200114" network-code="AK" time-stamp="2011/10/27_06:14:33" version="1">
+<event id="37200114" network-code="AK" time-stamp="2011/10/28_23:41:43" version="1">
 <param name="year" value="2010"/>
 <param name="month" value="12"/>
 <param name="day" value="14"/>
@@ -49,7 +49,7 @@
 <param name="local-time" value="Tue Dec 14, 2010 03:53:01 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37200095" network-code="AK" time-stamp="2011/10/27_06:14:33" version="1">
+<event id="37200095" network-code="AK" time-stamp="2011/10/28_23:41:43" version="1">
 <param name="year" value="2010"/>
 <param name="month" value="12"/>
 <param name="day" value="12"/>
