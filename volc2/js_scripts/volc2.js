@@ -78,7 +78,6 @@ var map;
 var side_bar_html = "";
 var gmarkers = []; //Eq markers
 var markers = []; //Station markers
-var stamarker = []; //Station markers
 var vmarkers = []; //Volcano markers
 var count = 0;
 var zIndex = 10000;
@@ -431,11 +430,11 @@ function changePlot(){
 		    if (req == 1){
 		    	$('legend').src = "images/legendVolcDepthRegional.png";
 		     }else{
-		     	if (symSize == 1){
-		     		$('legend').src = "images/legendVolcDepthSm.png";
-		     	}else{
+		     	//if (symSize == 1){
+		     	//	$('legend').src = "images/legendVolcDepthSm.png";
+		     	//}else{
 		     		$('legend').src = "images/legendVolcDepth.png";
-		     	}
+		     //	}
 		     }
 		}
 	}else{
@@ -443,14 +442,17 @@ function changePlot(){
 		// Check to see which kind of time legend should be used
 		if (typeof(req)=="undefined"){
 			$('legend').src = "images/legendVolcTime.png";
+			$('legend').src = "images/legendVolc2TimeRange.png";
 		}else{
 		     if (req == 1){
 		     	$('legend').src = "images/legendVolc2week.png";
 		     }else{
 		     	if (symSize == 1){
 		     		$('legend').src = "images/legendVolcTimeSmSym.png";
+		     		$('legend').src = "images/legendVolc2TimeRange.png";
 		     	}else{
 		     		$('legend').src = "images/legendVolcTime.png";
+		     		$('legend').src = "images/legendVolc2TimeRange.png";
 		     	}
 		     }
 		}
@@ -616,7 +618,7 @@ Eq = Class.create({
 			magAdjust = this.mag;
 		}
 		//return size = magAdjust * scale + base;
-		return size = (magAdjust * scale + base) * 2.0;
+		return size = (magAdjust * 5 + 5) * 2.0;
 
 	},
 	

@@ -5,7 +5,7 @@
 <logo src="images/avoLogo.jpg" alt="test logo" />
 <public_site>www.avo.alaska.edu</public_site>
 <banner src="images/volc2logoAVO.png" alt="Fixed size earthquakes" />
-<legend>images/legendVolc2TimeRange.png</legend>
+<legend>images/legendVolcTime.png</legend>
 <volcanomarkersxmlfile>volcanomarkers.xml</volcanomarkersxmlfile>
 <volcanoviewsxmlfile>volcanoviews.xml</volcanoviewsxmlfile>
 <initialview>test</initialview>
