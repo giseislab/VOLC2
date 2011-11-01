@@ -506,12 +506,22 @@ function cumCounts(){
 function dateTickFormat ( n ){
 	mydate = new Date();
 	mydate.setTime(n);
+	// GT 20111101 Attempting to fix the incorrect month problem
+	// Previously when plotting data from last week on 1 Nov 2011, dates on X-section
+	// would vary from 9/24 to 9/31.	
+	// When plotting for last year, some months would be shown as "0"
+	// It seems likely that January is month 0, December month 11 etc. 
+	// This is a common think found in programming languages 
+	// Attempting to fix this by incrementing the month prior to display
+	utcMonth = parseInt(mydate.getUTCMonth()) + 1;
 	// Return your formated date as you like.
 	if (mydate.getUTCMinutes() > 10){
-		dTick = mydate.getUTCFullYear()+'/'+mydate.getUTCMonth()+'/'+mydate.getUTCDate()+'  '+mydate.getUTCHours()+':'+mydate.getUTCMinutes();
+		//dTick = mydate.getUTCFullYear()+'/'+mydate.getUTCMonth()+'/'+mydate.getUTCDate()+'  '+mydate.getUTCHours()+':'+mydate.getUTCMinutes();
+		dTick = mydate.getUTCFullYear()+'/'+utcMonth+'/'+mydate.getUTCDate()+'  '+mydate.getUTCHours()+':'+mydate.getUTCMinutes();
 	}
 	else{
-		dTick = mydate.getUTCFullYear()+'/'+mydate.getUTCMonth()+'/'+mydate.getUTCDate()+'  '+mydate.getUTCHours()+':0'+mydate.getUTCMinutes();
+		//dTick = mydate.getUTCFullYear()+'/'+mydate.getUTCMonth()+'/'+mydate.getUTCDate()+'  '+mydate.getUTCHours()+':0'+mydate.getUTCMinutes();
+		dTick = mydate.getUTCFullYear()+'/'+utcMonth+'/'+mydate.getUTCDate()+'  '+mydate.getUTCHours()+':0'+mydate.getUTCMinutes();
 	}
 	return dTick
 }
