@@ -740,11 +740,16 @@ Eq = Class.create({
 	
 	//html for info window
 	getHtml: function(){
-		var name = ["Magnitude: ", "Time (UTC):", "Time (Local):", "Depth (Km): ", "Event Id:", "Epoch time:", "Age (Days):" ];
+		//var name = ["Magnitude: ", "Time (UTC):", "Time (Local):", "Depth (Km): ", "Event Id:", "Epoch time:", "Age (Days):" ];
+		var name = ["Magnitude: ", "Time (UTC):", "Depth (km): ", "Epicentral distance (km):", "Coordinates:", "Age (days):", "Event Id:" ];
 		var eqDate = new Date(this.yr, this.mon, this.day, this.hr, this.min, this.sec);
 		var noPage = new Date();
 		noPage.setDate(noPage.getDate()-14);
-		var param = [this.mag, this.getDate(), this.loc, this.dep, this.eId, this.epoch, this.age.toFixed(1) ];
+		var pointEq = new GLatLng(this.lat, this.lon);
+		var pointVol = new GLatLng(mapParam.lat, mapParam.lon);
+		var eqVolDistance = pointEq.distanceFrom(pointVol) / 1000;
+		//var param = [this.mag, this.getDate(), this.loc, this.dep, this.eId, this.epoch, this.age.toFixed(1) ];
+		var param = [this.mag, this.getDate(), this.dep, eqVolDistance.toFixed(1), this.lat + " " + this.lon, this.age.toFixed(1), this.eId];
 		var html = "<div class = 'eqWin'> \n";
 		if (eqDate > noPage ){
 			if (this.net != "AK") {

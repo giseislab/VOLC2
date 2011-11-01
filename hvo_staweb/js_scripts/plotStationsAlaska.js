@@ -67,6 +67,8 @@ function plotStations() {
 				var stalat = parseFloat(markers[i].getAttribute("lat"));
 				var stalng = parseFloat(markers[i].getAttribute("lng"));
 				var stapoint = new GLatLng(stalat,stalng);
+				var volpoint = new GLatLng(mapParam.lat,mapParam.lon);
+				var staVolDistance = stapoint.distanceFrom(volpoint)/1000;
 				var staname = markers[i].getAttribute("station");
 				staList[i] = staname;
 				var stachannel = markers[i].getAttribute("channel");
@@ -97,8 +99,7 @@ function plotStations() {
 				var html24 = '<a class="webi" href="'+hr24+'" target="_blank">';
 				//var html12 = '<a class="webi" href="'+arch12+'" target="_blank">';
 				//var html24 = '<a class="webi" href="'+arch24+'" target="_blank">';
-				
-				var stahtml = LAB+'Station: </a>'+vals+staname+'</a><br>'+LAB+'Station Type: </a>'+vals+statype+'</a><br>'+LAB+'Webicorder: </a>';
+				var stahtml = LAB+'Station: </a>'+vals+staname+'</a><br/>'+LAB+'Station Type: </a>'+vals+statype+'</a><br/>'+LAB+'Distance (km): </a>'+vals+staVolDistance.toFixed(1)+'</a><br/>'+LAB+'Webicorder: </a>';
 				stahtml=stahtml+vals+html6+'6hr</a>';
 				stahtml=stahtml+' | '+vals+html12+'12hr</a>';
 				stahtml=stahtml+' | '+vals+html24+'24hr</a><br>';
