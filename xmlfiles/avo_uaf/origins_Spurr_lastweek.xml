@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<merge fileTime_loc="2011/11/01 14:29:10 AKDT" fileTime_utc="2011/11/01 22:29:10 UTC">
+	<!-- created by css2volcxml from database: /Seis/Kiska4/picks/Total/Total on 11/01/2011  22:29:11.217 UTC -->
+<event id="38200386" network-code="AK" time-stamp="2011/11/01_22:29:11" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="10"/>
+<param name="day" value="31"/>
+<param name="hour" value="17"/>
+<param name="minute" value="58"/>
+<param name="second" value="26"/>
+<param name="latitude" value="61.4862"/>
+<param name="longitude" value="-151.9188"/>
+<param name="depth" value="8.5"/>
+<param name="magnitude" value="0.8"/>
+<param name="num-stations" value="14"/>
+<param name="num-phases" value="14"/>
+<param name="local-time" value="Mon Oct 31, 2011 17:58:26 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="38200385" network-code="AK" time-stamp="2011/11/01_22:29:11" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="10"/>
+<param name="day" value="31"/>
+<param name="hour" value="17"/>
+<param name="minute" value="43"/>
+<param name="second" value="34"/>
+<param name="latitude" value="61.1378"/>
+<param name="longitude" value="-152.3110"/>
+<param name="depth" value="0.7"/>
+<param name="magnitude" value="0.2"/>
+<param name="num-stations" value="12"/>
+<param name="num-phases" value="12"/>
+<param name="local-time" value="Mon Oct 31, 2011 17:43:34 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="38200373" network-code="AK" time-stamp="2011/11/01_22:29:11" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="10"/>
+<param name="day" value="30"/>
+<param name="hour" value="10"/>
+<param name="minute" value="54"/>
+<param name="second" value="37"/>
+<param name="latitude" value="61.3285"/>
+<param name="longitude" value="-152.2662"/>
+<param name="depth" value="-1.9"/>
+<param name="magnitude" value="0.5"/>
+<param name="num-stations" value="24"/>
+<param name="num-phases" value="23"/>
+<param name="local-time" value="Sun Oct 30, 2011 10:54:37 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="38200371" network-code="AK" time-stamp="2011/11/01_22:29:11" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="10"/>
+<param name="day" value="30"/>
+<param name="hour" value="04"/>
+<param name="minute" value="52"/>
+<param name="second" value="37"/>
+<param name="latitude" value="61.3287"/>
+<param name="longitude" value="-152.2232"/>
+<param name="depth" value="3.4"/>
+<param name="magnitude" value="0.3"/>
+<param name="num-stations" value="15"/>
+<param name="num-phases" value="15"/>
+<param name="local-time" value="Sun Oct 30, 2011 04:52:37 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="38200367" network-code="AK" time-stamp="2011/11/01_22:29:11" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="10"/>
+<param name="day" value="29"/>
+<param name="hour" value="15"/>
+<param name="minute" value="58"/>
+<param name="second" value="52"/>
+<param name="latitude" value="61.3292"/>
+<param name="longitude" value="-152.0762"/>
+<param name="depth" value="3.2"/>
+<param name="magnitude" value="0.2"/>
+<param name="num-stations" value="19"/>
+<param name="num-phases" value="19"/>
+<param name="local-time" value="Sat Oct 29, 2011 15:58:52 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="38200362" network-code="AK" time-stamp="2011/11/01_22:29:11" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="10"/>
+<param name="day" value="29"/>
+<param name="hour" value="00"/>
+<param name="minute" value="36"/>
+<param name="second" value="11"/>
+<param name="latitude" value="61.3373"/>
+<param name="longitude" value="-152.0712"/>
+<param name="depth" value="2.7"/>
+<param name="magnitude" value="-0.3"/>
+<param name="num-stations" value="16"/>
+<param name="num-phases" value="16"/>
+<param name="local-time" value="Sat Oct 29, 2011 00:36:11 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="38200358" network-code="AK" time-stamp="2011/11/01_22:29:11" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="10"/>
+<param name="day" value="28"/>
+<param name="hour" value="20"/>
+<param name="minute" value="03"/>
+<param name="second" value="31"/>
+<param name="latitude" value="61.3243"/>
+<param name="longitude" value="-152.2297"/>
+<param name="depth" value="4.7"/>
+<param name="magnitude" value="0.8"/>
+<param name="num-stations" value="18"/>
+<param name="num-phases" value="18"/>
+<param name="local-time" value="Fri Oct 28, 2011 20:03:31 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="38200357" network-code="AK" time-stamp="2011/11/01_22:29:11" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="10"/>
+<param name="day" value="28"/>
+<param name="hour" value="19"/>
+<param name="minute" value="55"/>
+<param name="second" value="22"/>
+<param name="latitude" value="61.2032"/>
+<param name="longitude" value="-152.2093"/>
+<param name="depth" value="7.8"/>
+<param name="magnitude" value="1.2"/>
+<param name="num-stations" value="29"/>
+<param name="num-phases" value="22"/>
+<param name="local-time" value="Fri Oct 28, 2011 19:55:22 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="38200356" network-code="AK" time-stamp="2011/11/01_22:29:11" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="10"/>
+<param name="day" value="28"/>
+<param name="hour" value="17"/>
+<param name="minute" value="19"/>
+<param name="second" value="06"/>
+<param name="latitude" value="61.3433"/>
+<param name="longitude" value="-152.2593"/>
+<param name="depth" value="17.6"/>
+<param name="magnitude" value="0.2"/>
+<param name="num-stations" value="14"/>
+<param name="num-phases" value="13"/>
+<param name="local-time" value="Fri Oct 28, 2011 17:19:06 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="38200350" network-code="AK" time-stamp="2011/11/01_22:29:11" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="10"/>
+<param name="day" value="28"/>
+<param name="hour" value="04"/>
+<param name="minute" value="39"/>
+<param name="second" value="54"/>
+<param name="latitude" value="61.1035"/>
+<param name="longitude" value="-152.5572"/>
+<param name="depth" value="8.8"/>
+<param name="magnitude" value="0.7"/>
+<param name="num-stations" value="26"/>
+<param name="num-phases" value="22"/>
+<param name="local-time" value="Fri Oct 28, 2011 04:39:54 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="38200349" network-code="AK" time-stamp="2011/11/01_22:29:11" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="10"/>
+<param name="day" value="28"/>
+<param name="hour" value="03"/>
+<param name="minute" value="13"/>
+<param name="second" value="56"/>
+<param name="latitude" value="61.4762"/>
+<param name="longitude" value="-151.9235"/>
+<param name="depth" value="5.2"/>
+<param name="magnitude" value="0.7"/>
+<param name="num-stations" value="17"/>
+<param name="num-phases" value="13"/>
+<param name="local-time" value="Fri Oct 28, 2011 03:13:56 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="38200348" network-code="AK" time-stamp="2011/11/01_22:29:11" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="10"/>
+<param name="day" value="28"/>
+<param name="hour" value="02"/>
+<param name="minute" value="34"/>
+<param name="second" value="31"/>
+<param name="latitude" value="61.2885"/>
+<param name="longitude" value="-152.4053"/>
+<param name="depth" value="10.8"/>
+<param name="magnitude" value="0.0"/>
+<param name="num-stations" value="19"/>
+<param name="num-phases" value="17"/>
+<param name="local-time" value="Fri Oct 28, 2011 02:34:31 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="38200346" network-code="AK" time-stamp="2011/11/01_22:29:11" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="10"/>
+<param name="day" value="27"/>
+<param name="hour" value="22"/>
+<param name="minute" value="49"/>
+<param name="second" value="13"/>
+<param name="latitude" value="61.3057"/>
+<param name="longitude" value="-152.2395"/>
+<param name="depth" value="2.8"/>
+<param name="magnitude" value="0.3"/>
+<param name="num-stations" value="16"/>
+<param name="num-phases" value="16"/>
+<param name="local-time" value="Thu Oct 27, 2011 22:49:13 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="38200343" network-code="AK" time-stamp="2011/11/01_22:29:11" version="1">
+<param name="year" value="2011"/>
+<param name="month" value="10"/>
+<param name="day" value="26"/>
+<param name="hour" value="20"/>
+<param name="minute" value="15"/>
+<param name="second" value="15"/>
+<param name="latitude" value="61.4692"/>
+<param name="longitude" value="-151.8998"/>
+<param name="depth" value="6.3"/>
+<param name="magnitude" value="0.7"/>
+<param name="num-stations" value="8"/>
+<param name="num-phases" value="8"/>
+<param name="local-time" value="Wed Oct 26, 2011 20:15:15 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+</merge>

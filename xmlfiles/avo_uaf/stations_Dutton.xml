@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<markers>
+	<!-- created by css2volcxml from database: /avort/oprun/dbmaster/master_stations on 11/01/2011  22:30:27.366 UTC -->
+<marker lat="55.1071" lng="-162.2781" station="DT1" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="55.1457" lng="-162.2570" station="DTN" channel="EHZ" network="AV" location="--" type="SP"/>
+</markers>

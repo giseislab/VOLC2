@@ -90,7 +90,7 @@ var xmark1 = [];
 var xmark2 = [];
 var markIndex = 1000000;
 
-function loadMap() {
+function loadMap(defaultPoint1, defaultPoint2) {
 	if (GBrowserIsCompatible()) {
 		map = new GMap2($("map"));
 		map.setCenter(new GLatLng(mapParam.lat, mapParam.lon), mapParam.zoom);
@@ -103,6 +103,16 @@ function loadMap() {
 		map.addControl(new GScaleControl());//adds scale
 		map.enableScrollWheelZoom();
 		var mapNormalProj = G_PHYSICAL_MAP.getProjection();
+if (npts == 0) {
+	deltadegrees = 0.1;
+	lat1 = mapParam.lat - deltadegrees;
+	lon1 = mapParam.lon - deltadegrees;
+	lat2 = mapParam.lat + deltadegrees;
+	lon2 = mapParam.lon + deltadegrees;
+	loc1 = new GLatLng(lat1, lon1);
+	loc2 = new GLatLng(lat2, lon2);
+	//getXsec();
+}
 		// Control cross section
 		GEvent.addListener(map, 'click', function(overlay, point) {
 		if (xsecExist == 0){
