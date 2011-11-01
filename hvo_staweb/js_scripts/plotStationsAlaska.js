@@ -191,9 +191,11 @@ function createMarker(point,html,name,statype) {
   	GEvent.addListener(marker, "click", function() {
 		marker.openInfoWindowHtml(html);
 	});
-  	GEvent.addListener(marker, "mouseover", function() {
+  	/* Remove mouseover because cannot click helicorders
+	GEvent.addListener(marker, "mouseover", function() {
 		marker.openInfoWindowHtml(name);
 	});
+	*/	
   	GEvent.addListener(marker, "mouseout", function() {
 		marker.closeInfoWindow();
 	});

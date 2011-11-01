@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<markers>
-	<!-- created by css2volcxml from database: /avort/oprun/dbmaster/master_stations on 10/28/2011  23:41:01.313 UTC -->
-<marker lat="54.4732" lng="-164.5840" station="WESE" channel="EHZ" network="AV" location="--" type="SP"/>
-<marker lat="54.5724" lng="-164.5784" station="WESN" channel="EHZ" network="AV" location="--" type="SP"/>
-<marker lat="54.5911" lng="-164.7530" station="WEBT" channel="EHZ" network="AV" location="--" type="SP"/>
-<marker lat="54.5309" lng="-164.7776" station="WECS" channel="EHZ" network="AV" location="--" type="SP"/>
-<marker lat="54.4935" lng="-164.7213" station="WESP" channel="EHZ" network="AV" location="--" type="SP"/>
-</markers>

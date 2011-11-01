@@ -65,13 +65,13 @@
                         $banner_alt = $config->banner['alt'];
                         $legend = $config->legend;
                         $network_code = $config->network_code;
-                        print "<title>$title $domain</title>\n";
+                        print "<title>$title</title>\n";
 
                         # Read in the list of volcanoes
                         $xml = simplexml_load_file($volcanoviewsxmlfile); # or die("file not found: $xmlfile\n");
                         $c=0;
-                        while ($volcano_name[$c] = $xml->volcano[$c]['name']):
-                                #print "<p>$volcano_name[$c]</p>\n";
+                        while ($vname = $xml->volcano[$c]['name']):
+                        	$volcano_name[$c] = $vname;
                                 $volcano_lat[$c] = $xml->volcano[$c]['lat'];
                                 $volcano_lon[$c] = $xml->volcano[$c]['lon'];
                                 $volcano_zoomlevel[$c] = $xml->volcano[$c]['zoomlevel'];
@@ -113,7 +113,7 @@ END;
 			if (!file_exists($eventXmlAll)) { 
 				die("</head><body>Event XML file ($eventXmlAll) not found</body></html>");
 			}
-			$eventXml20 = "$xml_directory/origins_$volcano_lastweek.xml";
+			$eventXml20 = "$xml_directory/origins_$volcano"."_lastweek.xml";
 			if (!file_exists($eventXml20)) { 
 				$eventXml20 = $eventXmlAll;
 			}
@@ -137,7 +137,7 @@ END;
 		<link rel="Shortcut Icon" href="images/volc2shortcut.png"/>
                 <script type="text/javascript">
 			radioTimeRangeHTML =	'<form name="timerange">' + 
-                                   			'Show last:</br>' + 
+                                   			'Show last:<br/>' + 
                                    			<?php
                                            			//$timeranges = array("day"=>1, "week"=>7, "month"=>30, "year"=>365, "all"=>999);
                                            			$timeranges = array("day"=>1, "week"=>7, "month"=>30, "year"=>365);
@@ -165,6 +165,12 @@ END;
 	<body>
 		<div id ="header">
                         <?php
+				#print "eventXmlAll = $eventXmlAll<br/>\n";
+				#print "eventXml20 = $eventXml20<br/>\n";
+				#print "staXML = $staXML<br/>\n";
+				#for ($c=0; $c<count($volcano_name); $c++) {
+				#	print $c.": ".$volcano_name[$c]."<br/>\n";
+				#}
 				print "<a href=\"$public_site\"><img id=\"logo\" src=\"$logo_src\" alt=\"$logo_alt\"/></a>\n";
 				print "<img id=\"req2Logo\" src=\"$banner_src\" alt=\"$banner_alt\"/>\n";
 				$previndex = $vindex - 1;
@@ -173,7 +179,7 @@ END;
 				}
 				$prevvolcano = $volcano_name[$previndex];		
 				$nextindex = $vindex + 1;
-				if ($nextindex > count($volcano_name)-1) {
+				if ($nextindex >= count($volcano_name)) {
 					$nextindex = 0;
 				}
 				$nextvolcano = $volcano_name[$nextindex];	
@@ -236,7 +242,7 @@ END;
 				</div>
 				<div id = "controlRight">
 					<form>
-					 	Color EQ's by:
+					 	Color by:
 						<label><input type="radio" id ="plotTime" name="plot" checked = "checked" />Time</label>
 						<label><input type="radio" id ="plotDepth" name="plot" />Depth</label>
 						<br/>

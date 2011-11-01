@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <volc2_configuration_parameters>
-<!-- <xml_directory>http://user:pass@giseis.alaska.edu/AVO/internal/avoseis/op/data/volc2_xml</xml_directory>  -->
-<xml_directory>../xmlfiles/avo_uaf</xml_directory>
+<xml_directory>../../data/volc2</xml_directory>
 <title>VOLC2 - Your source for volcanic earthquakes in Alaska</title>
 <logo src="images/avoLogo.jpg" alt="AVO logo" />
 <public_site>www.avo.alaska.edu</public_site>
