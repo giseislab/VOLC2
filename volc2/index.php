@@ -188,7 +188,7 @@ END;
                                 if ($volcano == "All") {
                                         print "All volcanoes\n";
                                 } else {
-                                        print "$volcano Volcano\n";
+                                        print "$volcano\n";
                                 };
                                 print "<a href=\"$thisPage?volcano=$nextvolcano\">&gt&gt</a>\n";
 				print "</span>\n";

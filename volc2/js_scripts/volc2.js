@@ -740,13 +740,11 @@ Eq = Class.create({
 	
 	//html for info window
 	getHtml: function(){
-		//var name = ["Magnitude: ", "Time (UTC):", "Time (Local):", "Depth (Km): ", "Event Id:", "Origin time:", "Age (Days):" ];
-		var name = ["Magnitude: ", "Depth (Km): ", "Event Id:", "Origin time:", "Age (Days):" ];
+		var name = ["Magnitude: ", "Time (UTC):", "Time (Local):", "Depth (Km): ", "Event Id:", "Epoch time:", "Age (Days):" ];
 		var eqDate = new Date(this.yr, this.mon, this.day, this.hr, this.min, this.sec);
 		var noPage = new Date();
 		noPage.setDate(noPage.getDate()-14);
-		//var param = [this.mag, this.getDate(), this.loc, this.dep, this.eId, this.epoch, this.age ];
-		var param = [this.mag, this.dep, this.eId, this.epoch, this.age.toFixed(1) ];
+		var param = [this.mag, this.getDate(), this.loc, this.dep, this.eId, this.epoch, this.age.toFixed(1) ];
 		var html = "<div class = 'eqWin'> \n";
 		if (eqDate > noPage ){
 			if (this.net != "AK") {
