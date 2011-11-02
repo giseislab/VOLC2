@@ -137,7 +137,9 @@ function clearXsec(){
 	document.getElementById("chart_div").innerHTML="";
 	document.getElementById("xsec_options").innerHTML=initialXsec;
 	// Clear markers
-	clearXmarks();
+	//clearXmarks();
+	map.removeOverlay(xmark1);
+	map.removeOverlay(xmark2);
 	// Clear polygon
 	map.removeOverlay(Xpoly);
 	loc1 = [];

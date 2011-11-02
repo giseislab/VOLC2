@@ -260,7 +260,7 @@ function parseEqs2(ajax){
 //add time range earthquake parser
 function updateEqs(){
 	killMarkers();
-	clearXsec();
+	//clearXsec();
 	eventArray = [];
 	eqNum = 0;
 	gmarkers = [];
@@ -518,10 +518,10 @@ function resetControl(){
 }
 
 // Clear markers from cross section
-function clearXmarks(){
-	map.removeOverlay(xmark1);
-	map.removeOverlay(xmark2);
-}
+//function clearXmarks(){
+//	map.removeOverlay(xmark1);
+//	map.removeOverlay(xmark2);
+//}
 /////////////////begin Earthquake class//////////////
 
 Eq = Class.create({
