@@ -18,8 +18,8 @@ Event.observe(window, 'load', function(){
 	if (plotVolcanoIcons ==1){
 		plotVolcanoes();
 	}
-	//$("plotVolcanoesTrue").observe('click', toggleVolcanoes);
-	//$("plotVolcanoesFalse").observe('click', toggleVolcanoes);
+	$("plotVolcanoesTrue").observe('click', toggleVolcanoes);
+	$("plotVolcanoesFalse").observe('click', toggleVolcanoes);
 	
 	//eqs
 	$("eqAll").observe('click',shide);
@@ -30,8 +30,8 @@ Event.observe(window, 'load', function(){
 	$("eq0").observe('click', shide);
 	$("plotTime").observe('click', changePlot);
 	$("plotDepth").observe('click', changePlot);
-	//$("plotStaTrue").observe('click', toggleStas);
-	//$("plotStaFalse").observe('click', toggleStas);
+	$("plotStaTrue").observe('click', toggleStas);
+	$("plotStaFalse").observe('click', toggleStas);
 	//reset map view
 	$('reset').observe('click', function(){
 		initialPlot = 1;
@@ -492,8 +492,8 @@ function toggleVolcanoes(){
 		plotVolcanoes();
 	}else{
 		plotVolcanoIcons = 0;
-		for (var i = 0; i<vmarkers.length; i++){
-			vmarkers[i].remove();
+		for (var i = 0; i<volcanomarker.length; i++){
+			volcanomarker[i].remove();
 		}
 	}
 }

@@ -45,7 +45,9 @@
 		<script src = "../hvo_staweb/js_scripts/effects.js" type="text/javascript"> </script>
 		<script src = "../hvo_staweb/js_scripts/checkMobile.js" type="text/javascript"> </script>
 		<!-- <script src = "../hvo_staweb/js_scripts/plotStations.js" type="text/javascript"> </script> -->
-                <script src = "../hvo_staweb/js_scripts/plotStationsAlaska.js" type="text/javascript"> </script>
+        <script src = "../hvo_staweb/js_scripts/plotStationsAlaska.js" type="text/javascript"> </script>
+		<script src = "js_scripts/plotVolcanoes.js" type="text/javascript"> </script>
+
 		<!--Volc2 stuff-->
 	
 
@@ -132,7 +134,6 @@ END;
 		<script src = "js_scripts/menu.js" type="text/javascript"> </script>
 		<script src = "js_scripts/volc2.js" type="text/javascript"> </script>
 		<script src = "js_scripts/xsec.js" type="text/javascript"> </script>
-		<script src = "js_scripts/plotVolcanoes.js" type="text/javascript"> </script>
 		<link rel="stylesheet" type="text/css" href="volc2.css" />
 		<link rel="Shortcut Icon" href="images/volc2shortcut.png"/>
                 <script type="text/javascript">
@@ -246,15 +247,16 @@ END;
 						<label><input type="radio" id ="plotTime" name="plot" checked = "checked" />Time</label>
 						<label><input type="radio" id ="plotDepth" name="plot" />Depth</label>
 						<br/>
-						<!-- Station toggling not working, and volcanoes layer never worked, so comment out for now - GT 2011/10/28
+						
 						Show Stations: 
 					    	<label><input type="radio" id ="plotStaTrue" checked="checked" name="plot2" />Yes</label>
 					    	<label><input type="radio" id ="plotStaFalse" name="plot2" />No</label>
 						<br/>
+						<!-- Station toggling not working, and volcanoes layer never worked, so comment out for now - GT 2011/10/28-->
 						Show Volcanoes:
 					    	<label><input type="radio" id ="plotVolcanoesTrue" checked="checked" name="radioPlotVolcanoes" />Yes</label>
 					    	<label><input type="radio" id ="plotVolcanoesFalse" name="radioPlotVolcanoes" />No</label>
-						-->
+						
 					</form>
 				</div>
 				<div class = "clear"></div>

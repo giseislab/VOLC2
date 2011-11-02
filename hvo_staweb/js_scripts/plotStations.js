@@ -52,6 +52,7 @@ var webiarc = 'http://hvointernal.wr.usgs.gov/seismic/volcWeb/ARCHIVE/';
 
 
 function plotStations() {
+    markeridx = 0;
 	var LAB = '<a style="color: #6487A1; font-size:90%; font-family:arial;">';
 	var vals = '<a style="color: #666666; font-size:90%; font-family:arial;">';
 	var request = GXmlHttp.create();

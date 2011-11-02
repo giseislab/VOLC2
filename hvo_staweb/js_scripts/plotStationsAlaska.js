@@ -11,13 +11,13 @@ hot_icon.shadowSize = new GSize(0,0);
 hot_icon.iconAnchor = new GPoint(3,3);
 hot_icon.image = "images/hotsta.png";
 var hotmarker = new GMarker (new GLatLng(0, 0), {icon:hot_icon, zIndexProcess:importanceOrder});
-
+var stamarker = new Array (); //Global variable that tracks stations throughout codes
 
 var thisIcon = new GIcon();
 thisIcon.shadow=null;
 thisIcon.iconSize=new GSize(11,11);
 thisIcon.shadowSize = new GSize(0,0);
-thisIcon.iconAnchor = new GPoint(0,0);
+thisIcon.iconAnchor = new GPoint(10,10);
 thisIcon.infoWindowAnchor=new GPoint(11,0);
 
 var SP_icon = new GIcon(thisIcon, "images/staPict_SP.png", null);
@@ -51,6 +51,7 @@ var webiarc = 'http://www.hvointernal.wr.usgs.gov/web/heliArchive/';
 
 
 function plotStations() {
+    markeridx = 0;
 	var LAB = '<a style="color: #6487A1; font-size:90%; font-family:arial;">';
 	var vals = '<a style="color: #666666; font-size:90%; font-family:arial;">';
 	var request = GXmlHttp.create();
@@ -188,20 +189,18 @@ function createMarker(point,html,name,statype) {
 		var new_icon=SM_icon;
 		var order = 0;
 	}
-	var marker = new GMarker(point,{icon:new_icon, zIndexProcess:importanceOrder});
-  	GEvent.addListener(marker, "click", function() {
-		marker.openInfoWindowHtml(html);
+	//stamarker is a global variable used to toggle stations on and off
+	stamarker[markeridx]  = new GMarker(point,{icon:new_icon, zIndexProcess:importanceOrder});
+  	var nowmarker = stamarker[markeridx];
+  	GEvent.addListener(nowmarker, "click", function() {
+		nowmarker.openInfoWindowHtml(html);
 	});
-  	/* Remove mouseover because cannot click helicorders
-	GEvent.addListener(marker, "mouseover", function() {
-		marker.openInfoWindowHtml(name);
-	});
-	*/	
-  	GEvent.addListener(marker, "mouseout", function() {
-		marker.closeInfoWindow();
-	});
-	marker.importance=markeridx+order;
-	coldmarkers.push(marker);
+	/* Couldn't click on anything in the bubble when this is used
+  	GEvent.addListener(nowmarker, "mouseout", function() {
+		nowmarker.closeInfoWindow();
+	}); */
+	stamarker.importance=markeridx+order;
+	coldmarkers.push(stamarker[markeridx]);
 	htmls.push(html);
 	side_bar_html = 'javascript:myclick(' + markeridx + ')';
 	if (sidebar ==1){
