@@ -25,6 +25,7 @@
 					$GMap2Key = "ABQIAAAADLVBXakPUVGdLMxvnw_xjRROHl2n3JvsTik875qBELv4_RGFpBQxZVxwItz8R2I-hgxB9x1rq8PgBQ";
 					break;
 				case "giseis.alaska.edu":
+				case "kiska.giseis.alaska.edu":
 	        			$GMap2Key = "ABQIAAAA08sgpfMO8KIySKvJkekPIRTXrO8TDN3d9zJDDLg-faokzzewNxRRg8YyWsFjL8Yj63junmxsjjZL9g";
 					break;
 				default:
@@ -101,7 +102,7 @@ END;
 
                 <!-- # Copy PHP variables to JAVASCRIPT variables -->
                 <script type="text/javascript">
-                        volcanoname = "<?php print $volcano; ?>";
+                        var volcanoname = "<?php print $volcano; ?>";
                         xml_directory = "<?php print $xml_directory; ?>";
                         network_code = "<?php print $network_code; ?>";
 			var date1 = new Date(1970, 0, 1, 0, 0, 0);

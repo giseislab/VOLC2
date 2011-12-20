@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<merge fileTime_loc="2011/11/01 14:30:21 AKDT" fileTime_utc="2011/11/01 22:30:21 UTC">
-	<!-- created by css2volcxml from database: /Seis/Kiska4/picks/Total/Total on 11/01/2011  22:30:22.767 UTC -->
-<event id="38000316" network-code="AK" time-stamp="2011/11/01_22:30:22" version="1">
+	<!-- created by db2googlemaps from database: /Seis/Kiska4/picks/Total/Total at 2011/12/08 23:30:24 UTC UTC -->
+<merge fileTime_loc="2011/12/08 14:30:24 AKST" fileTime_utc="2011/12/08 23:30:24 UTC">
+<event id="38000316" network-code="AK" time-stamp="2011/12/08_23:30:25" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="08"/>
 <param name="day" value="30"/>
@@ -17,7 +17,7 @@
 <param name="local-time" value="Tue Aug 30, 2011 17:52:53 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="38000243" network-code="AK" time-stamp="2011/11/01_22:30:22" version="1">
+<event id="38000243" network-code="AK" time-stamp="2011/12/08_23:30:25" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="08"/>
 <param name="day" value="24"/>
@@ -33,7 +33,7 @@
 <param name="local-time" value="Wed Aug 24, 2011 00:34:18 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37900347" network-code="AK" time-stamp="2011/11/01_22:30:22" version="1">
+<event id="37900347" network-code="AK" time-stamp="2011/12/08_23:30:25" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="07"/>
 <param name="day" value="29"/>
@@ -49,7 +49,7 @@
 <param name="local-time" value="Fri Jul 29, 2011 18:34:30 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37900329" network-code="AK" time-stamp="2011/11/01_22:30:22" version="1">
+<event id="37900329" network-code="AK" time-stamp="2011/12/08_23:30:25" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="07"/>
 <param name="day" value="28"/>
@@ -65,7 +65,7 @@
 <param name="local-time" value="Thu Jul 28, 2011 20:43:55 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37700110" network-code="AK" time-stamp="2011/11/01_22:30:22" version="1">
+<event id="37700110" network-code="AK" time-stamp="2011/12/08_23:30:25" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="05"/>
 <param name="day" value="11"/>
@@ -81,7 +81,7 @@
 <param name="local-time" value="Wed May 11, 2011 04:59:18 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37500115" network-code="AK" time-stamp="2011/11/01_22:30:22" version="1">
+<event id="37500115" network-code="AK" time-stamp="2011/12/08_23:30:25" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="03"/>
 <param name="day" value="12"/>
@@ -97,7 +97,7 @@
 <param name="local-time" value="Sat Mar 12, 2011 02:21:08 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37500109" network-code="AK" time-stamp="2011/11/01_22:30:22" version="1">
+<event id="37500109" network-code="AK" time-stamp="2011/12/08_23:30:25" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="03"/>
 <param name="day" value="12"/>
@@ -113,7 +113,7 @@
 <param name="local-time" value="Sat Mar 12, 2011 00:36:53 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37500107" network-code="AK" time-stamp="2011/11/01_22:30:22" version="1">
+<event id="37500107" network-code="AK" time-stamp="2011/12/08_23:30:25" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="03"/>
 <param name="day" value="11"/>
@@ -129,7 +129,7 @@
 <param name="local-time" value="Fri Mar 11, 2011 21:06:56 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37500105" network-code="AK" time-stamp="2011/11/01_22:30:22" version="1">
+<event id="37500105" network-code="AK" time-stamp="2011/12/08_23:30:25" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="03"/>
 <param name="day" value="11"/>
@@ -145,7 +145,7 @@
 <param name="local-time" value="Fri Mar 11, 2011 14:09:00 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37500047" network-code="AK" time-stamp="2011/11/01_22:30:22" version="1">
+<event id="37500047" network-code="AK" time-stamp="2011/12/08_23:30:25" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="03"/>
 <param name="day" value="07"/>
@@ -161,7 +161,7 @@
 <param name="local-time" value="Mon Mar 07, 2011 17:59:52 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37300212" network-code="AK" time-stamp="2011/11/01_22:30:22" version="1">
+<event id="37300212" network-code="AK" time-stamp="2011/12/08_23:30:25" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="01"/>
 <param name="day" value="27"/>
@@ -177,7 +177,7 @@
 <param name="local-time" value="Thu Jan 27, 2011 20:02:41 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37300191" network-code="AK" time-stamp="2011/11/01_22:30:22" version="1">
+<event id="37300191" network-code="AK" time-stamp="2011/12/08_23:30:25" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="01"/>
 <param name="day" value="25"/>
@@ -193,7 +193,7 @@
 <param name="local-time" value="Tue Jan 25, 2011 15:44:01 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37300166" network-code="AK" time-stamp="2011/11/01_22:30:22" version="1">
+<event id="37300166" network-code="AK" time-stamp="2011/12/08_23:30:25" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="01"/>
 <param name="day" value="20"/>
@@ -207,22 +207,6 @@
 <param name="num-stations" value="8"/>
 <param name="num-phases" value="8"/>
 <param name="local-time" value="Thu Jan 20, 2011 11:48:25 UTC"/>
-<param name="icon-style" value="1"/>
-</event>
-<event id="37100286" network-code="AK" time-stamp="2011/11/01_22:30:22" version="1">
-<param name="year" value="2010"/>
-<param name="month" value="11"/>
-<param name="day" value="30"/>
-<param name="hour" value="04"/>
-<param name="minute" value="14"/>
-<param name="second" value="55"/>
-<param name="latitude" value="55.3975"/>
-<param name="longitude" value="-161.8980"/>
-<param name="depth" value="-3.0"/>
-<param name="magnitude" value="1.5"/>
-<param name="num-stations" value="7"/>
-<param name="num-phases" value="7"/>
-<param name="local-time" value="Tue Nov 30, 2010 04:14:55 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
 </merge>

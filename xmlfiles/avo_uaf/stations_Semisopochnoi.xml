@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+	<!-- created by db2googlemaps from database: /avort/oprun/dbmaster/master_stations at 2011/12/08 23:31:26 UTC UTC -->
 <markers>
-	<!-- created by css2volcxml from database: /avort/oprun/dbmaster/master_stations on 11/01/2011  22:31:18.705 UTC -->
 <marker lat="52.0024" lng="179.5778" station="CEAP" channel="SHZ" network="AV" location="--" type="SP"/>
 <marker lat="51.9661" lng="179.4942" station="CETU" channel="SHZ" network="AV" location="--" type="SP"/>
 <marker lat="51.9658" lng="179.6492" station="CEPE" channel="SHZ" network="AV" location="--" type="SP"/>

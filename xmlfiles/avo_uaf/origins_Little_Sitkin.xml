@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<merge fileTime_loc="2011/11/01 14:31:20 AKDT" fileTime_utc="2011/11/01 22:31:20 UTC">
-	<!-- created by css2volcxml from database: /Seis/Kiska4/picks/Total/Total on 11/01/2011  22:31:21.763 UTC -->
-<event id="37400207" network-code="AK" time-stamp="2011/11/01_22:31:21" version="1">
+	<!-- created by db2googlemaps from database: /Seis/Kiska4/picks/Total/Total at 2011/12/08 23:31:29 UTC UTC -->
+<merge fileTime_loc="2011/12/08 14:31:29 AKST" fileTime_utc="2011/12/08 23:31:29 UTC">
+<event id="37400207" network-code="AK" time-stamp="2011/12/08_23:31:30" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="02"/>
 <param name="day" value="20"/>
@@ -17,7 +17,7 @@
 <param name="local-time" value="Sun Feb 20, 2011 08:19:41 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37400171" network-code="AK" time-stamp="2011/11/01_22:31:21" version="1">
+<event id="37400171" network-code="AK" time-stamp="2011/12/08_23:31:30" version="1">
 <param name="year" value="2011"/>
 <param name="month" value="02"/>
 <param name="day" value="18"/>
@@ -33,7 +33,7 @@
 <param name="local-time" value="Fri Feb 18, 2011 01:27:49 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37200114" network-code="AK" time-stamp="2011/11/01_22:31:21" version="1">
+<event id="37200114" network-code="AK" time-stamp="2011/12/08_23:31:30" version="1">
 <param name="year" value="2010"/>
 <param name="month" value="12"/>
 <param name="day" value="14"/>
@@ -49,7 +49,7 @@
 <param name="local-time" value="Tue Dec 14, 2010 03:53:01 UTC"/>
 <param name="icon-style" value="1"/>
 </event>
-<event id="37200095" network-code="AK" time-stamp="2011/11/01_22:31:21" version="1">
+<event id="37200095" network-code="AK" time-stamp="2011/12/08_23:31:30" version="1">
 <param name="year" value="2010"/>
 <param name="month" value="12"/>
 <param name="day" value="12"/>

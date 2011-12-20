@@ -18,8 +18,8 @@ Event.observe(window, 'load', function(){
 	if (plotVolcanoIcons ==1){
 		plotVolcanoes();
 	}
-	$("plotVolcanoesTrue").observe('click', toggleVolcanoes);
-	$("plotVolcanoesFalse").observe('click', toggleVolcanoes);
+	//$("plotVolcanoesTrue").observe('click', toggleVolcanoes);
+	//$("plotVolcanoesFalse").observe('click', toggleVolcanoes);
 	
 	//eqs
 	$("eqAll").observe('click',shide);
@@ -30,8 +30,8 @@ Event.observe(window, 'load', function(){
 	$("eq0").observe('click', shide);
 	$("plotTime").observe('click', changePlot);
 	$("plotDepth").observe('click', changePlot);
-	$("plotStaTrue").observe('click', toggleStas);
-	$("plotStaFalse").observe('click', toggleStas);
+	//$("plotStaTrue").observe('click', toggleStas);
+	//$("plotStaFalse").observe('click', toggleStas);
 	//reset map view
 	$('reset').observe('click', function(){
 		initialPlot = 1;
@@ -90,7 +90,20 @@ var xmark1 = [];
 var xmark2 = [];
 var markIndex = 1000000;
 
-function loadMap(defaultPoint1, defaultPoint2) {
+function initialTimeDepthPlot() {
+	if (npts == 0) {
+		deltadegrees = 0.1;
+		lat1 = mapParam.lat - deltadegrees;
+		lon1 = mapParam.lon - deltadegrees;
+		lat2 = mapParam.lat + deltadegrees;
+		lon2 = mapParam.lon + deltadegrees;
+		loc1 = new GLatLng(lat1, lon1);
+		loc2 = new GLatLng(lat2, lon2);
+		defaultXsec();
+	}
+}
+
+function loadMap() {
 	if (GBrowserIsCompatible()) {
 		map = new GMap2($("map"));
 		map.setCenter(new GLatLng(mapParam.lat, mapParam.lon), mapParam.zoom);
@@ -103,16 +116,7 @@ function loadMap(defaultPoint1, defaultPoint2) {
 		map.addControl(new GScaleControl());//adds scale
 		map.enableScrollWheelZoom();
 		var mapNormalProj = G_PHYSICAL_MAP.getProjection();
-if (npts == 0) {
-	deltadegrees = 0.1;
-	lat1 = mapParam.lat - deltadegrees;
-	lon1 = mapParam.lon - deltadegrees;
-	lat2 = mapParam.lat + deltadegrees;
-	lon2 = mapParam.lon + deltadegrees;
-	loc1 = new GLatLng(lat1, lon1);
-	loc2 = new GLatLng(lat2, lon2);
-	//getXsec();
-}
+
 		// Control cross section
 		GEvent.addListener(map, 'click', function(overlay, point) {
 		if (xsecExist == 0){
@@ -154,6 +158,7 @@ function getEqs(){
 				onSuccess: parseEqs
 			}
 		);
+		initialTimeDepthPlot();
 	}
 	else{
 		//updateEqs();
@@ -260,7 +265,7 @@ function parseEqs2(ajax){
 //add time range earthquake parser
 function updateEqs(){
 	killMarkers();
-	//clearXsec();
+	clearXsec();
 	eventArray = [];
 	eqNum = 0;
 	gmarkers = [];
@@ -492,8 +497,8 @@ function toggleVolcanoes(){
 		plotVolcanoes();
 	}else{
 		plotVolcanoIcons = 0;
-		for (var i = 0; i<volcanomarker.length; i++){
-			volcanomarker[i].remove();
+		for (var i = 0; i<vmarkers.length; i++){
+			vmarkers[i].remove();
 		}
 	}
 }
@@ -518,10 +523,10 @@ function resetControl(){
 }
 
 // Clear markers from cross section
-//function clearXmarks(){
-//	map.removeOverlay(xmark1);
-//	map.removeOverlay(xmark2);
-//}
+function clearXmarks(){
+	map.removeOverlay(xmark1);
+	map.removeOverlay(xmark2);
+}
 /////////////////begin Earthquake class//////////////
 
 Eq = Class.create({
@@ -738,7 +743,7 @@ Eq = Class.create({
 		    emarker.openInfoWindowHtml(windowHtml);
 			$(listId).style.backgroundColor = "yellow";
 		  });
-		/* this.mag is empty
+		/* this.mag was empty so I removed this
 		GEvent.addListener(emarker, "mouseover", function() {
 		    emarker.openInfoWindowHtml($(mag).toFixed(1));
 		  });
@@ -750,25 +755,16 @@ Eq = Class.create({
 	
 	//html for info window
 	getHtml: function(){
+		//var name = ["Magnitude: ", "Time (UTC):", "Time (Local):", "Depth (Km): ", "Event Id:", "Epoch time:", "Age (Days):" ];
+		var name = ["Magnitude: ", "Time (UTC):", "Depth (km): ", "Epicentral distance (km):", "Coordinates:", "Age (days):", "Event Id:" ];
 		var eqDate = new Date(this.yr, this.mon, this.day, this.hr, this.min, this.sec);
 		var noPage = new Date();
 		noPage.setDate(noPage.getDate()-14);
-		//var name = ["Magnitude: ", "Time (UTC):", "Time (Local):", "Depth (Km): ", "Event Id:", "Epoch time:", "Age (Days):" ];
-		
-		if (volcanoname == "All") {
-			var name = ["Magnitude: ", "Time (UTC):", "Depth (km): ", "Coordinates:", "Age (days):", "Event Id:" ];
-			var param = [this.mag, this.getDate(), this.dep, this.lat + " " + this.lon, this.age.toFixed(1), this.eId];
-
-		} else {
-	
-			var pointEq = new GLatLng(this.lat, this.lon);
-			var pointVol = new GLatLng(mapParam.lat, mapParam.lon);
-			var eqVolDistance = pointEq.distanceFrom(pointVol) / 1000;
-			var name = ["Magnitude: ", "Time (UTC):", "Depth (km): ", "Epicenter to " + volcanoname + " (km):", "Coordinates:", "Age (days):", "Event Id:" ];
-			//var name = ["Magnitude: ", "Time (UTC):", "Depth (km): ", "Epicentral distance (km):", "Coordinates:", "Age (days):", "Event Id:" ];
-			//var param = [this.mag, this.getDate(), this.loc, this.dep, this.eId, this.epoch, this.age.toFixed(1) ];
-			var param = [this.mag, this.getDate(), this.dep, eqVolDistance.toFixed(1), this.lat + " " + this.lon, this.age.toFixed(1), this.eId];
-		}
+		var pointEq = new GLatLng(this.lat, this.lon);
+		var pointVol = new GLatLng(mapParam.lat, mapParam.lon);
+		var eqVolDistance = pointEq.distanceFrom(pointVol) / 1000;
+		//var param = [this.mag, this.getDate(), this.loc, this.dep, this.eId, this.epoch, this.age.toFixed(1) ];
+		var param = [this.mag, this.getDate(), this.dep, eqVolDistance.toFixed(1), this.lat + " " + this.lon, this.age.toFixed(1), this.eId];
 		var html = "<div class = 'eqWin'> \n";
 		if (eqDate > noPage ){
 			if (this.net != "AK") {

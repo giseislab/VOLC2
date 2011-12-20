@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+	<!-- created by db2googlemaps from database: /avort/oprun/dbmaster/master_stations at 2011/12/08 23:30:21 UTC UTC -->
 <markers>
-	<!-- created by css2volcxml from database: /avort/oprun/dbmaster/master_stations on 11/01/2011  22:30:19.688 UTC -->
 <marker lat="55.7038" lng="-162.0651" station="BLHA" channel="EHZ" network="AV" location="--" type="SP"/>
 <marker lat="55.1493" lng="-161.8614" station="DOL" channel="EHZ" network="AV" location="--" type="SP"/>
 <marker lat="54.9669" lng="-162.2611" station="DRR3" channel="EHZ" network="AV" location="--" type="SP"/>
