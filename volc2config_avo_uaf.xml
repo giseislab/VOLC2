@@ -8,6 +8,6 @@
 <legend>images/legendVolc2TimeRange.png</legend>
 <volcanomarkersxmlfile>volcanomarkers.xml</volcanomarkersxmlfile>
 <volcanoviewsxmlfile>volcanoviews.xml</volcanoviewsxmlfile>
-<initialview>Spurr</initialview>
+<initialview>All</initialview>
 <network_code>AK</network_code>
 </volc2_configuration_parameters>

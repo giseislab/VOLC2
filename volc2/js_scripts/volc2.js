@@ -712,7 +712,9 @@ Eq = Class.create({
 		}else{
 			Element.addClassName(a, "msmall");
 		}
-		a.innerHTML= this.mag + " " + this.getDate() + " " + z; 
+		mymag = parseFloat(this.mag).toFixed(1);
+		//a.innerHTML= document.write(mymag.toFixed(1) + " " + this.getDate() + " " + z); 
+		a.innerHTML= mymag + " " + this.getDate() + " " + z; 
 		li.appendChild(a);
 		$("eqlist").appendChild(li);
 		count ++;
