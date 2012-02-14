@@ -680,7 +680,7 @@ Eq = Class.create({
 	 getAgeIcon: function(){
 		var days = this.age;
 		if (days < 1){
-			return "0";
+			return "redcircle";
 		}
 		if (days < 7){
 			return "3";
