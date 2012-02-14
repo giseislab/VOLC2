@@ -680,18 +680,18 @@ Eq = Class.create({
 	 getAgeIcon: function(){
 		var days = this.age;
 		if (days < 1){
-			return "1";
+			return "0";
 		}
 		if (days < 7){
-			return "blueGreen";
+			return "3";
 		}
 		if (days < 30){
-			return "green";	
+			return "2";	
 		}
 		if (days < 365){
 			return "2";
 		}
-		return "orange";
+		return "2";
 	},	
 	//create the side bar
 	makeList: function(){
