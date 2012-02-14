@@ -167,6 +167,7 @@ END;
 	<body>
 		<div id ="header">
                         <?php
+
 				#print "eventXmlAll = $eventXmlAll<br/>\n";
 				#print "eventXml20 = $eventXml20<br/>\n";
 				#print "staXML = $staXML<br/>\n";
@@ -194,6 +195,8 @@ END;
                                 };
                                 print "<a href=\"$thisPage?volcano=$nextvolcano\">&gt&gt</a>\n";
 				print "</span>\n";
+                                #print "<a href=\"https://www.avo.alaska.edu/wiki/index.php/VOLC2:_Internal_webpage_tool_for_plotting_hypocenters_from_AQMS\" target=\"_new\">Issues/Bugs</a><br/>\n";
+                                print "<a href=\"https://docs.google.com/a/alaska.edu/document/d/1j-cg2ykDBHgpYk-QXXW0Az9QwR6alEOraJtETZNUjzE/edit\" target=\"_new\">Issues/Bugs</a><br/>\n";
                         ?>
 		</div>
 		<div class = "clear"></div>
