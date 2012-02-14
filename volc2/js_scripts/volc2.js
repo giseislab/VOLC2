@@ -683,15 +683,15 @@ Eq = Class.create({
 			return "redcircle";
 		}
 		if (days < 7){
-			return "3";
+			return "orangecircle";
 		}
 		if (days < 30){
-			return "2";	
+			return "orangeyellowcircle";	
 		}
 		if (days < 365){
-			return "2";
+			return "yellowcircle";
 		}
-		return "2";
+		return "paleyellowcircle";
 	},	
 	//create the side bar
 	makeList: function(){
