@@ -1,0 +1,5 @@
+The branches are:
+master: the official project code-base on github, which may include recent commits from HVO and/or AVO
+avo_master: the current version running at AVO
+hvo_master: avo_master + any changes pull downed from master
+avo_develop: bleeding edge development version at AVO
