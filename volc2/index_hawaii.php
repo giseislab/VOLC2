@@ -4,27 +4,26 @@
 		<meta name="author" content="Weston Thelen, Hawaiian Volcano Observatory" />
 		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 		<title>VolcWeb, Your Source for Earthquakes in Hawaii!</title>
-		<!--Misc stuff-->
-		<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=ABQIAAAADLVBXakPUVGdLMxvnw_xjRROHl2n3JvsTik875qBELv4_RGFpBQxZVxwItz8R2I-hgxB9x1rq8PgBQ" type = "text/javascript"></script>
-		<script src = "js_scripts/prototype-1.6.0.2.js"  type = "text/javascript"></script>
-		<script src = "js_scripts/scriptaculous.js" type = "text/javascript"></script>
-		<script type = "text/javascript" src = "http://www.google.com/jsapi"></script>
+		
 		
 		<?php
+		// Get Google Maps Stuff
+		require_once('../includes/googleMaps.php');
+		//Get effects (prototype and scriptaculous)
+		require_once('../includes/effects.php');
 		//Get plotting stuff
 		require_once('../includes/crossSection.php');
+		//Better webicorder stuff
+		require_once('../includes/betterWebi.php');
 		?>
 		
-		<!--Better Webicorder Stuff-->
-		<script src = "../hvo_staweb/js_scripts/effects.js" type = "text/javascript"> </script>
-		<script src = "../hvo_staweb/js_scripts/checkMobile.js" type = "text/javascript"> </script>
-		<script src = "../hvo_staweb/js_scripts/plotStations.js" type = "text/javascript"> </script>
-		<!--Volc2 stuff-->
-		<script src = "js_scripts/volc2Param_allHawaii.js" type = "text/javascript"> </script>
-		<script src = "js_scripts/volcCalStuff.js" type = "text/javascript"> </script>
-		<script src = "js_scripts/menu.js" type = "text/javascript"> </script>
-		<script src = "js_scripts/volc2.js" type = "text/javascript"> </script>
-		<script src = "js_scripts/xsec.js" type = "text/javascript"> </script>
+<script type = "text/javascript" src = "js_scripts/volc2Param_allHawaii.js"> </script>
+		
+		<?php
+		//Get volcWeb Stuff
+		require_once('../includes/volc2.php');
+		?>
+		
 		<link rel = "stylesheet" type = "text/css" href = "volc2.css" />
 		<link rel = "Shortcut Icon" href = "images/volc2shortcut.png"/>	
 	</head>
