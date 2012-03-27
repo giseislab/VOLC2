@@ -19,6 +19,7 @@ thisIcon.infoWindowAnchor=new GPoint(11,0);
 
 var volcano_icon = new GIcon(thisIcon, "images/volcano_icon2.png", null);
 volcano_icon.iconSize=new GSize(30,30);
+//volcano_icon.iconSize=new GSize(50,50);
 var mobile = isMobile();
 if (mobile == 1){
 	volcano_icon.iconSize=new GSize(25,25);
@@ -63,7 +64,7 @@ function createVMarker(point,name) {
   	GEvent.addListener(nowmarker, "click", function() {
 		nowmarker.openInfoWindowHtml(name);
 	});
-	volcanomarker[markeridxv].importance = markeridxv+order;
+	//volcanomarker[markeridxv].importance = markeridxv+order;
 	markeridxv++;
 }
 

@@ -196,7 +196,7 @@ END;
                                 print "<a href=\"$thisPage?volcano=$nextvolcano\">&gt&gt</a>\n";
 				print "</span>\n";
                                 #print "<a href=\"https://www.avo.alaska.edu/wiki/index.php/VOLC2:_Internal_webpage_tool_for_plotting_hypocenters_from_AQMS\" target=\"_new\">Issues/Bugs</a><br/>\n";
-                                print "<a href=\"https://docs.google.com/a/alaska.edu/document/d/1j-cg2ykDBHgpYk-QXXW0Az9QwR6alEOraJtETZNUjzE/edit\" target=\"_new\">Issues/Bugs</a><br/>\n";
+                                print "<a href=\"https://docs.google.com/a/alaska.edu/document/d/1j-cg2ykDBHgpYk-QXXW0Az9QwR6alEOraJtETZNUjzE/edit\" target=\"_new\">Issues/Comments</a><br/>\n";
                         ?>
 		</div>
 		<div class = "clear"></div>
@@ -256,7 +256,6 @@ END;
 					    	<label><input type="radio" id ="plotStaTrue" checked="checked" name="plot2" />Yes</label>
 					    	<label><input type="radio" id ="plotStaFalse" name="plot2" />No</label>
 						<br/>
-						<!-- Station toggling not working, and volcanoes layer never worked, so comment out for now - GT 2011/10/28-->
 						Show Volcanoes:
 					    	<label><input type="radio" id ="plotVolcanoesTrue" checked="checked" name="radioPlotVolcanoes" />Yes</label>
 					    	<label><input type="radio" id ="plotVolcanoesFalse" name="radioPlotVolcanoes" />No</label>
