@@ -100,6 +100,14 @@
 END;
                 ?>
 
+                <!-- # Set maps corner variables -->
+                <script type="text/javascript">
+			var ne = 0.0;
+			var sw = 0.0;
+			var nw = 0.0;
+			var se = 0.0;
+		</script>
+
                 <!-- # Copy PHP variables to JAVASCRIPT variables -->
                 <script type="text/javascript">
                         var volcanoname = "<?php print $volcano; ?>";

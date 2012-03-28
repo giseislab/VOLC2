@@ -113,6 +113,16 @@ if (npts == 0) {
 	loc2 = new GLatLng(lat2, lon2);
 	//getXsec();
 }
+
+
+var bounds = map.getBounds();
+var ne = bounds.getNorthEast(); // LatLng of the north-east corner
+var sw = bounds.getSouthWest(); // LatLng of the south-west corder
+var nw = new google.maps.LatLng(ne.lat(), sw.lng());
+var se = new google.maps.LatLng(sw.lat(), ne.lng());
+document.write('' + sw.lng() + '' + se.lng() + '' + sw.lat() + '' + nw.lat() + '');
+
+
 		// Control cross section
 		GEvent.addListener(map, 'click', function(overlay, point) {
 		if (xsecExist == 0){
