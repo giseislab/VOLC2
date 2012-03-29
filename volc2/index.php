@@ -195,20 +195,21 @@ END;
 				}
 				$nextvolcano = $volcano_name[$nextindex];	
 				$thisPage = curPageName();
-                                print "<span><a href=\"$thisPage?volcano=$prevvolcano\">&lt&lt</a>\n";
+                                print "<span><a href=\"$thisPage?volcano=$prevvolcano\">&lArr;</a>\n";
                                 if ($volcano == "All") {
                                         print "All volcanoes\n";
                                 } else {
                                         print "$volcano\n";
                                 };
-                                print "<a href=\"$thisPage?volcano=$nextvolcano\">&gt&gt</a>\n";
+                                print "<a href=\"$thisPage?volcano=$nextvolcano\">&rArr;</a>\n";
 				print "</span>\n";
-                                #print "<a href=\"https://www.avo.alaska.edu/wiki/index.php/VOLC2:_Internal_webpage_tool_for_plotting_hypocenters_from_AQMS\" target=\"_new\">Issues/Bugs</a><br/>\n";
                                 print "<a href=\"https://docs.google.com/a/alaska.edu/document/d/1j-cg2ykDBHgpYk-QXXW0Az9QwR6alEOraJtETZNUjzE/edit\" target=\"_new\">Issues/Comments</a><br/>\n";
                         ?>
 		</div>
+		<div id = "latlonboundaries">Lat/lon boundaries: <span></span></font></div>
 		<div class = "clear"></div>
-		<tr><div id = "time">File updated: <span></span></div></tr>
+		<div id = "time">File updated: <span></span></div>
+
 	
 		<hr/>
 		<div id = "leftCol"> 

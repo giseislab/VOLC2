@@ -109,13 +109,17 @@ a:hover{
 	margin:25px 10px 0 0;
 }
 
+#latlonboundaries{
+	font-size:8pt;
+	float:right;
+}
 #time{
-	font-size:10pt;
+	font-size:8pt;
 	float:left;
 }
 #time span {
 	color:red;
-	font-size:10pt;
+	//font-size:10pt;
 }
 
 #time a{

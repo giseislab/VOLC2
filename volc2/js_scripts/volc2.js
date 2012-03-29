@@ -103,6 +103,24 @@ function loadMap(defaultPoint1, defaultPoint2) {
 		map.addControl(new GScaleControl());//adds scale
 		map.enableScrollWheelZoom();
 		var mapNormalProj = G_PHYSICAL_MAP.getProjection();
+
+		// stuff added from reset function
+		initialPlot = 1;
+		killMarkers();
+		//getEqs();
+		resetControl();
+		clearXsec();
+		toggleStas();
+		plotStations();
+		plotVolcanoes();
+		document.getElementById("oneday").checked==false
+		document.getElementById("range").checked==false
+		document.getElementById("last").checked==true
+		//document.getElementById("time_options").innerHTML=single_day_html;
+		document.getElementById("plotStaTrue").checked==true
+		document.getElementById("plotStaFalse").checked==false
+		document.getElementById("plotVolcanoesTrue").checked==true
+		document.getElementById("plotVolcanoesFalse").checked==false
 if (npts == 0) {
 	deltadegrees = 0.1;
 	lat1 = mapParam.lat - deltadegrees;
@@ -120,7 +138,14 @@ var ne = bounds.getNorthEast(); // LatLng of the north-east corner
 var sw = bounds.getSouthWest(); // LatLng of the south-west corder
 var nw = new google.maps.LatLng(ne.lat(), sw.lng());
 var se = new google.maps.LatLng(sw.lat(), ne.lng());
-document.write('' + sw.lng() + '' + se.lng() + '' + sw.lat() + '' + nw.lat() + '');
+var londiff = se.lng() - sw.lng();
+var latdiff = nw.lat() - sw.lat();
+var minlon = sw.lng().toFixed(3);
+var maxlon = se.lng().toFixed(3);
+var minlat = se.lat().toFixed(3);
+var maxlat = ne.lat().toFixed(3);
+
+document.getElementById("latlonboundaries").innerHTML = new String('Default map boundaries: Longitude=[' + minlon + ',' + maxlon + '] Latitude=[' + minlat + ',' + maxlat + ']');
 
 
 		// Control cross section
