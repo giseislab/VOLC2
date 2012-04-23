@@ -236,25 +236,7 @@ END;
                                                 }
                                         ?>
                                         </select>
-					<!-- <input type="hidden" value="eqAll" name="eqselect" /> -->
-
-   <table>
-                                                <tr>
-                                                        <td>
-                                                                Magnitudes: <br/>
-                                                                <label><input type="checkbox" id ="eqAll" name="eqselect" checked ="checked"/> All EQ's</label><br/>
-                                                                <label><input type="checkbox" id ="eq4" name="eqselect"/> &gt; 4.0 </label><br/>
-                                                                <label><input type="checkbox" id ="eq3" name="eqselect"/> 3.0 - 3.9 </label><br/>
-                                                                <label><input type="checkbox" id ="eq2" name="eqselect"/> 2.0 - 2.9 </label><br/>
-                                                                <label><input type="checkbox" id ="eq1" name="eqselect" /> 1.0 - 1.9 </label><br/>
-                                                                <label><input type="checkbox" id ="eq0" name="eqselect"/> &lt; 1.0 </label><br/><br/>
-                                                        </td>
-                                                        <td>&nbsp;&nbsp;</td>
-                                                        <td valign="top">
-                                                        </td>
-                                                </tr>
-                                        </table>
-
+					<input type="hidden" value="eqAll" name="eqselect" />
 				</div>
 				<div id = "controlRight">
 					<form>
