@@ -789,12 +789,13 @@ Eq = Class.create({
 	getHtml: function(){
 		var eqDate = new Date(this.yr, this.mon, this.day, this.hr, this.min, this.sec);
 		var noPage = new Date();
-		noPage.setDate(noPage.getDate()-14);
-		//var name = ["Magnitude: ", "Time (UTC):", "Time (Local):", "Depth (Km): ", "Event Id:", "Epoch time:", "Age (Days):" ];
+		if (this.net != "AK") {
+			noPage.setDate(noPage.getDate()-14); // seems to suggest HVO has a 14 day database
+		}
 		
 		if (volcanoname == "All") {
 			var name = ["Magnitude: ", "Time (UTC):", "Depth (km): ", "Coordinates:", "Age (days):", "Event Id:" ];
-			var param = [this.mag, this.getDate(), this.dep, this.lat + " " + this.lon, this.age.toFixed(1), this.eId];
+			var param = [parseFloat(this.mag).toFixed(2), this.getDate(), parseFloat(this.dep).toFixed(2), this.lat + " " + this.lon, this.age.toFixed(1), this.eId];
 
 		} else {
 	
@@ -802,9 +803,7 @@ Eq = Class.create({
 			var pointVol = new GLatLng(mapParam.lat, mapParam.lon);
 			var eqVolDistance = pointEq.distanceFrom(pointVol) / 1000;
 			var name = ["Magnitude: ", "Time (UTC):", "Depth (km): ", "Epicenter to " + volcanoname + " (km):", "Coordinates:", "Age (days):", "Event Id:" ];
-			//var name = ["Magnitude: ", "Time (UTC):", "Depth (km): ", "Epicentral distance (km):", "Coordinates:", "Age (days):", "Event Id:" ];
-			//var param = [this.mag, this.getDate(), this.loc, this.dep, this.eId, this.epoch, this.age.toFixed(1) ];
-			var param = [this.mag, this.getDate(), this.dep, eqVolDistance.toFixed(1), this.lat + " " + this.lon, this.age.toFixed(1), this.eId];
+			var param = [parseFloat(this.mag).toFixed(2), this.getDate(), parseFloat(this.dep).toFixed(2), eqVolDistance.toFixed(1), this.lat + " " + this.lon, this.age.toFixed(1), this.eId];
 		}
 		var html = "<div class = 'eqWin'> \n";
 		if (eqDate > noPage ){
@@ -813,20 +812,15 @@ Eq = Class.create({
 				link += "View Event Page</a>";
 				html += link;	
 			}
-			html += "<ul> \n";
-			for (var i = 0; i < name.length; i++){
-				html += "<li>" + name[i]  + "<span>" + param[i] + "</span> </li> \n";
-			}
-			html += "</ul>";
-			}
-		else{
-			//html +="Event Page Unavailable";
-			html += "<ul> ";
-			for (var i = 0; i < name.length; i++){
-					html += "<li>" + name[i]  + "<span>" + param[i] + "</span> </li> \n";
-			}
-			html += "</ul>";
 		}
+		html += "<ul> ";
+		for (var i = 0; i < name.length; i++){
+				html += "<li>" + name[i]  + "<span>" + param[i] + "</span> </li> \n";
+		}
+		if (volcanoname != "All" && this.net == "AK") {
+			html += "<li><a href=\"http://giseis.alaska.edu/AVO/avoseis/TreMoR/html/sgram10min.php?subnet=" + volcanoname + "&year=" + this.yr + "&month=" + this.mon + "&day=" + this.day + "&hour=" + this.hr + "&minute=" + this.min + "&second=" + this.sec + "\">Spectrogram</a></li>";
+		}
+		html += "</ul>";
 		return html; 
 	}
 });

@@ -119,7 +119,7 @@ END;
 
 		<!-- # Set XML filenames here -->
 		<?php
-                        $timerange = !isset($_GET['timerange'])? "week" : $_GET['timerange'];
+                        $timerange = !isset($_GET['timerange'])? "year" : $_GET['timerange'];
 			$eventXmlAll = "$xml_directory/origins_$volcano.xml";
 			if (!file_exists($eventXmlAll)) { 
 				die("</head><body>Event XML file ($eventXmlAll) not found</body></html>");
@@ -203,7 +203,7 @@ END;
                                 };
                                 print "<a href=\"$thisPage?volcano=$nextvolcano\">&rArr;</a>\n";
 				print "</span>\n";
-                                print "<a href=\"https://docs.google.com/a/alaska.edu/document/d/1j-cg2ykDBHgpYk-QXXW0Az9QwR6alEOraJtETZNUjzE/edit\" target=\"_new\">Issues/Comments</a><br/>\n";
+                                #print "<a href=\"https://docs.google.com/a/alaska.edu/document/d/1j-cg2ykDBHgpYk-QXXW0Az9QwR6alEOraJtETZNUjzE/edit\" target=\"_new\">Issues/Comments</a><br/>\n";
                         ?>
 		</div>
 		<div id = "latlonboundaries">Lat/lon boundaries: <span></span></font></div>
