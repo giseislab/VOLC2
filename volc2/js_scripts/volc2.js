@@ -23,11 +23,11 @@ Event.observe(window, 'load', function(){
 	
 	//eqs
 	$("eqAll").observe('click',shide);
-	$("eq4").observe('click', shide);
-	$("eq3").observe('click', shide);
-	$("eq2").observe('click', shide);
-	$("eq1").observe('click', shide);
-	$("eq0").observe('click', shide);
+	//$("eq4").observe('click', shide);
+	//$("eq3").observe('click', shide);
+	//$("eq2").observe('click', shide);
+	//$("eq1").observe('click', shide);
+	//$("eq0").observe('click', shide);
 	$("plotTime").observe('click', changePlot);
 	$("plotDepth").observe('click', changePlot);
 	$("plotStaTrue").observe('click', toggleStas);
@@ -817,7 +817,8 @@ Eq = Class.create({
 		for (var i = 0; i < name.length; i++){
 				html += "<li>" + name[i]  + "<span>" + param[i] + "</span> </li> \n";
 		}
-		if (volcanoname != "All" && this.net == "AK") {
+		if (volcanoname != "All" && 
+		(!(volcanoname.match(/\b[A-Z|_]{2,}\b/))) ) {
 			html += "<li><a href=\"http://giseis.alaska.edu/AVO/avoseis/TreMoR/html/sgram10min.php?subnet=" + volcanoname + "&year=" + this.yr + "&month=" + this.mon + "&day=" + this.day + "&hour=" + this.hr + "&minute=" + this.min + "&second=" + this.sec + "\">Spectrogram</a></li>";
 		}
 		html += "</ul>";

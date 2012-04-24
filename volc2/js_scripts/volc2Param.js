@@ -106,7 +106,8 @@ var range_days_html=		'<table>' +
 				'</table>';
 
 //HTML code for xsec
-var initialXsec ='To generate a cross-sectional plot, first define the cross-sectional area by clicking on the map to define the two endpoints, then enter in a Cross Section Width (default is 10 km), then click the "Plot X-section" button';
+//var initialXsec ='<hr/>To generate a cross-sectional plot, first define the cross-sectional area by clicking on the map to define the two endpoints, then enter in a Cross Section Width (default is 10 km), then click the "Plot X-section" button<hr/>';
+var initialXsec ='';
 
 var twoClickXsec = 		'<table>' + 
 					'<td>Cross Section Width (km):<br><input id="Xwidth" type="text" style="width:80px;" name="Xwidth" value="10" onkeypress="if(event.keyCode==13){getXsec()}"></td>' + 

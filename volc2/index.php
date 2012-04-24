@@ -182,8 +182,9 @@ END;
 				#for ($c=0; $c<count($volcano_name); $c++) {
 				#	print $c.": ".$volcano_name[$c]."<br/>\n";
 				#}
-				print "<a href=\"$public_site\"><img id=\"logo\" src=\"$logo_src\" alt=\"$logo_alt\"/></a>\n";
-				print "<img id=\"req2Logo\" src=\"$banner_src\" alt=\"$banner_alt\"/>\n";
+				# 2012/04/23 Removed by GT
+				#print "<a href=\"$public_site\"><img id=\"logo\" src=\"$logo_src\" alt=\"$logo_alt\"/></a>\n";
+				#print "<img id=\"req2Logo\" src=\"$banner_src\" alt=\"$banner_alt\"/>\n";
 				$previndex = $vindex - 1;
 				if ($previndex < 0) {
 					$previndex = count($volcano_name)-1;
@@ -195,18 +196,14 @@ END;
 				}
 				$nextvolcano = $volcano_name[$nextindex];	
 				$thisPage = curPageName();
-                                print "<span><a href=\"$thisPage?volcano=$prevvolcano\">&lArr;</a>\n";
                                 if ($volcano == "All") {
                                         print "All volcanoes\n";
                                 } else {
                                         print "$volcano\n";
                                 };
-                                print "<a href=\"$thisPage?volcano=$nextvolcano\">&rArr;</a>\n";
-				print "</span>\n";
                                 #print "<a href=\"https://docs.google.com/a/alaska.edu/document/d/1j-cg2ykDBHgpYk-QXXW0Az9QwR6alEOraJtETZNUjzE/edit\" target=\"_new\">Issues/Comments</a><br/>\n";
                         ?>
 		</div>
-		<div id = "latlonboundaries">Lat/lon boundaries: <span></span></font></div>
 		<div class = "clear"></div>
 		<div id = "time">File updated: <span></span></div>
 
@@ -215,7 +212,7 @@ END;
 		<div id = "leftCol"> 
 			<div id="map"><noscript><p>This application runs on the Google Map API and must have Javascript enabled in order to run. It appears that your have disabled your Javascript or you are using a very outdated browser. To enable Javascript, click on your browser options and select "Enable JavaScript."</p></noscript></div>
                         <?php
-				print "<p><img id =\"legend\" src =\"$legend\" alt =\"legend\"/></p>\n";
+				#print "<p><img id =\"legend\" src =\"$legend\" alt =\"legend\"/></p>\n";
 			?> 
 		</div>	
 		<div id ="rightCol">
@@ -223,8 +220,15 @@ END;
 				<legend>Control Panel</legend>
 				<div id = "controlLeft">
                                         <b>Volcano: </b>
-                                        <select onchange="window.open('?volcano=' + this.options[this.selectedIndex].value, '_top')" name="volcano">
                                         <?php
+                                		print "<a href=\"$thisPage?volcano=$prevvolcano\">&lArr;</a>\n";
+					?>
+
+                                        <select onchange="window.open('?volcano=' + this.options[this.selectedIndex].value, '_top')" name="volcano">
+
+                                        <?php
+
+
                                                 foreach($volcano_name as $volcanoitem) {
                                                         if ($volcanoitem == $volcano) {
                                                                 print "\t\t<option value=\"$volcano\" selected=\"yes\">$volcano</option>\n";
@@ -234,10 +238,14 @@ END;
                                                                 print "\t\t<option value=\"$volcanoitem\" >$volcanoitem</option>\n";
                                                         }
                                                 }
+
                                         ?>
                                         </select>
-					<!-- <input type="hidden" value="eqAll" name="eqselect" /> -->
+                                        <?php
+                                		print "<a href=\"$thisPage?volcano=$nextvolcano\">&rArr;</a>\n";
+					?>
 
+<div id="magnitude_selector">
    <table>
                                                 <tr>
                                                         <td>
@@ -254,7 +262,7 @@ END;
                                                         </td>
                                                 </tr>
                                         </table>
-
+</div>
 				</div>
 				<div id = "controlRight">
 					<form>
@@ -270,7 +278,7 @@ END;
 						Show Volcanoes:
 					    	<label><input type="radio" id ="plotVolcanoesTrue" checked="checked" name="radioPlotVolcanoes" />Yes</label>
 					    	<label><input type="radio" id ="plotVolcanoesFalse" name="radioPlotVolcanoes" />No</label>
-						
+						<br/><a href="legend.php" target="legend">Show Legend</a>
 					</form>
 				</div>
 				<div class = "clear"></div>
@@ -285,7 +293,11 @@ END;
 						<div class ='clear'></div>
 						<p>Earthquakes locations are available from the AVO catalog from February 2012 to present.  
 							Older data are being filled in gradually. 
+
+<p/>
+To generate a cross-sectional plot, first define the cross-sectional area by clicking on the map to define the two endpoints, then enter in a Cross Section Width (default is 10 km), then click the "Plot X-section" button
 						</p>	
+							<div id = "latlonboundaries">Lat/lon boundaries: <span></span></font></div>
 					</div>
 					Time Options: 
 					<div id="datecontrol"></div><p>
@@ -302,7 +314,7 @@ END;
 		
 			</fieldset>
 			<h2>List of <span id ="numberEQs">0</span> EQ(s) on Map</h2>
-			<p id ="listTop"><a href ="http://www.pnsn.org/recenteqs/glossary.htm#mag">Mag </a><a href ='http://www.pnsn.org/recenteqs/glossary.htm#time'> Date Time(UTC)</a> <a href ="http://www.pnsn.org/recenteqs/glossary.htm#depth"> Depth</a></p>
+			<p id ="listTop">Mag Date Time(Z) Depth</p>
 			<ul id ="eqlist">
 				<li id = "starter"></li><!--for validation-->
 			</ul>

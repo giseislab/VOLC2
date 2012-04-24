@@ -244,7 +244,7 @@ font-size:90%;
 
 #eqlist{
 	overflow:scroll;
-	height:140px;
+	height:350px;
 	list-style-type:none;
 	margin:0;
 	padding-left:3px;
@@ -265,6 +265,7 @@ font-size:90%;
 }
 #legend{
 	width:700px;
+	//display:none;
 }
 .clear{
 	clear:both;
@@ -333,7 +334,10 @@ font-size:90%;
 .answers ul{
 	list-style-type:decimal;
 }
-	
+
+#magnitude_selector {
+	display:none;
+}	
 	
 
 
