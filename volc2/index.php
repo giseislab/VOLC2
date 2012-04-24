@@ -316,7 +316,7 @@ To generate a cross-sectional plot, first define the cross-sectional area by cli
 		
 			</fieldset>
 			<h2>List of <span id ="numberEQs">0</span> EQ(s) on Map</h2>
-			<p id ="listTop">Mag Date Time(Z) Depth</p>
+			<p id ="listTop">Mag Date Time(UTC) Depth</p>
 			<ul id ="eqlist">
 				<li id = "starter"></li><!--for validation-->
 			</ul>
