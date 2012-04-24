@@ -154,11 +154,13 @@ END;
 
                                            			foreach($timeranges as $item=>$numdays) {
                                                    			if ($item == $timerange) {
-                                                        			print "\t\t'<input type=radio onchange=\"timeRangeChanged(this)\" Name=radioTimeRange Value=$numdays checked>$item</input><br/>' + \n";
+                                                        			#print "\t\t'<input type=radio onchange=\"timeRangeChanged(this)\" Name=radioTimeRange Value=$numdays checked>$item</input><br/>' + \n";
+                                                        			print "\t\t'<input type=radio onchange=\"timeRangeChanged(this)\" Name=radioTimeRange Value=$numdays checked>$item</input>&nbsp;' + \n";
                                                    			}
                                                    			else
                                                    			{
-                                                        			print "\t\t'<input type=radio onchange=\"timeRangeChanged(this)\" Name=radioTimeRange Value=$numdays >$item</input><br/>' + \n";
+                                                        			#print "\t\t'<input type=radio onchange=\"timeRangeChanged(this)\" Name=radioTimeRange Value=$numdays >$item</input><br/>' + \n";
+                                                        			print "\t\t'<input type=radio onchange=\"timeRangeChanged(this)\" Name=radioTimeRange Value=$numdays >$item</input>&nbsp;' + \n";
                                                    			}
                                            			}	
                                    			?> 

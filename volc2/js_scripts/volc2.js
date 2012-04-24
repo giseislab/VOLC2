@@ -731,6 +731,7 @@ Eq = Class.create({
 	//create the side bar
 	makeList: function(){
 		var z = this.dep.split(".")[0];
+		myz = parseFloat(this.dep).toFixed(1);
 		//if (z < 10){
 		//	z = "0" + z;
 		//}
@@ -749,7 +750,7 @@ Eq = Class.create({
 		}
 		mymag = parseFloat(this.mag).toFixed(1);
 		//a.innerHTML= document.write(mymag.toFixed(1) + " " + this.getDate() + " " + z); 
-		a.innerHTML= mymag + " " + this.getDate() + " " + z; 
+		a.innerHTML= mymag + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + this.getDate() + "&nbsp;&nbsp;&nbsp;" + myz; 
 		li.appendChild(a);
 		$("eqlist").appendChild(li);
 		count ++;
