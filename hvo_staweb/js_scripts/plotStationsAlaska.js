@@ -1,4 +1,3 @@
-//var staXML = "purplepig/sta_file_AK.xml";
 var server = 'pubavo1.wr.usgs.gov';
 var port = '16022';
 var staList = [];
@@ -46,8 +45,8 @@ else {
 	var url3='&tzo=-8&tza=AKDT';
 }
 // var url3='&tzo=-10&tza=HST';
-var pdfurl1 = 'http://www.iris.edu/servlet/quackquery/plotcache/pdf_E';
-var webiarc = 'http://www.hvointernal.wr.usgs.gov/web/heliArchive/';
+//var pdfurl1 = 'http://www.iris.edu/servlet/quackquery/plotcache/pdf_E';
+//var webiarc = 'http://www.hvointernal.wr.usgs.gov/web/heliArchive/';
 
 
 function plotStations() {
@@ -107,11 +106,11 @@ function plotStations() {
 				
 				// Archive Webicorder links (previous days)
 				var dd = getPreviousDates();
-				var webi1 = '<a class="webi" href="'+webiarc+staname+'_'+stachannel+'_'+stanetwork+'_--.'+dd[1]+'00.png" target="_blank">';
+				//var webi1 = '<a class="webi" href="'+webiarc+staname+'_'+stachannel+'_'+stanetwork+'_--.'+dd[1]+'00.png" target="_blank">';
 				//stahtml=stahtml+ LAB+'Webicorder Archive: </a>'+vals+webi1+'1 day ago</a>';
-				var webi2 = '<a class="webi" href="'+webiarc+staname+'_'+stachannel+'_'+stanetwork+'_--.'+dd[2]+'00.png" target="_blank">';
+				//var webi2 = '<a class="webi" href="'+webiarc+staname+'_'+stachannel+'_'+stanetwork+'_--.'+dd[2]+'00.png" target="_blank">';
 				//stahtml=stahtml+ ' | '+vals+webi2+'2 days ago</a>';
-				var webi3 = '<a class="webi" href="'+webiarc+staname+'_'+stachannel+'_'+stanetwork+'_--.'+dd[3]+'00.png" target="_blank">';
+				//var webi3 = '<a class="webi" href="'+webiarc+staname+'_'+stachannel+'_'+stanetwork+'_--.'+dd[3]+'00.png" target="_blank">';
 				//stahtml=stahtml+ ' | '+vals+webi3+'3 days ago</a>';
 				
 				if (pdf == 1){

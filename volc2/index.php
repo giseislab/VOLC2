@@ -280,7 +280,16 @@ END;
 						Show Volcanoes:
 					    	<label><input type="radio" id ="plotVolcanoesTrue" checked="checked" name="radioPlotVolcanoes" />Yes</label>
 					    	<label><input type="radio" id ="plotVolcanoesFalse" name="radioPlotVolcanoes" />No</label>
-						<br/><a href="legend.php" target="legend">Show Legend</a>
+						<br/>
+						<!-- <a href="legend.php" target="legend">Show Legend</a> -->
+<a onmouseover="document.getElementById('PopUp').style.display = 'block' " onmouseout="document.getElementById('PopUp').style.display = 'none' " onfocus='this.blur();'><span style="text-decoration: underline;">Legend</span></a>
+	<div id='PopUp' style='display: none; position: absolute; left: -500px; top: 50px; border: solid black 1px; padding: 10px; background-color: rgb(255,255,225); text-align: justify; font-size: 12px; width: 700px;'>
+ <?php
+                        print "<p><img id =\"legend\"  src =\"$legend\" alt =\"legend\"/></p>\n";
+                ?>
+	<br />
+	<div style='text-align: right;'><a onmouseover='this.style.cursor="pointer" ' style='font-size: 12px;' onfocus='this.blur();' onclick="document.getElementById('PopUp').style.display = 'none' " ><span style="text-decoration: underline;"></span></a></div>
+	</div>
 					</form>
 				</div>
 				<div class = "clear"></div>
@@ -294,12 +303,11 @@ END;
 						<img id = 'webiHelpClose' src ="images/close.jpg" alt ="close"/>
 						<div class ='clear'></div>
 						<p>Earthquakes locations are available from the AVO catalog from February 2012 to present.  
-							Older data are being filled in gradually. 
-
-<p/>
-To generate a cross-sectional plot, first define the cross-sectional area by clicking on the map to define the two endpoints, then enter in a Cross Section Width (default is 10 km), then click the "Plot X-section" button
+						Older data are being filled in gradually. 
+						<p/>
+						To generate a cross-sectional plot, first define the cross-sectional area by clicking on the map to define the two endpoints, then enter in a Cross Section Width (default is 10 km), then click the "Plot X-section" button
 						</p>	
-							<div id = "latlonboundaries">Lat/lon boundaries: <span></span></font></div>
+						<div id = "latlonboundaries">Lat/lon boundaries: <span></span></font></div>
 					</div>
 					Time Options: 
 					<div id="datecontrol"></div><p>

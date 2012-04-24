@@ -6,7 +6,8 @@ var side_bar_html = "";
 
 var hot_icon = new GIcon();
 hot_icon.shadow = null;
-hot_icon.iconSize = new GSize(19, 16);
+//hot_icon.iconSize = new GSize(19, 16);
+hot_icon.iconSize = new GSize(5, 5);
 hot_icon.shadowSize = new GSize(0,0);
 hot_icon.iconAnchor = new GPoint(3,3);
 hot_icon.image = "images/hotsta.png";
@@ -15,13 +16,15 @@ var hotmarker = new GMarker (new GLatLng(0, 0), {icon:hot_icon, zIndexProcess:im
 
 var thisIcon = new GIcon();
 thisIcon.shadow=null;
-thisIcon.iconSize=new GSize(11,11);
+//thisIcon.iconSize=new GSize(11,11);
+thisIcon.iconSize=new GSize(5,5);
 thisIcon.shadowSize = new GSize(0,0);
 thisIcon.iconAnchor = new GPoint(0,0);
 thisIcon.infoWindowAnchor=new GPoint(11,0);
 
 var SP_icon = new GIcon(thisIcon, "images/staPict_SP.png", null);
-SP_icon.iconSize=new GSize(15,13);
+//SP_icon.iconSize=new GSize(15,13);
+SP_icon.iconSize=new GSize(5,5);
 var BB_icon = new GIcon(thisIcon, "images/staPict_BB.png", null);
 BB_icon.iconSize=new GSize(15,13);
 var SM_icon = new GIcon(thisIcon, "images/staPict_SM.png", null);
