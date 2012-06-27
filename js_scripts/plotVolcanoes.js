@@ -46,6 +46,7 @@ function plotVolcanoes() {
 				var vname = vmarkers[i].getAttribute("name");
 				vList[i] = vname;
 				// create the marker
+				//createVMarker(vpoint,vname,vlat,vlon);
 				createVMarker(vpoint,vname);
 			}
 			setTimeout("addVMarkers()",10000);
@@ -56,12 +57,15 @@ function plotVolcanoes() {
 
 
 
+//function createVMarker(point,name,vlat,vlon) {
 function createVMarker(point,name) {
 	var new_icon=volcano_icon;
 	var order = 100000;
 	volcanomarker[markeridxv] = new GMarker(point,{icon:volcano_icon, zIndexProcess:importanceOrder});
 	var nowmarker = volcanomarker[markeridxv];
+	//var vhtml = new String(name + "<br/>lon: " + vlon + "<br/>lat: " + vlat); 
   	GEvent.addListener(nowmarker, "click", function() {
+		//nowmarker.openInfoWindowHtml(vhtml);
 		nowmarker.openInfoWindowHtml(name);
 	});
 	//volcanomarker[markeridxv].importance = markeridxv+order;

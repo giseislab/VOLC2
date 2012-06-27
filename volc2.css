@@ -149,7 +149,7 @@ a:hover{
 
 #rightCol{
 	float:left;
-	width:270px;
+	width:290px;
 	margin-left:10px;
 	padding:0;
 	position:relative;
@@ -249,6 +249,7 @@ font-size:90%;
 	padding-left:3px;
 	font-size:10pt;
 	border:black solid 1px;
+	//width: 300px;
 }
 
 #eqlist li a:hover{

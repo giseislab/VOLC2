@@ -251,9 +251,9 @@ END;
 							hour2 = date2.getHours()
 							minute2 = date2.getMinutes()
 
-							document.write("Time range:&nbsp;" + year1 + "/" + month1 + "/" + day1 + "/" + "&nbsp;" + hour1 + ":" + minute1 + " to ")
-							document.write(year2 + "/" + month2 + "/" + day2 + "/" + "&nbsp;" + hour2 + ":" + minute2 + "<br/>")
-							document.write("Timezone offset (in minutes) is "+date2.getTimezoneOffset()+" minutes from UTC<br/>"); 
+							document.write("Time range:&nbsp;" + year1 + "/" + month1 + "/" + day1 + "&nbsp;" + hour1 + ":" + minute1 + " to ")
+							document.write(year2 + "/" + month2 + "/" + day2 + "&nbsp;" + hour2 + ":" + minute2 + "<br/>")
+							document.write("Timezone offset: "+date2.getTimezoneOffset()+" minutes behind UTC<br/>"); 
 							//-->
 						</script>
 						<br />
@@ -349,7 +349,7 @@ END;
 				<hr/>
 				<div id = "controlLeft">
 
-					Time Options: 
+					Time Options: (Note: data only go back 1 year) 
 					<div id="datecontrol"></div><p>
 					<div id="timerange_options"></div>
 					<div id="time_options"></div>
