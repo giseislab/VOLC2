@@ -59,7 +59,14 @@
                         # Read in parameters from the configuration file
                         $configfile = "volc2config.xml";
                         $config = simplexml_load_file($configfile) or die("file not found: $configfile\n");
-                        $xml_directory = $config->xml_directory;
+			$xml_directory = !isset($_REQUEST['source'])? $config->xml_directory : $_REQUEST['source'];
+			if (!(file_exists($xml_directory))) {
+				if (file_exists("xmlfiles/$xml_directory")) {
+					$xml_directory = "xmlfiles/$xml_directory"; 
+				} else {
+					die("</head><body>XML directory ($xmlfiles) not found</body></html>");
+				}
+			}
                         $volcanoviewsxmlfile = $xml_directory."/".$config->volcanoviewsxmlfile;
                         $volcanomarkersxmlfile = $xml_directory."/".$config->volcanomarkersxmlfile;
                         $initialview = $config->initialview;
