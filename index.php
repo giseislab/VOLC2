@@ -67,6 +67,7 @@
 					die("</head><body>XML directory ($xmlfiles) not found</body></html>");
 				}
 			}
+			$datasource = basename($xml_directory);
                         $volcanoviewsxmlfile = $xml_directory."/".$config->volcanoviewsxmlfile;
                         $volcanomarkersxmlfile = $xml_directory."/".$config->volcanomarkersxmlfile;
                         $initialview = $config->initialview;
@@ -185,6 +186,7 @@ END;
                         volcanomarkersxmlfile = "<?php print $volcanomarkersxmlfile; ?>";
                         eventXml20 = "<?php print $eventXml20; ?>";
                         eventXmlAll = "<?php print $eventXmlAll; ?>";
+			datasource = "<?php print $datasource; ?>";
                         staXML = "<?php print $staXML; ?>";
                 </script>
 	</head>
@@ -270,10 +272,10 @@ END;
 				<div id = "controlLeft">
                                         <b>Volcano: </b>
                                         <?php
-                                		print "<a href=\"$thisPage?volcano=$prevvolcano\">&lArr;</a>\n";
+                                		print "<a href=\"$thisPage?volcano=$prevvolcano"."&source=$datasource\">&lArr;</a>\n";
 					?>
 
-                                        <select onchange="window.open('?volcano=' + this.options[this.selectedIndex].value, '_top')" name="volcano">
+                                        <select onchange="window.open('?volcano=' + this.options[this.selectedIndex].value + '&source=' + datasource, '_top')" name="volcano">
 
                                         <?php
 
@@ -291,7 +293,7 @@ END;
                                         ?>
                                         </select>
                                         <?php
-                                		print "<a href=\"$thisPage?volcano=$nextvolcano\">&rArr;</a>\n";
+                                		print "<a href=\"$thisPage?volcano=$nextvolcano"."&source=$datasource\">&rArr;</a>\n";
 					?>
 
 <div id="magnitude_selector">
