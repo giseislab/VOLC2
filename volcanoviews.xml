@@ -1,0 +1,36 @@
+<volcanoes>
+<volcano name="COOK_INLET" lat="60.0" lon="-152.5" zoomlevel="7" />
+<volcano name="Spurr" lat="61.2989" lon="-152.2539" zoomlevel="9" />
+<volcano name="Redoubt" lat="60.4852" lon="-152.7438" zoomlevel="10" />
+<volcano name="Iliamna" lat="60.0319" lon="-153.0918" zoomlevel="10" />
+<volcano name="Augustine" lat="59.3626" lon="-153.435" zoomlevel="11" />
+<volcano name="Fourpeaked" lat="58.7703" lon="-153.6738" zoomlevel="10" />
+<volcano name="KATMAI_REGION" lat="58.3" lon="-154.8" zoomlevel="8" />
+<volcano name="Snowy" lat="58.3336" lon="-154.6859" zoomlevel="10" />
+<volcano name="Griggs" lat="58.3572" lon="-155.1037" zoomlevel="11" />
+<volcano name="Katmai" lat="58.279" lon="-154.9533" zoomlevel="11" />
+<volcano name="Novarupta" lat="58.2654" lon="-155.1591" zoomlevel="11" />
+<volcano name="Trident" lat="58.235" lon="-155.104" zoomlevel="11" />
+<volcano name="Martin" lat="58.1692" lon="-155.3566" zoomlevel="11" />
+<volcano name="Mageik" lat="58.1946" lon="-155.2544" zoomlevel="11" />
+<volcano name="Ugashik-Peulik" lat="57.7503" lon="-156.37" zoomlevel="10" />
+<volcano name="Aniakchak" lat="56.88149" lon="-158.15456" zoomlevel="10" />
+<volcano name="Veniaminof" lat="56.1979" lon="-159.3931" zoomlevel="9" />
+<volcano name="COLD_BAY" lat="55.4" lon="-161.5" zoomlevel="8" />
+<volcano name="Pavlof" lat="55.4173" lon="-161.8937" zoomlevel="10" />
+<volcano name="Dutton" lat="55.1867" lon="-162.2744" zoomlevel="10" />
+<volcano name="UNIMAK_ISLAND" lat="54.7" lon="-163.9" zoomlevel="9" />
+<volcano name="Shishaldin" lat="54.7554" lon="-163.9711" zoomlevel="10" />
+<volcano name="Westdahl" lat="54.5171" lon="-164.6476" zoomlevel="10" />
+<volcano name="Akutan" lat="54.1331" lon="-165.9856" zoomlevel="10" />
+<volcano name="Makushin" lat="53.8899" lon="-166.925" zoomlevel="10" />
+<volcano name="Okmok" lat="53.397" lon="-168.166" zoomlevel="10" />
+<volcano name="Cleveland" lat="52.8222" lon="-169.945" zoomlevel="8" />
+<volcano name="Korovin" lat="52.3817" lon="-174.1653" zoomlevel="10" />
+<volcano name="Great_Sitkin" lat="52.0765" lon="-176.1109" zoomlevel="10" />
+<volcano name="Kanaga" lat="51.9242" lon="-177.1623" zoomlevel="10" />
+<volcano name="Tanaga" lat="51.884" lon="-178.143" zoomlevel="10" />
+<volcano name="Gareloi" lat="51.7892" lon="-178.796" zoomlevel="10" />
+<volcano name="Semisopochnoi" lat="51.9288" lon="179.5977" zoomlevel="10" />
+<volcano name="Little_Sitkin" lat="51.9531" lon="178.5356" zoomlevel="10" />
+</volcanoes>

@@ -68,8 +68,11 @@
 				}
 			}
 			$datasource = basename($xml_directory);
-                        $volcanoviewsxmlfile = $xml_directory."/".$config->volcanoviewsxmlfile;
-                        $volcanomarkersxmlfile = $xml_directory."/".$config->volcanomarkersxmlfile;
+# HACK 20130122 because volcanoviews.xml file sometimes not generated right
+                        #$volcanoviewsxmlfile = $xml_directory."/".$config->volcanoviewsxmlfile;
+                        #$volcanomarkersxmlfile = $xml_directory."/".$config->volcanomarkersxmlfile;
+                        $volcanoviewsxmlfile = $config->volcanoviewsxmlfile;
+                        $volcanomarkersxmlfile = $config->volcanomarkersxmlfile;
                         $initialview = $config->initialview;
                         $title = $config->title;
                         $public_site = $config->public_site;

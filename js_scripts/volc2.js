@@ -849,7 +849,8 @@ Eq = Class.create({
 			noPage.setDate(noPage.getDate()-14); // seems to suggest HVO has a 14 day database
 		}
 		
-		if (volcanoname == "All") {
+		//if (volcanoname == "All") {
+		if (!(volcanoname.match(/[a-z]/))) { // check for lower case letter in volcanoname, means volcano rather than region
 			var name = ["Magnitude: ", "Time (UTC):", "Depth (km): ", "Coordinates:", "Age (days):", "Event Id:" ];
 			var param = [parseFloat(this.mag).toFixed(2), this.getDate(), parseFloat(this.dep).toFixed(2), this.lat + " " + this.lon, this.age.toFixed(1), this.eId];
 
