@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- created by db2googlemaps from database: /Seis/Kiska4/picks/Total/Total at 2013/05/03 01:08:48 UTC UTC -->
+<merge fileTime_loc="2013/05/02 17:08:48 AKDT" fileTime_utc="2013/05/03 01:08:48 UTC">
+<event id="40100017" network-code="AK" time-stamp="2013/05/03_01:08:49" version="1">
+<param name="year" value="2013"/>
+<param name="month" value="05"/>
+<param name="day" value="02"/>
+<param name="hour" value="19"/>
+<param name="minute" value="59"/>
+<param name="second" value="37"/>
+<param name="latitude" value="54.5372"/>
+<param name="longitude" value="-164.6860"/>
+<param name="depth" value="2.3"/>
+<param name="magnitude" value="2.4"/>
+<param name="num-stations" value="11"/>
+<param name="num-phases" value="7"/>
+<param name="local-time" value="Thu May 02, 2013 19:59:37 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="40000326" network-code="AK" time-stamp="2013/05/03_01:08:49" version="1">
+<param name="year" value="2013"/>
+<param name="month" value="04"/>
+<param name="day" value="29"/>
+<param name="hour" value="18"/>
+<param name="minute" value="49"/>
+<param name="second" value="04"/>
+<param name="latitude" value="54.5538"/>
+<param name="longitude" value="-164.6900"/>
+<param name="depth" value="17.4"/>
+<param name="magnitude" value="0.3"/>
+<param name="num-stations" value="11"/>
+<param name="num-phases" value="6"/>
+<param name="local-time" value="Mon Apr 29, 2013 18:49:04 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+</merge>

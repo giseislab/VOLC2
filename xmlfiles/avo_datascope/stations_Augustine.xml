@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- created by db2googlemaps from database: /avort/oprun/dbmaster/master_stations at 2013/05/03 01:07:36 UTC UTC -->
+<markers>
+<marker lat="59.3711" lng="-153.3773" station="AUE" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="59.3632" lng="-153.4454" station="AUH" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="59.3345" lng="-153.4299" station="AUI" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="59.3493" lng="-153.4106" station="AUJK" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="59.3816" lng="-153.4379" station="AUL" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="59.3816" lng="-153.4379" station="AUL" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="59.3775" lng="-153.4790" station="AUNW" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="59.3627" lng="-153.4226" station="AUP" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="59.3694" lng="-153.4730" station="AUW" channel="EHZ" network="AV" location="--" type="SP"/>
+</markers>

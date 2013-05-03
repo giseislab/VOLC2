@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- created by db2googlemaps from database: /avort/oprun/dbmaster/master_stations at 2013/05/03 01:08:55 UTC UTC -->
+<markers>
+<marker lat="54.1144" lng="-165.8177" station="AHB" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="54.0975" lng="-165.9338" station="AKBB" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="54.1979" lng="-165.9936" station="AKGG" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="54.1618" lng="-165.9576" station="AKLV" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="54.0903" lng="-166.0126" station="AKMO" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="54.1292" lng="-166.0708" station="AKRB" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="54.1095" lng="-165.6987" station="AKS" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="54.1095" lng="-165.6987" station="AKSA" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="54.1253" lng="-165.9647" station="AKV" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="54.1859" lng="-165.9144" station="HSB" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="54.1600" lng="-166.0358" station="LVA" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="54.0907" lng="-165.9800" station="ZRO" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="54.1352" lng="-165.7719" station="AKUT" channel="BHZ" network="AT" location="--" type="BB"/>
+</markers>

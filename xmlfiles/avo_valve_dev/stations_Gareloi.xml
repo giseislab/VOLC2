@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- created by db2googlemaps from database: /avort/oprun/dbmaster/master_stations at 2012/04/23 21:59:10 UTC UTC -->
+<markers>
+<marker lat="51.7606" lng="-178.7735" station="GALA" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.8178" lng="-178.7787" station="GANE" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.7819" lng="-178.7488" station="GAEA" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.8192" lng="-178.8058" station="GANO" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.7778" lng="-178.8566" station="GASW" channel="EHZ" network="AV" location="--" type="SP"/>
+</markers>

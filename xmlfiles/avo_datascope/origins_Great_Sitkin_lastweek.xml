@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- created by db2googlemaps from database: /Seis/Kiska4/picks/Total/Total at 2013/05/03 01:09:13 UTC UTC -->
+<merge fileTime_loc="2013/05/02 17:09:13 AKDT" fileTime_utc="2013/05/03 01:09:13 UTC">
+<event id="40000321" network-code="AK" time-stamp="2013/05/03_01:09:14" version="1">
+<param name="year" value="2013"/>
+<param name="month" value="04"/>
+<param name="day" value="28"/>
+<param name="hour" value="11"/>
+<param name="minute" value="35"/>
+<param name="second" value="52"/>
+<param name="latitude" value="52.0750"/>
+<param name="longitude" value="-176.1137"/>
+<param name="depth" value="-3.2"/>
+<param name="magnitude" value="-0.3"/>
+<param name="num-stations" value="11"/>
+<param name="num-phases" value="9"/>
+<param name="local-time" value="Sun Apr 28, 2013 11:35:52 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+</merge>

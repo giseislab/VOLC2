@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- created by db2googlemaps from database: /avort/oprun/dbmaster/master_stations at 2013/04/29 19:07:21 UTC UTC -->
+<markers>
+<marker lat="56.2849" lng="-159.5532" station="VNFG" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="56.2203" lng="-159.1663" station="VNHG" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="56.0304" lng="-159.3699" station="VNKR" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="56.2829" lng="-159.3181" station="VNNF" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="56.1250" lng="-159.0875" station="VNSG" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="56.2259" lng="-159.4569" station="VNSS" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="56.0712" lng="-159.5606" station="VNSW" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="56.1509" lng="-159.5643" station="VNWF" channel="EHZ" network="AV" location="--" type="SP"/>
+</markers>

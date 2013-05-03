@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- created by db2googlemaps from database: /avort/oprun/dbmaster/master_stations at 2013/04/29 19:06:32 UTC UTC -->
+<markers>
+<marker lat="60.0807" lng="-152.9606" station="ILI" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="59.9570" lng="-153.0703" station="ILS" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="60.0592" lng="-153.1392" station="ILW" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="60.0599" lng="-153.0644" station="INE" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="60.0163" lng="-153.0185" station="IVE" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="60.0086" lng="-153.0830" station="IVS" channel="EHZ" network="AV" location="--" type="SP"/>
+</markers>

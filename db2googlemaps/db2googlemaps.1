@@ -1,0 +1,130 @@
+.TH DB2GOOGLEMAPS 1 "$Date$"
+.SH NAME
+db2googlemaps \- Create an xml-formatted version of hypocenter solutions.
+
+.SH SYNOPSIS
+.nf
+\fBdb2googlemaps\fP [-sob] [-f] [-x N]  \fIdbname\fP > \fIxml_file\fP 
+.fi
+.SH DESCRIPTION
+\fBdb2googlemaps\fP This script creates a xml file in a format suitable for use with the AVO public Google Maps pages. It uses event or station information extracted from the input database. Either -s, -b or -o must be used or the resulting xml file will be empty. 
+
+.SH OPTIONS
+.IP -s
+create placemarks for all seismic stations in database.
+.IP -o
+creates placemarks for all preferred origins. This option requires the origin, event and netmag tables. Origin placemarks are colored by depth. Size is scaled by origin magnitude.
+.IP -b
+creates basic placemarks for all origins. This is a simplified version of the -o flag that reads only an origin table. The same color and depth scale is used as for -o. A single magnitude is assigned in the order of preference: Ms, mb, ml. Either the -o or -b should be used, but not both.
+.IP "-x N"
+By default, XML format is almost identical to that exported by \fBdb2avoxml\fP, and is appropriate for public-facing applications. 
+This can be overridden with "-x N", where N is an integer 1 or 2.
+N=1 will export to an XML format identical to the above, except for a more verbose popup window, suitable for internal AVO use.
+N=2 will export to the XML format used by HVO for VOLC2. 
+.IP -f
+force program to include all origins. By default only the first 300 are included in the output.
+
+.SH ENVIRONMENT
+$ANTELOPE and $AVOSEIS must be set.
+
+.SH PARAMETER FILE
+None.
+
+.SH EXAMPLE
+chinook:iceweb 75 tcsh>> db2googlemaps -o /avort/oprun/events/earthworm/events_earthworm > events_earthworm.xml
+.br
+chinook:iceweb 74 tcsh>> head -8 events_earthworm.xml
+.br
+<?xml version="1.0" encoding="UTF-8"?>
+.br
+        <!-- created by db2googlemaps from database: /avort/oprun/events/earthworm/events_earthworm at 2011/11/05 23:47:03 UTC UTC -->
+.br
+<markers>
+.br
+<marker name=" 2011/11/05" icon="hyp0060FF.png" lat="53.8899" lon="-166.9250" depth="10.0" ml="" scale="0.28125" color="FF0060FF" TimeStamp="2011-11-05T23:20:49Z">
+.br
+[b]2011/11/05 23:20:49 UTC[/b][br/] 
+.br
+[b]magnitude: [/b][br/] 
+.br
+lat=53.8899, lon=-166.9250, depth=10.0 km[br/] 
+.br
+</marker>
+.PP
+chinook:iceweb 77 tcsh>> db2googlemaps -o -x 1 /avort/oprun/events/earthworm/events_earthworm > events_earthworm.xml
+.br
+chinook:iceweb 79 tcsh>> head -11 events_earthworm.xml
+.br
+<?xml version="1.0" encoding="UTF-8"?>
+.br
+        <!-- created by db2googlemaps from database: /avort/oprun/events/earthworm/events_earthworm at 2011/11/05 23:50:47 UTC UTC -->
+.br
+<markers>
+.br
+<marker name=" 2011/11/05" icon="unreviewed0060FF.png" lat="58.7703" lon="-153.6738" depth="10.0" ml="" scale="0.28125" color="FF0060FF" TimeStamp="2011-11-05T23:39:05Z">
+.br
+[b]2011/11/05 23:39:05 UTC[/b][br/] 
+.br
+[b]No magnitude: [/b][br/] 
+.br
+lat=58.7703, lon=-153.6738, depth=10.0 km[br/] 
+.br
+source: AVO Earthworm automatic[br] author: ew_fo[br/] 
+.br
+event type: -[br/]
+.br 
+[b]arrivals: 4/4[/b] [br/]
+.br
+</marker>
+.PP
+chinook:iceweb 80 tcsh>> db2googlemaps -o -x 2 /avort/oprun/events/earthworm/events_earthworm > events_earthworm.xml
+.br
+chinook:iceweb 83 tcsh>> head -19 events_earthworm.xml
+.br
+<?xml version="1.0" encoding="UTF-8"?>
+.br
+        <!-- created by db2googlemaps from database: /avort/oprun/events/earthworm/events_earthworm at 2011/11/05 23:53:40 UTC UTC -->
+.br
+<merge fileTime_loc="2011/11/05 15:53:40 AKDT" fileTime_utc="2011/11/05 23:53:40 UTC">
+.br
+<event id="78651" network-code="AK" time-stamp="2011/11/05_23:53:40" version="1">
+.br
+<param name="year" value="2011"/>
+.br
+<param name="month" value="11"/>
+.br
+<param name="day" value="05"/>
+.br
+<param name="hour" value="23"/>
+.br
+<param name="minute" value="39"/>
+.br
+<param name="second" value="05"/>
+.br
+<param name="latitude" value="58.7703"/>
+.br
+<param name="longitude" value="-153.6738"/>
+.br
+<param name="depth" value="10.0"/>
+.br
+<param name="magnitude" value=""/>
+.br
+<param name="num-stations" value="4"/>
+.br
+<param name="num-phases" value="4"/>
+.br
+<param name="local-time" value="Sat Nov 05, 2011 23:39:05 UTC"/>
+.br
+<param name="icon-style" value="1"/>
+.br
+</event>
+.br
+  
+.SH SEE ALSO
+db2avoxml(1), db2volc2(1), db2kml(1)
+
+.SH BUGS AND CAVEATS
+It is possible that -b is obsolete/identical to the -o option.
+
+.SH AUTHOR
+Glenn Thompson, after db2avoxml by Mike West

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- created by db2googlemaps from database: /avort/oprun/dbmaster/master_stations at 2013/04/29 19:06:29 UTC UTC -->
+<markers>
+<marker lat="60.5913" lng="-152.6882" station="DFR" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="60.5621" lng="-152.9293" station="NCT" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="60.5621" lng="-152.9293" station="NCT" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="60.5912" lng="-152.6883" station="RDDF" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="60.5843" lng="-152.5887" station="RDDR" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="60.5905" lng="-152.8058" station="RDJH" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="60.5224" lng="-152.7401" station="RDN" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="60.4536" lng="-152.7430" station="RDSO" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="60.5726" lng="-152.4075" station="RDT" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="60.4875" lng="-152.8425" station="RDWB" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="60.4196" lng="-152.7742" station="RED" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="60.4196" lng="-152.7742" station="RED" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="60.4888" lng="-152.6940" station="REF" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="60.4616" lng="-152.7560" station="RSO" channel="EHZ" network="AV" location="--" type="SP"/>
+</markers>

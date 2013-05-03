@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- created by db2googlemaps from database: /avort/oprun/dbmaster/master_stations at 2013/04/29 19:08:18 UTC UTC -->
+<markers>
+<marker lat="52.0012" lng="179.5758" station="CEAP" channel="SHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.9646" lng="179.6472" station="CEPE" channel="SHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.9058" lng="179.6826" station="CERA" channel="SHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.9302" lng="179.6277" station="CERB" channel="SHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.8998" lng="179.5613" station="CESW" channel="SHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.9649" lng="179.4922" station="CETU" channel="SHZ" network="AV" location="--" type="SP"/>
+</markers>

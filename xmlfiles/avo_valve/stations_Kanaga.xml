@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- created by db2googlemaps from database: /avort/oprun/dbmaster/master_stations at 2013/04/29 19:08:08 UTC UTC -->
+<markers>
+<marker lat="51.9178" lng="-177.1973" station="KICM" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.8777" lng="-177.1724" station="KIKV" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.7605" lng="-177.2369" station="KIMD" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.9303" lng="-177.1296" station="KINC" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.8985" lng="-177.0955" station="KIRH" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.8520" lng="-177.1528" station="KIWB" channel="EHZ" network="AV" location="--" type="SP"/>
+</markers>

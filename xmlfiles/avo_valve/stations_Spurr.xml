@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- created by db2googlemaps from database: /avort/oprun/dbmaster/master_stations at 2013/04/29 19:06:25 UTC UTC -->
+<markers>
+<marker lat="61.2663" lng="-152.3913" station="BGL" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="61.0696" lng="-152.2650" station="BKG" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="61.3071" lng="-152.0090" station="CGL" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="61.1934" lng="-152.3401" station="CKL" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="61.2234" lng="-152.1838" station="CKN" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="61.2002" lng="-152.2085" station="CKT" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="61.2636" lng="-152.2441" station="CP2" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="61.2664" lng="-152.1578" station="CRP" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="61.4031" lng="-152.1590" station="NCG" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="61.2591" lng="-152.3722" station="SPBG" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="61.2913" lng="-152.0228" station="SPCG" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="61.2244" lng="-152.1854" station="SPCN" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="61.2655" lng="-152.1550" station="SPCP" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="61.2003" lng="-152.2091" station="SPCR" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="61.3662" lng="-152.7012" station="SPNN" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="61.1811" lng="-152.0566" station="SPU" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="61.2728" lng="-152.5614" station="SPWE" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="61.4982" lng="-151.8349" station="STLK" channel="EHZ" network="AV" location="--" type="SP"/>
+</markers>

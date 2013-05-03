@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- created by valve2googlemaps at Mon Apr 29 19:06:34 GMT 2013 UTC -->
+<merge fileTime_loc="Mon Apr 29 11:06:34 AKDT 2013" fileTime_utc="Mon Apr 29 19:06:34 GMT 2013">
+<event id="1" network-code="AK" time-stamp="2013/04/26 11:43:56" version="1">
+<param name="year" value="2013"/>
+<param name="month" value="04"/>
+<param name="day" value="26"/>
+<param name="hour" value="11"/>
+<param name="minute" value="43"/>
+<param name="second" value="56"/>
+<param name="latitude" value="59.3617"/>
+<param name="longitude" value="-153.4335"/>
+<param name="depth" value="-0.4000"/>
+<param name="magnitude" value="0.5000"/>
+<param name="num-stations" value="-1"/>
+<param name="num-phases" value="-1"/>
+<param name="local-time" value="2013/04/26 11:43:56"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="2" network-code="AK" time-stamp="2013/04/23 11:15:14" version="1">
+<param name="year" value="2013"/>
+<param name="month" value="04"/>
+<param name="day" value="23"/>
+<param name="hour" value="11"/>
+<param name="minute" value="15"/>
+<param name="second" value="14"/>
+<param name="latitude" value="59.3627"/>
+<param name="longitude" value="-153.4290"/>
+<param name="depth" value="-0.6100"/>
+<param name="magnitude" value="0.0800"/>
+<param name="num-stations" value="-1"/>
+<param name="num-phases" value="-1"/>
+<param name="local-time" value="2013/04/23 11:15:14"/>
+<param name="icon-style" value="1"/>
+</event>
+</merge>

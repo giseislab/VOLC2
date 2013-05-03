@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- created by db2googlemaps from database: /avort/oprun/dbmaster/master_stations at 2013/05/03 01:08:51 UTC UTC -->
+<markers>
+<marker lat="54.5902" lng="-164.7550" station="WEBT" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="54.5300" lng="-164.7796" station="WECS" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="54.4723" lng="-164.5860" station="WESE" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="54.5761" lng="-164.5804" station="WESN" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="54.4926" lng="-164.7233" station="WESP" channel="EHZ" network="AV" location="--" type="SP"/>
+</markers>

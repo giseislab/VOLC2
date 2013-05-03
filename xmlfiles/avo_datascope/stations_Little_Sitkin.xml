@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- created by db2googlemaps from database: /avort/oprun/dbmaster/master_stations at 2013/05/03 01:09:37 UTC UTC -->
+<markers>
+<marker lat="51.9693" lng="178.5148" station="LSNW" channel="SHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.9557" lng="178.5714" station="LSPA" channel="SHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.9484" lng="178.5112" station="LSSA" channel="SHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.9320" lng="178.5670" station="LSSE" channel="SHZ" network="AV" location="--" type="SP"/>
+</markers>

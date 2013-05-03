@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <volc2_configuration_parameters>
-<xml_directory>xmlfiles/avo_valve</xml_directory>
+<xml_directory>xmlfiles/avo_datascope</xml_directory>
 <title>AQMS Hypocenters - reviewed by AVO Analyst</title>
 <logo src="images/avoLogo.jpg" alt="AVO logo" />
 <public_site>www.avo.alaska.edu</public_site>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- created by db2googlemaps from database: /avort/oprun/dbmaster/master_stations at 2013/04/29 19:07:39 UTC UTC -->
+<markers>
+<marker lat="54.6446" lng="-163.7428" station="BRPK" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="54.7251" lng="-163.7130" station="ISLZ" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="54.8314" lng="-163.7804" station="ISNN" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="54.7718" lng="-164.1265" station="SSBA" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="54.8109" lng="-163.9979" station="SSLN" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="54.7111" lng="-164.0008" station="SSLS" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="54.7709" lng="-164.1234" station="SSLW" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="54.8466" lng="-164.3873" station="WTUG" channel="EHZ" network="AV" location="--" type="SP"/>
+</markers>

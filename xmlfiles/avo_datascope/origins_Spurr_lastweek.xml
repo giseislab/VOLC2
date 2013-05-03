@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- created by db2googlemaps from database: /Seis/Kiska4/picks/Total/Total at 2013/05/03 01:07:20 UTC UTC -->
+<merge fileTime_loc="2013/05/02 17:07:20 AKDT" fileTime_utc="2013/05/03 01:07:20 UTC">
+<event id="40100014" network-code="AK" time-stamp="2013/05/03_01:07:21" version="1">
+<param name="year" value="2013"/>
+<param name="month" value="05"/>
+<param name="day" value="02"/>
+<param name="hour" value="17"/>
+<param name="minute" value="17"/>
+<param name="second" value="06"/>
+<param name="latitude" value="61.3253"/>
+<param name="longitude" value="-151.9833"/>
+<param name="depth" value="9.4"/>
+<param name="magnitude" value="0.3"/>
+<param name="num-stations" value="12"/>
+<param name="num-phases" value="9"/>
+<param name="local-time" value="Thu May 02, 2013 17:17:06 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="40100012" network-code="AK" time-stamp="2013/05/03_01:07:21" version="1">
+<param name="year" value="2013"/>
+<param name="month" value="05"/>
+<param name="day" value="02"/>
+<param name="hour" value="02"/>
+<param name="minute" value="57"/>
+<param name="second" value="40"/>
+<param name="latitude" value="61.2057"/>
+<param name="longitude" value="-152.5580"/>
+<param name="depth" value="8.1"/>
+<param name="magnitude" value="-0.0"/>
+<param name="num-stations" value="10"/>
+<param name="num-phases" value="9"/>
+<param name="local-time" value="Thu May 02, 2013 02:57:40 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="40100001" network-code="AK" time-stamp="2013/05/03_01:07:21" version="1">
+<param name="year" value="2013"/>
+<param name="month" value="05"/>
+<param name="day" value="01"/>
+<param name="hour" value="00"/>
+<param name="minute" value="20"/>
+<param name="second" value="50"/>
+<param name="latitude" value="61.3067"/>
+<param name="longitude" value="-152.2437"/>
+<param name="depth" value="-2.5"/>
+<param name="magnitude" value="-0.3"/>
+<param name="num-stations" value="9"/>
+<param name="num-phases" value="7"/>
+<param name="local-time" value="Wed May 01, 2013 00:20:50 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="40000329" network-code="AK" time-stamp="2013/05/03_01:07:21" version="1">
+<param name="year" value="2013"/>
+<param name="month" value="04"/>
+<param name="day" value="30"/>
+<param name="hour" value="10"/>
+<param name="minute" value="22"/>
+<param name="second" value="09"/>
+<param name="latitude" value="61.0778"/>
+<param name="longitude" value="-152.3640"/>
+<param name="depth" value="16.1"/>
+<param name="magnitude" value="0.1"/>
+<param name="num-stations" value="14"/>
+<param name="num-phases" value="11"/>
+<param name="local-time" value="Tue Apr 30, 2013 10:22:09 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="40000328" network-code="AK" time-stamp="2013/05/03_01:07:21" version="1">
+<param name="year" value="2013"/>
+<param name="month" value="04"/>
+<param name="day" value="30"/>
+<param name="hour" value="09"/>
+<param name="minute" value="52"/>
+<param name="second" value="18"/>
+<param name="latitude" value="61.0327"/>
+<param name="longitude" value="-152.3685"/>
+<param name="depth" value="9.9"/>
+<param name="magnitude" value="0.6"/>
+<param name="num-stations" value="23"/>
+<param name="num-phases" value="19"/>
+<param name="local-time" value="Tue Apr 30, 2013 09:52:18 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="40000313" network-code="AK" time-stamp="2013/05/03_01:07:21" version="1">
+<param name="year" value="2013"/>
+<param name="month" value="04"/>
+<param name="day" value="27"/>
+<param name="hour" value="13"/>
+<param name="minute" value="09"/>
+<param name="second" value="47"/>
+<param name="latitude" value="61.3417"/>
+<param name="longitude" value="-152.2020"/>
+<param name="depth" value="-3.2"/>
+<param name="magnitude" value="-0.0"/>
+<param name="num-stations" value="11"/>
+<param name="num-phases" value="8"/>
+<param name="local-time" value="Sat Apr 27, 2013 13:09:47 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="40000312" network-code="AK" time-stamp="2013/05/03_01:07:21" version="1">
+<param name="year" value="2013"/>
+<param name="month" value="04"/>
+<param name="day" value="27"/>
+<param name="hour" value="11"/>
+<param name="minute" value="49"/>
+<param name="second" value="23"/>
+<param name="latitude" value="61.3108"/>
+<param name="longitude" value="-152.2517"/>
+<param name="depth" value="2.0"/>
+<param name="magnitude" value="0.5"/>
+<param name="num-stations" value="22"/>
+<param name="num-phases" value="17"/>
+<param name="local-time" value="Sat Apr 27, 2013 11:49:23 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+</merge>

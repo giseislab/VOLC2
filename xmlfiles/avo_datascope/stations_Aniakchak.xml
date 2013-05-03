@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- created by db2googlemaps from database: /avort/oprun/dbmaster/master_stations at 2013/05/03 01:08:24 UTC UTC -->
+<markers>
+<marker lat="56.9119" lng="-158.0610" station="ANNE" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="56.9656" lng="-158.2170" station="ANNW" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="56.9190" lng="-158.1737" station="ANON" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="56.8016" lng="-158.2829" station="ANPB" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="56.8409" lng="-158.1283" station="ANPK" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="56.8947" lng="-158.2328" station="AZAC" channel="EHZ" network="AV" location="--" type="SP"/>
+</markers>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- created by db2googlemaps from database: /avort/oprun/dbmaster/master_stations at 2013/04/29 19:08:01 UTC UTC -->
+<markers>
+<marker lat="52.2740" lng="-174.0992" station="KOFP" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="52.3221" lng="-174.2022" station="KOKL" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="52.3603" lng="-174.1673" station="KOKV" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="52.3925" lng="-174.1213" station="KONE" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="52.3954" lng="-174.2125" station="KONW" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="52.3447" lng="-174.0505" station="KOSE" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="52.3646" lng="-174.2527" station="KOWE" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="52.2016" lng="-174.1975" station="ATKA" channel="BHZ" network="AK" location="--" type="BB"/>
+</markers>

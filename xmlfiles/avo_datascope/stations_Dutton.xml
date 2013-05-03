@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- created by db2googlemaps from database: /avort/oprun/dbmaster/master_stations at 2013/05/03 01:08:40 UTC UTC -->
+<markers>
+<marker lat="55.1488" lng="-161.8638" station="DOL" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="54.9660" lng="-162.2631" station="DRR3" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="55.1062" lng="-162.2801" station="DT1" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="55.1448" lng="-162.2590" station="DTN" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="55.3170" lng="-161.9045" station="HAG" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="55.4329" lng="-161.9973" station="PN7A" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="55.3460" lng="-161.8567" station="PS4A" channel="EHZ" network="AV" location="--" type="SP"/>
+</markers>

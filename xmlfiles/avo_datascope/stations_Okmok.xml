@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- created by db2googlemaps from database: /avort/oprun/dbmaster/master_stations at 2013/05/03 01:09:04 UTC UTC -->
+<markers>
+<marker lat="53.4113" lng="-168.3600" station="OKAK" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="53.4260" lng="-168.1663" station="OKCE" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="53.3948" lng="-168.1382" station="OKCF" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="53.4536" lng="-168.0513" station="OKER" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="53.4107" lng="-167.9115" station="OKFG" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="53.4764" lng="-167.8182" station="OKID" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="53.4559" lng="-168.1257" station="OKNC" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="53.5192" lng="-168.1661" station="OKRE" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="53.3565" lng="-168.1619" station="OKSO" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="53.2516" lng="-168.2925" station="OKSP" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="53.3829" lng="-168.0431" station="OKTU" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="53.4711" lng="-168.2418" station="OKWE" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="53.4337" lng="-168.2076" station="OKWR" channel="EHZ" network="AV" location="--" type="SP"/>
+</markers>

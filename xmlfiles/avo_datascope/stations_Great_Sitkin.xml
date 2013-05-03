@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- created by db2googlemaps from database: /avort/oprun/dbmaster/master_stations at 2013/05/03 01:09:16 UTC UTC -->
+<markers>
+<marker lat="51.8608" lng="-176.4079" station="ETKA" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="52.0108" lng="-176.1640" station="GSCK" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.9853" lng="-175.9270" station="GSIG" channel="SHZ" network="AV" location="--" type="SP"/>
+<marker lat="52.0421" lng="-176.0583" station="GSMY" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="52.0917" lng="-176.1777" station="GSSP" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="52.0548" lng="-176.1468" station="GSTD" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="52.0932" lng="-176.0611" station="GSTR" channel="EHZ" network="AV" location="--" type="SP"/>
+</markers>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- created by valve2googlemaps at Mon Apr 29 19:07:51 GMT 2013 UTC -->
+<merge fileTime_loc="Mon Apr 29 11:07:51 AKDT 2013" fileTime_utc="Mon Apr 29 19:07:51 GMT 2013">
+<event id="1" network-code="AK" time-stamp="2013/04/25 11:49:08" version="1">
+<param name="year" value="2013"/>
+<param name="month" value="04"/>
+<param name="day" value="25"/>
+<param name="hour" value="11"/>
+<param name="minute" value="49"/>
+<param name="second" value="08"/>
+<param name="latitude" value="53.3940"/>
+<param name="longitude" value="-168.1748"/>
+<param name="depth" value="4.7700"/>
+<param name="magnitude" value="1.3100"/>
+<param name="num-stations" value="-1"/>
+<param name="num-phases" value="-1"/>
+<param name="local-time" value="2013/04/25 11:49:08"/>
+<param name="icon-style" value="1"/>
+</event>
+</merge>

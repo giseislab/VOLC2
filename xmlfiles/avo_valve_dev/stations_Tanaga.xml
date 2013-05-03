@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- created by db2googlemaps from database: /avort/oprun/dbmaster/master_stations at 2012/04/23 21:59:10 UTC UTC -->
+<markers>
+<marker lat="51.8144" lng="-177.8148" station="TAPA" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.7555" lng="-177.8998" station="TAFL" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.8621" lng="-178.1414" station="TACS" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.8339" lng="-178.0390" station="TASE" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.9146" lng="-178.1228" station="TANO" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="51.8990" lng="-177.9853" station="TAFP" channel="EHZ" network="AV" location="--" type="SP"/>
+</markers>

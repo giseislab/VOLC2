@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- created by db2googlemaps from database: /avort/oprun/dbmaster/master_stations at 2012/04/23 21:59:01 UTC UTC -->
+<markers>
+<marker lat="61.9858" lng="-144.3305" station="WACK" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="62.0027" lng="-144.0720" station="WANC" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="61.9277" lng="-144.1745" station="WASW" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="62.0746" lng="-144.1544" station="WAZA" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="62.9380" lng="-143.7194" station="MENT" channel="BHZ" network="AT" location="--" type="BB"/>
+<marker lat="61.0358" lng="-142.3462" station="BAL" channel="BHZ" network="AK" location="--" type="BB"/>
+<marker lat="61.1292" lng="-145.7749" station="DIV" channel="BHZ" network="AK" location="--" type="BB"/>
+<marker lat="61.4925" lng="-145.9228" station="KLU" channel="SHZ" network="AK" location="--" type="SP"/>
+<marker lat="61.4925" lng="-145.9228" station="KLU" channel="BHZ" network="AK" location="--" type="BB"/>
+<marker lat="62.9699" lng="-145.4698" station="PAX" channel="BHZ" network="AK" location="--" type="BB"/>
+<marker lat="61.4417" lng="-143.8123" station="GLB" channel="SHZ" network="AK" location="--" type="SP"/>
+</markers>

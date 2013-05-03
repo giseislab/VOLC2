@@ -1,0 +1,63 @@
+<volcanoes>
+<volcano name="Adagdak" lat="51.9905" lon="-176.5852" zoomlevel="9" />
+<volcano name="Akutan" lat="54.13308" lon="-165.98555" zoomlevel="9" />
+<volcano name="Amak" lat="55.41728" lon="-163.14687" zoomlevel="9" />
+<volcano name="Amukta" lat="52.49419" lon="-171.25476" zoomlevel="9" />
+<volcano name="Aniakchak" lat="56.88149" lon="-158.15456" zoomlevel="9" />
+<volcano name="Atka" lat="52.38167" lon="-174.16527" zoomlevel="9" />
+<volcano name="Augustine" lat="59.3626" lon="-153.435" zoomlevel="9" />
+<volcano name="Bogoslof" lat="53.9272" lon="-168.0344" zoomlevel="9" />
+<volcano name="Carlisle" lat="52.8906" lon="-170.0576" zoomlevel="9" />
+<volcano name="Chiginagak" lat="57.13348" lon="-156.99147" zoomlevel="9" />
+<volcano name="Cleveland" lat="52.8222" lon="-169.945" zoomlevel="9" />
+<volcano name="Douglas" lat="58.8596" lon="-153.5351" zoomlevel="9" />
+<volcano name="Dutton" lat="55.1867" lon="-162.2744" zoomlevel="9" />
+<volcano name="Edgecumbe" lat="57.0509" lon="-135.7611" zoomlevel="9" />
+<volcano name="Emmons Lake" lat="55.3409" lon="-162.0726" zoomlevel="9" />
+<volcano name="Fisher" lat="54.6692" lon="-164.3524" zoomlevel="9" />
+<volcano name="Fourpeaked" lat="58.7703" lon="-153.6738" zoomlevel="9" />
+<volcano name="Gareloi" lat="51.7892" lon="-178.796" zoomlevel="9" />
+<volcano name="Gilbert" lat="54.2522" lon="-165.6605" zoomlevel="9" />
+<volcano name="Great Sitkin" lat="52.0765" lon="-176.1109" zoomlevel="9" />
+<volcano name="Griggs" lat="58.3572" lon="-155.1037" zoomlevel="9" />
+<volcano name="Hayes" lat="61.5985" lon="-152.42" zoomlevel="9" />
+<volcano name="Iliamna" lat="60.0319" lon="-153.0918" zoomlevel="9" />
+<volcano name="Isanotski" lat="54.76799" lon="-163.72904" zoomlevel="9" />
+<volcano name="Kagamil" lat="52.9726" lon="-169.719" zoomlevel="9" />
+<volcano name="Kaguyak" lat="58.6113" lon="-154.0245" zoomlevel="9" />
+<volcano name="Kanaga" lat="51.9242" lon="-177.1623" zoomlevel="9" />
+<volcano name="Kasatochi" lat="52.1693" lon="-175.5113" zoomlevel="9" />
+<volcano name="Katmai" lat="58.279" lon="-154.9533" zoomlevel="9" />
+<volcano name="Kiska" lat="52.1031" lon="177.6035" zoomlevel="9" />
+<volcano name="Korovin" lat="52.38167" lon="-174.16527" zoomlevel="9" />
+<volcano name="Kupreanof" lat="56.0126" lon="-159.7912" zoomlevel="9" />
+<volcano name="Little Sitkin" lat="51.9531" lon="178.5356" zoomlevel="9" />
+<volcano name="Mageik" lat="58.1946" lon="-155.2544" zoomlevel="9" />
+<volcano name="Makushin" lat="53.8899" lon="-166.925" zoomlevel="9" />
+<volcano name="Martin" lat="58.1692" lon="-155.3566" zoomlevel="9" />
+<volcano name="Moffett" lat="51.937" lon="-176.741" zoomlevel="9" />
+<volcano name="Novarupta" lat="58.2654" lon="-155.1591" zoomlevel="9" />
+<volcano name="Okmok" lat="53.397" lon="-168.166" zoomlevel="9" />
+<volcano name="Pavlof" lat="55.4173" lon="-161.8937" zoomlevel="9" />
+<volcano name="Pavlof Sister" lat="55.4569" lon="-161.8544" zoomlevel="9" />
+<volcano name="Recheshnoi" lat="53.1536" lon="-168.5382" zoomlevel="9" />
+<volcano name="Redoubt" lat="60.4852" lon="-152.7438" zoomlevel="9" />
+<volcano name="Roundtop" lat="54.7992" lon="-163.5914" zoomlevel="9" />
+<volcano name="Seguam" lat="52.316" lon="-172.51" zoomlevel="9" />
+<volcano name="Segula" lat="52.0138" lon="178.134" zoomlevel="9" />
+<volcano name="Semisopochnoi" lat="51.9288" lon="179.5977" zoomlevel="9" />
+<volcano name="Shishaldin" lat="54.7554" lon="-163.9711" zoomlevel="9" />
+<volcano name="Snowy" lat="58.3336" lon="-154.6859" zoomlevel="9" />
+<volcano name="Spurr" lat="61.2989" lon="-152.2539" zoomlevel="9" />
+<volcano name="Steller" lat="58.4301" lon="-154.3903" zoomlevel="9" />
+<volcano name="Takawangha" lat="51.867" lon="-178.027" zoomlevel="9" />
+<volcano name="Tanaga" lat="51.884" lon="-178.143" zoomlevel="9" />
+<volcano name="Trident" lat="58.2343" lon="-155.1026" zoomlevel="9" />
+<volcano name="Ugashik-Peulik" lat="57.7503" lon="-156.37" zoomlevel="9" />
+<volcano name="Ukinrek Maars" lat="57.831" lon="-156.512" zoomlevel="9" />
+<volcano name="Veniaminof" lat="56.1979" lon="-159.3931" zoomlevel="9" />
+<volcano name="Vsevidof" lat="53.1256" lon="-168.6937" zoomlevel="9" />
+<volcano name="Westdahl" lat="54.5171" lon="-164.6476" zoomlevel="9" />
+<volcano name="Wrangell" lat="62.00572" lon="-144.01935" zoomlevel="9" />
+<volcano name="Yunaska" lat="52.649" lon="-170.659" zoomlevel="9" />
+</volcanoes>

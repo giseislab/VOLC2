@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- created by valve2googlemaps at Mon Apr 29 19:07:15 GMT 2013 UTC -->
+<merge fileTime_loc="Mon Apr 29 11:07:15 AKDT 2013" fileTime_utc="Mon Apr 29 19:07:15 GMT 2013">
+<event id="1" network-code="AK" time-stamp="2013/04/24 12:47:27" version="1">
+<param name="year" value="2013"/>
+<param name="month" value="04"/>
+<param name="day" value="24"/>
+<param name="hour" value="12"/>
+<param name="minute" value="47"/>
+<param name="second" value="27"/>
+<param name="latitude" value="56.8950"/>
+<param name="longitude" value="-158.0902"/>
+<param name="depth" value="15.4900"/>
+<param name="magnitude" value="0.2400"/>
+<param name="num-stations" value="-1"/>
+<param name="num-phases" value="-1"/>
+<param name="local-time" value="2013/04/24 12:47:27"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="2" network-code="AK" time-stamp="2013/04/24 12:32:33" version="1">
+<param name="year" value="2013"/>
+<param name="month" value="04"/>
+<param name="day" value="24"/>
+<param name="hour" value="12"/>
+<param name="minute" value="32"/>
+<param name="second" value="33"/>
+<param name="latitude" value="56.8202"/>
+<param name="longitude" value="-158.0517"/>
+<param name="depth" value="14.8300"/>
+<param name="magnitude" value="0.8400"/>
+<param name="num-stations" value="-1"/>
+<param name="num-phases" value="-1"/>
+<param name="local-time" value="2013/04/24 12:32:33"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="3" network-code="AK" time-stamp="2013/04/24 12:32:20" version="1">
+<param name="year" value="2013"/>
+<param name="month" value="04"/>
+<param name="day" value="24"/>
+<param name="hour" value="12"/>
+<param name="minute" value="32"/>
+<param name="second" value="20"/>
+<param name="latitude" value="56.8702"/>
+<param name="longitude" value="-158.1403"/>
+<param name="depth" value="14.5100"/>
+<param name="magnitude" value="0.3300"/>
+<param name="num-stations" value="-1"/>
+<param name="num-phases" value="-1"/>
+<param name="local-time" value="2013/04/24 12:32:20"/>
+<param name="icon-style" value="1"/>
+</event>
+</merge>

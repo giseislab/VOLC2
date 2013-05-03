@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- created by db2googlemaps from database: /avort/oprun/dbmaster/master_stations at 2013/05/03 01:08:12 UTC UTC -->
+<markers>
+<marker lat="58.2100" lng="-155.3281" station="ACH" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.1981" lng="-155.4961" station="ANCK" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.0518" lng="-155.3036" station="CAHL" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.2702" lng="-155.2843" station="KABU" channel="BHZ" network="AV" location="--" type="BB"/>
+<marker lat="58.2743" lng="-155.2038" station="KBM" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.2426" lng="-155.1854" station="KCE" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.0533" lng="-155.5753" station="KJL" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.1336" lng="-155.1629" station="MGLS" channel="EHZ" network="AV" location="--" type="SP"/>
+</markers>

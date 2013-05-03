@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- created by db2googlemaps from database: /Seis/Kiska4/picks/Total/Total at 2013/05/03 01:07:41 UTC UTC -->
+<merge fileTime_loc="2013/05/02 17:07:41 AKDT" fileTime_utc="2013/05/03 01:07:41 UTC">
+<event id="40100021" network-code="AK" time-stamp="2013/05/03_01:07:42" version="1">
+<param name="year" value="2013"/>
+<param name="month" value="05"/>
+<param name="day" value="02"/>
+<param name="hour" value="21"/>
+<param name="minute" value="48"/>
+<param name="second" value="24"/>
+<param name="latitude" value="58.2762"/>
+<param name="longitude" value="-155.5212"/>
+<param name="depth" value="7.2"/>
+<param name="magnitude" value="1.1"/>
+<param name="num-stations" value="13"/>
+<param name="num-phases" value="9"/>
+<param name="local-time" value="Thu May 02, 2013 21:48:24 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="40100011" network-code="AK" time-stamp="2013/05/03_01:07:42" version="1">
+<param name="year" value="2013"/>
+<param name="month" value="05"/>
+<param name="day" value="01"/>
+<param name="hour" value="18"/>
+<param name="minute" value="24"/>
+<param name="second" value="00"/>
+<param name="latitude" value="58.1858"/>
+<param name="longitude" value="-155.3240"/>
+<param name="depth" value="2.6"/>
+<param name="magnitude" value="1.2"/>
+<param name="num-stations" value="13"/>
+<param name="num-phases" value="8"/>
+<param name="local-time" value="Wed May 01, 2013 18:24:00 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="40100010" network-code="AK" time-stamp="2013/05/03_01:07:42" version="1">
+<param name="year" value="2013"/>
+<param name="month" value="05"/>
+<param name="day" value="01"/>
+<param name="hour" value="18"/>
+<param name="minute" value="10"/>
+<param name="second" value="44"/>
+<param name="latitude" value="58.2518"/>
+<param name="longitude" value="-155.1098"/>
+<param name="depth" value="2.6"/>
+<param name="magnitude" value="1.9"/>
+<param name="num-stations" value="19"/>
+<param name="num-phases" value="13"/>
+<param name="local-time" value="Wed May 01, 2013 18:10:44 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="40000324" network-code="AK" time-stamp="2013/05/03_01:07:42" version="1">
+<param name="year" value="2013"/>
+<param name="month" value="04"/>
+<param name="day" value="29"/>
+<param name="hour" value="09"/>
+<param name="minute" value="43"/>
+<param name="second" value="04"/>
+<param name="latitude" value="58.4320"/>
+<param name="longitude" value="-156.1680"/>
+<param name="depth" value="4.7"/>
+<param name="magnitude" value="2.1"/>
+<param name="num-stations" value="25"/>
+<param name="num-phases" value="16"/>
+<param name="local-time" value="Mon Apr 29, 2013 09:43:04 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="40000320" network-code="AK" time-stamp="2013/05/03_01:07:42" version="1">
+<param name="year" value="2013"/>
+<param name="month" value="04"/>
+<param name="day" value="28"/>
+<param name="hour" value="10"/>
+<param name="minute" value="20"/>
+<param name="second" value="21"/>
+<param name="latitude" value="57.8285"/>
+<param name="longitude" value="-156.1003"/>
+<param name="depth" value="9.9"/>
+<param name="magnitude" value="0.7"/>
+<param name="num-stations" value="9"/>
+<param name="num-phases" value="7"/>
+<param name="local-time" value="Sun Apr 28, 2013 10:20:21 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+<event id="40000306" network-code="AK" time-stamp="2013/05/03_01:07:42" version="1">
+<param name="year" value="2013"/>
+<param name="month" value="04"/>
+<param name="day" value="26"/>
+<param name="hour" value="16"/>
+<param name="minute" value="30"/>
+<param name="second" value="56"/>
+<param name="latitude" value="58.2195"/>
+<param name="longitude" value="-155.3603"/>
+<param name="depth" value="2.4"/>
+<param name="magnitude" value="0.5"/>
+<param name="num-stations" value="9"/>
+<param name="num-phases" value="7"/>
+<param name="local-time" value="Fri Apr 26, 2013 16:30:56 UTC"/>
+<param name="icon-style" value="1"/>
+</event>
+</merge>

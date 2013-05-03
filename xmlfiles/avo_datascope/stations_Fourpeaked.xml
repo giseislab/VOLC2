@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- created by db2googlemaps from database: /avort/oprun/dbmaster/master_stations at 2013/05/03 01:07:40 UTC UTC -->
+<markers>
+<marker lat="58.9289" lng="-153.6449" station="CDD" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.8341" lng="-153.9204" station="FONW" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.7574" lng="-153.4762" station="FOPK" channel="EHZ" network="AV" location="--" type="SP"/>
+<marker lat="58.7987" lng="-153.6971" station="FOSS" channel="EHZ" network="AV" location="--" type="SP"/>
+</markers>
